@@ -1,0 +1,198 @@
+[FRAME] "System Settings" 1280x1006 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Main Content" 1000x1006 @5751,15 fill=#fbf8fb flex=VERTICAL
+    [FRAME] "Container" 920x902 @5791,79 flex=VERTICAL/gap40
+      [FRAME] "Page Header" 920x52 @5791,79 flex=VERTICAL/gap4
+        [FRAME] "Heading 2" 920x24 @5791,79 flex=VERTICAL
+          [TEXT] "System Settings" 920x24 @5791,79 fill=#4a0810 :: "System Settings" 16px Inter/Regular #4a0810 
+        [FRAME] "Container" 672x24 @5791,107 flex=VERTICAL
+          [TEXT] "Text" 583x24 @5791,107 fill=#544242 :: "Manage global configurations, financial parameters, and system integrations." 16px Inter/Regular #544242 
+      [FRAME] "Settings Grid" 920x810 @5791,171 flex=GRID
+        [FRAME] "Financial Configuration Card" 605x447 @5791,171 fill=#ffffff r=8 flex=VERTICAL/gap24
+          [FRAME] "HorizontalBorder" 555x41 @5816,196 flex=HORIZONTAL/gap16
+            [FRAME] "Container" 19x18 @5816,199 flex=VERTICAL
+              [VECTOR] "Icon" 19x18 @5816,199 fill=#4a0810
+            [FRAME] "Heading 3" 187x24 @5851,196 flex=VERTICAL
+              [TEXT] "Text" 187x24 @5851,196 fill=#1b1b1d :: "Global Transaction Rules" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 555x228 @5816,261 flex=VERTICAL/gap16
+            [FRAME] "Container" 555x126 @5816,261 flex=VERTICAL/gap4
+              [FRAME] "Label" 555x24 @5816,261 flex=VERTICAL
+                [TEXT] "Default Reservation Deposit (SAR)" 555x24 @5816,261 fill=#544242 :: "Default Reservation Deposit (SAR)" 16px Inter/Regular #544242 
+              [FRAME] "Container" 384x42 @5816,289 flex=VERTICAL
+                [FRAME] "Input" 384x42 @5816,289 fill=#fbf8fb flex=HORIZONTAL
+                  [FRAME] "Container" 352x24 @5832,297 flex=VERTICAL
+                    [TEXT] "5,000.00" 352x24 @5832,297 fill=#1b1b1d :: "5,000.00" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 33x24 @6151,298 flex=VERTICAL
+                  [TEXT] "Text" 33x24 @6151,298 fill=#dac1c0 :: "SAR" 16px Inter/Regular #dac1c0 
+              [FRAME] "Container" 555x52 @5816,335 flex=VERTICAL
+                [TEXT] "This value sets the fixed deposit amount required for all unit reservations across all marketer links." 555x48 @5816,339 fill=#544242 :: "This value sets the fixed deposit amount required for all unit reservations
+across all marketer links." 16px Inter/Italic #544242 
+            [FRAME] "Container" 555x86 @5816,403 flex=GRID
+              [FRAME] "Container" 270x70 @5816,419 flex=VERTICAL/gap4
+                [FRAME] "Label" 270x24 @5816,419 flex=VERTICAL
+                  [TEXT] "Refund Window (Days)" 270x24 @5816,419 fill=#544242 :: "Refund Window (Days)" 16px Inter/Regular #544242 
+                [FRAME] "Input" 270x42 @5816,447 fill=#fbf8fb flex=HORIZONTAL
+                  [FRAME] "Container" 238x24 @5832,455 flex=HORIZONTAL/gap0
+                    [FRAME] "Container" 223x24 @5832,455 flex=VERTICAL
+                      [FRAME] "Container" 223x24 @5832,455 flex=VERTICAL
+                        [TEXT] "7" 223x24 @5832,455 fill=#1b1b1d :: "7" 16px Inter/Regular #1b1b1d 
+                    [FRAME] "Rectangle:align-stretch" 15x24 @6055,455 flex=HORIZONTAL
+                      [ROUNDED_RECTANGLE] "Rectangle" 15x24 @6055,455
+              [FRAME] "Container" 270x70 @6102,419 flex=VERTICAL/gap4
+                [FRAME] "Label" 270x24 @6102,419 flex=VERTICAL
+                  [TEXT] "Late Payment Penalty (%)" 270x24 @6102,419 fill=#544242 :: "Late Payment Penalty (%)" 16px Inter/Regular #544242 
+                [FRAME] "Input" 270x42 @6102,447 fill=#fbf8fb flex=HORIZONTAL
+                  [FRAME] "Container" 238x24 @6118,455 flex=HORIZONTAL/gap0
+                    [FRAME] "Container" 223x24 @6118,455 flex=VERTICAL
+                      [FRAME] "Container" 223x24 @6118,455 flex=VERTICAL
+                        [TEXT] "2.5" 223x24 @6118,455 fill=#1b1b1d :: "2.5" 16px Inter/Regular #1b1b1d 
+                    [FRAME] "Rectangle:align-stretch" 15x24 @6340,455 flex=HORIZONTAL
+                      [ROUNDED_RECTANGLE] "Rectangle" 15x24 @6340,455
+          [FRAME] "Container" 555x80 @5816,513 flex=HORIZONTAL
+            [FRAME] "Button" 215x56 @6157,537 fill=#4a0810 r=4 flex=HORIZONTAL/gap8
+              [FRAME] "Container" 18x18 @6197,556 flex=VERTICAL
+                [VECTOR] "Icon" 18x18 @6197,556 fill=#ffffff
+              [TEXT] "Text" 109x24 @6223,553 fill=#ffffff :: "Save Changes" 16px Inter/Regular #ffffff CENTER
+        [FRAME] "Branding & Profile" 291x447 @6420,171 fill=#ffffff r=8 flex=VERTICAL/gap24
+          [FRAME] "HorizontalBorder" 241x41 @6445,196 flex=HORIZONTAL/gap16
+            [FRAME] "Container" 20x16 @6445,200 flex=VERTICAL
+              [VECTOR] "Icon" 20x16 @6445,200 fill=#4a0810
+            [FRAME] "Heading 3" 144x24 @6481,196 flex=VERTICAL
+              [TEXT] "Text" 144x24 @6481,196 fill=#1b1b1d :: "Branding & Identity" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 241x218 @6445,261 flex=VERTICAL/gap24
+            [FRAME] "Container" 128x128 @6502,261 flex=VERTICAL
+              [FRAME] "Background+Border" 128x128 @6502,261 fill=#f0edef r=4 flex=HORIZONTAL
+                [FRAME] "Container" 27x27 @6552,312 flex=VERTICAL
+                  [VECTOR] "Icon" 27x27 @6552,312 fill=#dac1c0
+              [FRAME] "Button" 19x19 @6619,379 fill=#4a0810 r=12 flex=VERTICAL
+                [ROUNDED_RECTANGLE] "Button:shadow" 19x19 @6619,379 fill=#ffffff r=12
+                [FRAME] "Container" 11x11 @6623,383 flex=HORIZONTAL
+                  [VECTOR] "Icon" 11x11 @6623,383 fill=#ffffff
+            [FRAME] "Container" 241x66 @6445,413 flex=VERTICAL/gap4
+              [FRAME] "Label" 241x24 @6445,413 flex=VERTICAL
+                [TEXT] "Admin Contact Email" 241x24 @6445,413 fill=#544242 :: "Admin Contact Email" 16px Inter/Regular #544242 
+              [FRAME] "Input" 241x38 @6445,441 fill=#fbf8fb flex=HORIZONTAL
+                [FRAME] "Container" 209x20 @6461,449 flex=VERTICAL
+                  [TEXT] "admin@jiwaraloula.com" 209x20 @6461,449 fill=#1b1b1d :: "admin@jiwaraloula.com" 14px Inter/Regular #1b1b1d 
+        [FRAME] "System Sync Card" 448x339 @5791,642 fill=#ffffff r=8 flex=VERTICAL/gap24
+          [FRAME] "HorizontalBorder" 398x41 @5816,667 flex=HORIZONTAL/gap16
+            [FRAME] "Container" 16x16 @5816,671 flex=VERTICAL
+              [VECTOR] "Icon" 16x16 @5816,671 fill=#4a0810
+            [FRAME] "Heading 3" 116x24 @5848,667 flex=VERTICAL
+              [TEXT] "Text" 116x24 @5848,667 fill=#1b1b1d :: "ERP Integration" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 398x186 @5816,732 flex=VERTICAL/gap24
+            [FRAME] "Container" 398x48 @5816,732 flex=HORIZONTAL/gap37
+              [FRAME] "Container" 272x48 @5816,732 flex=VERTICAL
+                [FRAME] "Container" 272x24 @5816,732 flex=VERTICAL
+                  [TEXT] "Text" 165x24 @5816,732 fill=#1b1b1d :: "Auto-Sync Frequency" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 272x24 @5816,756 flex=VERTICAL
+                  [TEXT] "Text" 272x24 @5816,756 fill=#544242 :: "Update inventory data automatically" 16px Inter/Regular #544242 
+              [FRAME] "Options" 89x42 @6125,735 fill=#f5f3f5 flex=VERTICAL
+                [FRAME] "image clip" 89x42 @6125,735 flex=VERTICAL
+                  [FRAME] "image" 24x24 @6182,743
+                    [VECTOR] "Vector" 10x5 @6189,753
+                [FRAME] "Container" 57x24 @6141,743 flex=VERTICAL
+                  [TEXT] "Text" 56x24 @6141,743 fill=#1b1b1d :: "15 mins" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Overlay+Border" 398x114 @5816,804 fill=#004036 r=4 flex=VERTICAL/gap16
+              [FRAME] "Container" 364x24 @5833,821 flex=HORIZONTAL/gap142
+                [FRAME] "Container" 214x24 @5833,821 flex=VERTICAL
+                  [TEXT] "Text" 214x24 @5833,821 fill=#004036 :: "Last Sync: Today, 10:45 AM" 16px Inter/Regular #004036 
+                [ROUNDED_RECTANGLE] "Background" 8x8 @6189,829 fill=#b6eedf r=12
+              [FRAME] "Button" 364x40 @5833,861 fill=#174f45 r=4 flex=HORIZONTAL/gap8
+                [FRAME] "Container" 16x16 @5925,873 flex=VERTICAL
+                  [VECTOR] "Icon" 16x16 @5925,873 fill=#ffffff
+                [TEXT] "Text" 155x24 @5949,869 fill=#ffffff :: "Manual Project Sync" 16px Inter/Regular #ffffff CENTER
+        [FRAME] "Notification Preferences" 448x339 @6263,642 fill=#ffffff r=8 flex=VERTICAL/gap24
+          [FRAME] "HorizontalBorder" 398x41 @6288,667 flex=HORIZONTAL/gap16
+            [FRAME] "Container" 20x20 @6288,669 flex=VERTICAL
+              [VECTOR] "Icon" 20x20 @6288,669 fill=#4a0810
+            [FRAME] "Heading 3" 183x24 @6324,667 flex=VERTICAL
+              [TEXT] "Text" 183x24 @6324,667 fill=#1b1b1d :: "Notification Preferences" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 398x224 @6288,732 flex=VERTICAL/gap16
+            [FRAME] "Switch Component" 398x64 @6288,732 r=4 flex=HORIZONTAL/gap150
+              [FRAME] "Container" 188x48 @6296,740 flex=VERTICAL
+                [FRAME] "Container" 188x24 @6296,740 flex=VERTICAL
+                  [TEXT] "Text" 146x24 @6296,740 fill=#1b1b1d :: "Admin Email Alerts" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 188x24 @6296,764 flex=VERTICAL
+                  [TEXT] "Text" 188x24 @6296,764 fill=#544242 :: "On new unit reservations" 16px Inter/Regular #544242 
+              [FRAME] "Label" 44x24 @6634,752 flex=HORIZONTAL
+                [ROUNDED_RECTANGLE] "Background" 44x24 @6634,752 fill=#4a0810 r=12
+                [ROUNDED_RECTANGLE] "Background+Border" 20x20 @6656,754 fill=#ffffff r=12
+            [FRAME] "Container" 398x64 @6288,812 r=4 flex=HORIZONTAL/gap81
+              [FRAME] "Container" 257x48 @6296,820 flex=VERTICAL
+                [FRAME] "Container" 257x24 @6296,820 flex=VERTICAL
+                  [TEXT] "Text" 213x24 @6296,820 fill=#1b1b1d :: "Marketer SMS Notifications" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 257x24 @6296,844 flex=VERTICAL
+                  [TEXT] "Text" 257x24 @6296,844 fill=#544242 :: "Instant confirmation for marketers" 16px Inter/Regular #544242 
+              [FRAME] "Label" 44x24 @6634,832 flex=HORIZONTAL
+                [ROUNDED_RECTANGLE] "Background" 44x24 @6634,832 fill=#4a0810 r=12
+                [ROUNDED_RECTANGLE] "Background+Border" 20x20 @6656,834 fill=#ffffff r=12
+            [FRAME] "Container" 398x64 @6288,892 r=4 flex=HORIZONTAL/gap74
+              [FRAME] "Container" 264x48 @6296,900 flex=VERTICAL
+                [FRAME] "Container" 264x24 @6296,900 flex=VERTICAL
+                  [TEXT] "Text" 224x24 @6296,900 fill=#1b1b1d :: "Payment Success Webhooks" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 264x24 @6296,924 flex=VERTICAL
+                  [TEXT] "Text" 264x24 @6296,924 fill=#544242 :: "Trigger external automation scripts" 16px Inter/Regular #544242 
+              [FRAME] "Label" 44x24 @6634,912 flex=HORIZONTAL
+                [ROUNDED_RECTANGLE] "Overlay" 44x24 @6634,912 fill=#dac1c0 r=12
+                [ROUNDED_RECTANGLE] "Background+Border" 20x20 @6636,914 fill=#ffffff r=12
+    [FRAME] "Header - TopAppBar (Authority: JSON)" 1000x64 @5748,15 fill=#fbf8fb flex=HORIZONTAL/gap-355
+      [FRAME] "Container" 978x28 @5788,33 flex=HORIZONTAL
+        [FRAME] "Container" 448x28 @5977,33 flex=VERTICAL
+          [FRAME] "Input" 448x28 @5977,33 fill=#f5f3f5 flex=HORIZONTAL
+            [FRAME] "Container" 368x17 @6017,38 flex=VERTICAL
+              [TEXT] "Search Inventory..." 368x17 @6017,38 fill=#6b7280 :: "Search Inventory..." 14px Inter/Regular #6b7280 
+          [FRAME] "Container" 18x24 @5985,35 flex=VERTICAL
+            [VECTOR] "Icon" 18x18 @5985,35 fill=#877271
+      [FRAME] "Container" 238x36 @6528,29 flex=HORIZONTAL/gap16
+        [FRAME] "Button" 32x36 @6528,29 r=12 flex=VERTICAL
+          [FRAME] "Container" 16x20 @6536,37 flex=HORIZONTAL
+            [VECTOR] "Icon" 16x20 @6536,37 fill=#544242
+          [ROUNDED_RECTANGLE] "Background" 8x8 @6548,33 fill=#4a0810 r=12
+        [FRAME] "Button" 36x36 @6576,29 r=12 flex=VERTICAL
+          [FRAME] "Container" 20x20 @6584,37 flex=HORIZONTAL
+            [VECTOR] "Icon" 20x20 @6584,37 fill=#544242
+        [FRAME] "Container" 97x16 @6628,39 flex=VERTICAL
+          [TEXT] "Text" 97x16 @6628,39 fill=#4a0810 :: "Admin Console" 12px Inter/Regular #4a0810 
+        [FRAME] "Margin" 9x32 @6741,31 flex=VERTICAL
+  [FRAME] "Aside - Side Navigation Bar" 280x1006 @5471,15 fill=#303032 flex=VERTICAL
+    [FRAME] "Margin" 231x115 @5495,39 flex=VERTICAL
+      [FRAME] "Margin" 231x115 @5495,39 flex=VERTICAL
+        [FRAME] "Margin" 231x115 @5495,39 flex=VERTICAL
+          [FRAME] "Margin" 231x115 @5495,39 flex=VERTICAL
+            [FRAME] "Container" 231x96 @5495,39 flex=HORIZONTAL
+              [FRAME] "Container" 231x183 @5495,-4 flex=VERTICAL
+                [FRAME] "Jiwar Aloula Logo" 215x183 @5503,-4 fill=img:e852a301f0
+    [FRAME] "Nav" 231x232 @5495,154 flex=VERTICAL/gap8
+      [FRAME] "Link" 231x40 @5495,154 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x18 @5511,165 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @5511,165 fill=#e4e2e4
+        [FRAME] "Container" 83x24 @5545,162 flex=VERTICAL
+          [TEXT] "Text" 83x24 @5545,162 fill=#e4e2e4 :: "Dashboard" 16px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x40 @5495,202 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x20 @5511,212 flex=VERTICAL
+          [VECTOR] "Icon" 20x20 @5511,212 fill=#e4e2e4
+        [FRAME] "Container" 71x24 @5547,210 flex=VERTICAL
+          [TEXT] "Text" 71x24 @5547,210 fill=#e4e2e4 :: "Inventory" 16px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x40 @5495,250 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 24x12 @5511,264 flex=VERTICAL
+          [VECTOR] "Icon" 24x12 @5511,264 fill=#e4e2e4
+        [FRAME] "Container" 76x24 @5551,258 flex=VERTICAL
+          [TEXT] "Text" 76x24 @5551,258 fill=#e4e2e4 :: "Marketers" 16px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x40 @5495,298 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x20 @5511,308 flex=VERTICAL
+          [VECTOR] "Icon" 18x20 @5511,308 fill=#e4e2e4
+        [FRAME] "Container" 97x24 @5545,306 flex=VERTICAL
+          [TEXT] "Text" 97x24 @5545,306 fill=#e4e2e4 :: "Transactions" 16px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x40 @5495,346 fill=#4a0810 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x20 @5511,356 flex=VERTICAL
+          [VECTOR] "Icon" 20x20 @5511,356 fill=#ffffff
+        [FRAME] "Container" 62x24 @5547,354 flex=VERTICAL
+          [TEXT] "Text" 62x24 @5547,354 fill=#ffffff :: "Settings" 16px Inter/Regular #ffffff 
+    [FRAME] "Margin" 231x546 @5495,386 flex=VERTICAL
+    [FRAME] "HorizontalBorder" 231x65 @5495,932 flex=VERTICAL
+      [FRAME] "Container" 231x40 @5495,957 flex=HORIZONTAL/gap16
+        [FRAME] "Background+Border" 40x40 @5495,957 fill=#671f23 r=12 flex=HORIZONTAL
+          [FRAME] "Administrator Profile" 38x38 @5496,958 fill=img:88f7a67d2c
+        [FRAME] "Container" 85x21 @5551,967 flex=VERTICAL
+          [FRAME] "Container" 85x21 @5551,967 flex=VERTICAL
+            [TEXT] "Text" 85x21 @5551,967 fill=#ffffff :: "Admin Portal" 14px Inter/Regular #ffffff 

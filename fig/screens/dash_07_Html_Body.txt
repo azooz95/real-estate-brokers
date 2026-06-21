@@ -1,0 +1,134 @@
+[FRAME] "Html → Body" 1280x1023 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Header - Main Background Layout" 1280x73 @1121,1328 fill=#fbf8fb flex=HORIZONTAL/gap561
+    [FRAME] "Container" 345x40 @1169,1344 flex=HORIZONTAL/gap12
+      [FRAME] "Jiwar Aloula Logo" 40x40 @1169,1344 fill=img:3f5706c287
+      [FRAME] "Heading 1" 293x40 @1221,1344 flex=VERTICAL
+        [TEXT] "Text" 293x40 @1221,1344 fill=#4a0810 :: "Heritage Excellence" 32px Inter/Semi Bold #4a0810 
+    [FRAME] "Nav" 278x16 @2075,1356 flex=HORIZONTAL/gap32
+      [FRAME] "Container" 69x16 @2075,1356 flex=VERTICAL
+        [TEXT] "Text" 69x16 @2075,1356 fill=#544242 :: "Dashboard" 12px Inter/Semi Bold #544242 
+      [FRAME] "Container" 84x16 @2176,1356 flex=VERTICAL
+        [TEXT] "Text" 84x16 @2176,1356 fill=#4a0810 :: "Reservations" 12px Inter/Bold #4a0810 
+      [FRAME] "Container" 61x16 @2292,1356 flex=VERTICAL
+        [TEXT] "Text" 61x16 @2292,1356 fill=#544242 :: "Inventory" 12px Inter/Semi Bold #544242 
+  [ROUNDED_RECTANGLE] "Overlay Backdrop" 1280x1023 @1121,1328 fill=#1b1b1d
+  [FRAME] "Side Panel Container" 720x1023 @1681,1328 fill=#fbf8fb flex=VERTICAL
+    [FRAME] "Utility Bar Top" 720x67 @1681,1328 fill=#eae7ea flex=HORIZONTAL/gap174
+      [FRAME] "Container" 172x30 @1713,1346 flex=HORIZONTAL/gap16
+        [FRAME] "Button" 30x30 @1713,1346 r=12 flex=VERTICAL
+          [FRAME] "Container" 14x14 @1721,1354 flex=HORIZONTAL
+            [VECTOR] "Icon" 14x14 @1721,1354 fill=#1b1b1d
+        [FRAME] "Heading 3" 126x28 @1759,1347 flex=VERTICAL
+          [TEXT] "Text" 126x28 @1759,1347 fill=#1b1b1d :: "View Receipt" 20px Inter/Semi Bold #1b1b1d 
+      [FRAME] "Container" 288x34 @2081,1344 flex=HORIZONTAL/gap12
+        [FRAME] "Button" 99x34 @2081,1344 r=2 flex=HORIZONTAL/gap8
+          [FRAME] "Container" 20x18 @2097,1352 flex=VERTICAL
+            [VECTOR] "Icon" 20x18 @2097,1352 fill=#4a0810
+          [FRAME] "Container" 39x16 @2125,1353 flex=VERTICAL
+            [TEXT] "Text" 39x16 @2125,1353 fill=#4a0810 :: "PRINT" 12px Inter/Semi Bold #4a0810 CENTER
+        [FRAME] "Button" 177x32 @2192,1345 fill=#4a0810 r=2 flex=HORIZONTAL/gap8
+          [FRAME] "Container" 16x16 @2216,1353 flex=VERTICAL
+            [VECTOR] "Icon" 16x16 @2216,1353 fill=#ffffff
+          [FRAME] "Container" 105x16 @2240,1353 flex=VERTICAL
+            [TEXT] "Text" 105x16 @2240,1353 fill=#ffffff :: "DOWNLOAD PDF" 12px Inter/Semi Bold #ffffff CENTER
+    [FRAME] "Scrollable Receipt Content" 720x956 @1681,1395 fill=#ffffff
+      [FRAME] "Container" 720x717 @1681,1648 flex=VERTICAL/gap48
+        [FRAME] "Details Grid" 624x133 @1729,1688 flex=GRID
+          [FRAME] "Client" 288x133 @1729,1688 flex=VERTICAL/gap16
+            [FRAME] "Heading 3" 288x25 @1729,1688 flex=VERTICAL
+              [TEXT] "Text" 104x16 @1729,1688 fill=#4a0810 :: "CLIENT DETAILS" 12px Inter/Semi Bold #4a0810 
+            [FRAME] "Container" 288x80 @1729,1729 flex=VERTICAL/gap8
+              [FRAME] "Container" 288x28 @1729,1729 flex=VERTICAL
+                [TEXT] "Fahad Al-Rashidi" 288x28 @1729,1729 fill=#1b1b1d :: "Fahad Al-Rashidi" 20px Inter/Semi Bold #1b1b1d 
+              [FRAME] "Container" 288x44 @1729,1765 flex=VERTICAL/gap4
+                [FRAME] "Container" 288x20 @1729,1765 flex=HORIZONTAL/gap8
+                  [FRAME] "Container" 11x11 @1729,1770 flex=VERTICAL
+                    [VECTOR] "Icon" 11x11 @1729,1770 fill=#544242
+                  [TEXT] "Text" 121x20 @1748,1765 fill=#544242 :: "+966 50 123 4567" 14px Inter/Regular #544242 
+                [FRAME] "Container" 288x20 @1729,1789 flex=HORIZONTAL/gap8
+                  [FRAME] "Container" 12x9 @1729,1794 flex=VERTICAL
+                    [VECTOR] "Icon" 12x9 @1729,1794 fill=#544242
+                  [TEXT] "Text" 166x20 @1749,1789 fill=#544242 :: "f.alrashidi@example.com" 14px Inter/Regular #544242 
+          [FRAME] "Property" 288x133 @2065,1688 flex=VERTICAL/gap16
+            [FRAME] "Heading 3" 288x25 @2065,1688 flex=VERTICAL
+              [TEXT] "Text" 164x16 @2065,1688 fill=#4a0810 :: "PROPERTY INFORMATION" 12px Inter/Semi Bold #4a0810 
+            [FRAME] "Container" 288x92 @2065,1729 flex=VERTICAL/gap4
+              [FRAME] "Container" 288x28 @2065,1729 flex=VERTICAL
+                [TEXT] "Unit JWR-101" 288x28 @2065,1729 fill=#1b1b1d :: "Unit JWR-101" 20px Inter/Semi Bold #1b1b1d 
+              [FRAME] "Container" 288x20 @2065,1761 flex=VERTICAL
+                [TEXT] "Al-Nargis Residence • Floor 4" 288x20 @2065,1761 fill=#544242 :: "Al-Nargis Residence • Floor 4" 14px Inter/Regular #544242 
+              [FRAME] "Container" 288x36 @2065,1785 flex=HORIZONTAL/gap12
+                [FRAME] "Background" 42x28 @2065,1793 fill=#f0edef r=2 flex=HORIZONTAL/gap4
+                  [FRAME] "Container" 13x9 @2073,1802 flex=VERTICAL
+                    [VECTOR] "Icon" 13x9 @2073,1802 fill=#544242
+                  [FRAME] "Container" 9x20 @2090,1797 flex=VERTICAL
+                    [TEXT] "Text" 9x20 @2090,1797 fill=#544242 :: "3" 14px Inter/Semi Bold #544242 
+                [FRAME] "Background" 42x28 @2119,1793 fill=#f0edef r=2 flex=HORIZONTAL/gap4
+                  [FRAME] "Container" 13x13 @2127,1800 flex=VERTICAL
+                    [VECTOR] "Icon" 13x13 @2127,1800 fill=#544242
+                  [FRAME] "Container" 9x20 @2145,1797 flex=VERTICAL
+                    [TEXT] "Text" 9x20 @2145,1797 fill=#544242 :: "2" 14px Inter/Semi Bold #544242 
+        [FRAME] "Financial Table-like View" 624x299 @1729,1869 flex=VERTICAL/gap24
+          [FRAME] "Heading 3" 624x25 @1729,1869 flex=VERTICAL
+            [TEXT] "Text" 159x16 @1729,1869 fill=#4a0810 :: "FINANCIAL BREAKDOWN" 12px Inter/Semi Bold #4a0810 
+          [FRAME] "Container" 624x96 @1729,1918 flex=VERTICAL/gap16
+            [FRAME] "Container" 624x40 @1729,1918 flex=HORIZONTAL/gap324
+              [FRAME] "Container" 196x24 @1729,1926 flex=VERTICAL
+                [TEXT] "Text" 196x24 @1729,1926 fill=#544242 :: "Initial Reservation Deposit" 16px Inter/Regular #544242 
+              [FRAME] "Container" 104x24 @2249,1926 flex=VERTICAL
+                [TEXT] "Text" 104x24 @2249,1926 fill=#1b1b1d :: "5,000.00 SAR" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Container" 624x40 @1729,1974 flex=HORIZONTAL/gap367
+              [FRAME] "Container" 192x24 @1729,1982 flex=VERTICAL
+                [TEXT] "Text" 192x24 @1729,1982 fill=#544242 :: "Admin & Processing Fees" 16px Inter/Regular #544242 
+              [FRAME] "Container" 65x24 @2288,1982 flex=VERTICAL
+                [TEXT] "Text" 65x24 @2288,1982 fill=#002821 :: "Included" 16px Inter/Regular #002821 
+          [FRAME] "Highlighted Total" 624x130 @1729,2038 fill=#671f23 r=2 flex=HORIZONTAL/gap147
+            [FRAME] "Container" 195x36 @1762,2099 flex=VERTICAL/gap4
+              [FRAME] "Container" 195x16 @1762,2099 flex=VERTICAL
+                [TEXT] "Text" 148x16 @1762,2099 fill=#4a0810 :: "TOTAL PAID AMOUNT" 12px Inter/Bold #4a0810 
+              [FRAME] "Container" 195x16 @1762,2119 flex=HORIZONTAL/gap8
+                [ROUNDED_RECTANGLE] "Background" 8x8 @1762,2123 fill=#002821 r=12
+                [FRAME] "Container" 179x16 @1778,2119 flex=VERTICAL
+                  [TEXT] "Text" 179x16 @1778,2119 fill=#002821 :: "TRANSACTION COMPLETED" 12px Inter/Bold #002821 
+            [FRAME] "Container" 215x64 @2105,2071 flex=VERTICAL/gap4
+              [FRAME] "Paragraph" 215x40 @2105,2071 flex=HORIZONTAL/gap8
+                [TEXT] "Text" 146x40 @2126,2071 fill=#4a0810 :: "5,000.00" 32px Inter/Bold #4a0810 RIGHT
+                [TEXT] "Text" 40x28 @2280,2082 fill=#4a0810 :: "SAR" 20px Inter/Semi Bold #4a0810 RIGHT
+              [FRAME] "Container" 215x20 @2105,2115 flex=VERTICAL
+                [TEXT] "Text" 215x20 @2105,2115 fill=#ea8586 :: "Five Thousand Saudi Riyals Only" 14px Inter/Italic #ea8586 RIGHT
+        [FRAME] "Footer Details" 624x109 @1729,2216 flex=GRID
+          [FRAME] "Container" 296x64 @1729,2257 flex=VERTICAL/gap8
+            [FRAME] "Container" 296x16 @1729,2257 flex=VERTICAL
+              [TEXT] "ASSIGNED AGENT" 296x16 @1729,2257 fill=#544242 :: "ASSIGNED AGENT" 12px Inter/Bold #544242 
+            [FRAME] "Container" 296x40 @1729,2281 flex=HORIZONTAL/gap12
+              [FRAME] "Background" 40x40 @1729,2281 fill=#ffdad9 r=12 flex=HORIZONTAL
+                [TEXT] "Text" 15x24 @1742,2289 fill=#4a0810 :: "SI" 16px Inter/Bold #4a0810 CENTER
+              [FRAME] "Container" 109x24 @1781,2289 flex=VERTICAL
+                [TEXT] "Text" 109x24 @1781,2289 fill=#1b1b1d :: "Sultan Ibrahim" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 296x69 @2057,2257 flex=VERTICAL
+            [TEXT] "Text" 293x69 @2060,2257 fill=#544242 :: "This digital document is a valid proof of
+transaction for the specified unit. For further
+assistance, contact our main office." 14px Inter/Italic #544242 RIGHT
+      [FRAME] "Branding Header with Pattern" 720x249 @1681,1395 fill=#f5f3f5 flex=VERTICAL
+        [FRAME] "image" 40x40 @1681,1395
+          [VECTOR] "Vector" 40x40 @1681,1395 fill=#4a0810
+        [ROUNDED_RECTANGLE] "Background" 720x6 @1681,1395 fill=#4a0810
+        [FRAME] "Container" 720x248 @1681,1395 flex=HORIZONTAL/gap150
+          [FRAME] "Container" 309x168 @1729,1435 flex=VERTICAL/gap4
+            [FRAME] "Jiwar Aloula Logo" 64x64 @1729,1435 fill=img:3f5706c287
+            [FRAME] "Container" 309x36 @1729,1503 flex=HORIZONTAL/gap8
+              [FRAME] "Container" 13x12 @1729,1525 flex=VERTICAL
+                [VECTOR] "Icon" 13x12 @1729,1525 fill=#002821
+              [FRAME] "Container" 169x16 @1750,1523 flex=VERTICAL
+                [TEXT] "Text" 169x16 @1750,1523 fill=#002821 :: "TRANSACTION VERIFIED" 12px Inter/Bold #002821 
+            [FRAME] "Heading 2" 309x40 @1729,1543 flex=VERTICAL
+              [TEXT] "Text" 309x40 @1729,1543 fill=#1b1b1d :: "Reservation Receipt" 32px Inter/Semi Bold #1b1b1d 
+            [FRAME] "Container" 309x16 @1729,1587 flex=VERTICAL
+              [TEXT] "Text" 256x16 @1729,1587 fill=#544242 :: "Reference: #TRX-992102 • Oct 24, 2023" 12px Inter/Semi Bold #544242 
+          [FRAME] "Container" 165x88 @2188,1515 flex=VERTICAL/gap3
+            [FRAME] "Container" 165x16 @2188,1515 flex=VERTICAL
+              [TEXT] "Text" 151x16 @2202,1515 fill=#1b1b1d :: "HERITAGE EXCELLENCE" 12px Inter/Bold #1b1b1d RIGHT
+            [FRAME] "Container" 165x69 @2188,1534 flex=VERTICAL
+              [TEXT] "Text" 165x69 @2188,1534 fill=#544242 :: "Real Estate Development
+King Fahad Rd, Riyadh
+Kingdom of Saudi Arabia" 14px Inter/Regular #544242 RIGHT

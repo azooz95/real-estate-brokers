@@ -1,0 +1,315 @@
+[FRAME] "Inventory Master Directory" 1280x918 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Main Content Canvas" 1000x914 @2694,15 flex=VERTICAL/gap24
+    [FRAME] "Header Section" 920x60 @2734,79 flex=HORIZONTAL/gap303
+      [FRAME] "Container" 394x60 @2734,79 flex=VERTICAL/gap4
+        [FRAME] "Nav" 394x16 @2734,79 flex=HORIZONTAL/gap4
+          [FRAME] "Container" 36x16 @2734,79 flex=VERTICAL
+            [TEXT] "Text" 36x16 @2734,79 fill=#877271 :: "Admin" 12px Inter/Regular #877271 
+          [FRAME] "Container" 4x6 @2774,84 flex=VERTICAL
+            [VECTOR] "Icon" 4x6 @2774,84 fill=#877271
+          [FRAME] "Container" 53x16 @2782,79 flex=VERTICAL
+            [TEXT] "Text" 53x16 @2782,79 fill=#877271 :: "Inventory" 12px Inter/Regular #877271 
+        [FRAME] "Heading 2" 394x40 @2734,99 flex=VERTICAL
+          [TEXT] "Text" 394x40 @2734,99 fill=#4a0810 :: "Inventory Master Directory" 32px Inter/Regular #4a0810 
+      [FRAME] "Button" 215x32 @3439,107 fill=#4a0810 r=4 flex=HORIZONTAL/gap8
+        [FRAME] "Container" 16x16 @3463,115 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @3463,115 fill=#ffffff
+        [FRAME] "Container" 143x16 @3487,115 flex=VERTICAL
+          [TEXT] "Text" 143x16 @3487,115 fill=#ffffff :: "+ Manual Project Sync" 12px Inter/Regular #ffffff CENTER
+    [FRAME] "Section - Filter Bar: Architectural "Punched-in" style" 920x82 @2734,163 fill=#ffffff r=8 flex=VERTICAL
+      [FRAME] "Container" 886x48 @2751,180 flex=GRID
+        [FRAME] "Container" 164x48 @2751,180 flex=VERTICAL/gap4
+          [FRAME] "Label" 164x16 @2751,180 flex=VERTICAL
+            [TEXT] "Project/Building" 164x16 @2751,180 fill=#877271 :: "Project/Building" 12px Inter/Regular #877271 
+          [FRAME] "Options" 164x28 @2751,200 fill=#f5f3f5 flex=VERTICAL
+            [FRAME] "image clip" 164x28 @2751,200 flex=VERTICAL
+              [FRAME] "image" 21x21 @2886,204
+                [VECTOR] "Vector" 8x4 @2893,212
+            [FRAME] "Container" 112x20 @2763,204 flex=VERTICAL
+              [TEXT] "All Projects" 112x20 @2763,204 fill=#1b1b1d :: "All Projects" 14px Inter/Regular #1b1b1d 
+        [FRAME] "Container" 164x48 @2931,180 flex=VERTICAL/gap4
+          [FRAME] "Label" 164x16 @2931,180 flex=VERTICAL
+            [TEXT] "Floor" 164x16 @2931,180 fill=#877271 :: "Floor" 12px Inter/Regular #877271 
+          [FRAME] "Options" 164x28 @2931,200 fill=#f5f3f5 flex=VERTICAL
+            [FRAME] "image clip" 164x28 @2931,200 flex=VERTICAL
+              [FRAME] "image" 21x21 @3067,204
+                [VECTOR] "Vector" 8x4 @3073,212
+            [FRAME] "Container" 112x20 @2943,204 flex=VERTICAL
+              [TEXT] "All Floors" 112x20 @2943,204 fill=#1b1b1d :: "All Floors" 14px Inter/Regular #1b1b1d 
+        [FRAME] "Container" 164x48 @3112,180 flex=VERTICAL/gap4
+          [FRAME] "Label" 164x16 @3112,180 flex=VERTICAL
+            [TEXT] "Price Tier" 164x16 @3112,180 fill=#877271 :: "Price Tier" 12px Inter/Regular #877271 
+          [FRAME] "Options" 164x28 @3112,200 fill=#f5f3f5 flex=VERTICAL
+            [FRAME] "image clip" 164x28 @3112,200 flex=VERTICAL
+              [FRAME] "image" 21x21 @3247,204
+                [VECTOR] "Vector" 8x4 @3253,212
+            [FRAME] "Container" 112x20 @3124,204 flex=VERTICAL
+              [TEXT] "Any Price" 112x20 @3124,204 fill=#1b1b1d :: "Any Price" 14px Inter/Regular #1b1b1d 
+        [FRAME] "Container" 164x48 @3292,180 flex=VERTICAL/gap4
+          [FRAME] "Label" 164x16 @3292,180 flex=VERTICAL
+            [TEXT] "Status" 164x16 @3292,180 fill=#877271 :: "Status" 12px Inter/Regular #877271 
+          [FRAME] "Options" 164x28 @3292,200 fill=#f5f3f5 flex=VERTICAL
+            [FRAME] "image clip" 164x28 @3292,200 flex=VERTICAL
+              [FRAME] "image" 21x21 @3428,204
+                [VECTOR] "Vector" 8x4 @3434,212
+            [FRAME] "Container" 112x20 @3304,204 flex=VERTICAL
+              [TEXT] "All Status" 112x20 @3304,204 fill=#1b1b1d :: "All Status" 14px Inter/Regular #1b1b1d 
+        [FRAME] "Container" 164x48 @3473,180 flex=HORIZONTAL
+          [FRAME] "Button" 164x34 @3473,194 r=4 flex=HORIZONTAL/gap8
+            [FRAME] "Container" 14x9 @3517,207 flex=VERTICAL
+              [VECTOR] "Icon" 14x9 @3517,207 fill=#725a40
+            [TEXT] "Text" 54x16 @3538,203 fill=#725a40 :: "Clear All" 12px Inter/Regular #725a40 CENTER
+    [FRAME] "Inventory Data Table" 920x417 @2734,269 fill=#ffffff r=8 flex=VERTICAL
+      [FRAME] "Table" 918x374 @2735,270 flex=VERTICAL
+        [FRAME] "Header → Row" 918x49 @2735,270 fill=#303032 flex=HORIZONTAL
+          [FRAME] "Cell" 123x49 @2735,270 flex=VERTICAL
+            [TEXT] "Text" 77x16 @2751,286 fill=#ffffff :: "UNIT CODE" 12px Inter/Regular #ffffff 
+          [FRAME] "Cell" 236x49 @2858,270 flex=VERTICAL
+            [TEXT] "Text" 110x16 @2874,286 fill=#ffffff :: "PROJECT NAME" 12px Inter/Regular #ffffff 
+          [FRAME] "Cell" 98x49 @3093,270 flex=VERTICAL
+            [TEXT] "Text" 46x16 @3109,286 fill=#ffffff :: "FLOOR" 12px Inter/Regular #ffffff 
+          [FRAME] "Cell" 118x49 @3191,270 flex=VERTICAL
+            [TEXT] "Text" 46x16 @3207,286 fill=#ffffff :: "SPECS" 12px Inter/Regular #ffffff 
+          [FRAME] "Cell" 131x49 @3310,270 flex=VERTICAL
+            [TEXT] "Text" 85x16 @3340,286 fill=#ffffff :: "PRICE (SAR)" 12px Inter/Regular #ffffff RIGHT
+          [FRAME] "Cell" 121x49 @3441,270 flex=VERTICAL
+            [TEXT] "Text" 54x16 @3457,286 fill=#ffffff :: "STATUS" 12px Inter/Regular #ffffff 
+          [FRAME] "Cell" 91x49 @3562,270 flex=VERTICAL
+            [TEXT] "Text" 49x16 @3583,286 fill=#ffffff :: "Actions" 12px Inter/Regular #ffffff CENTER
+        [FRAME] "Body" 918x325 @2735,319 flex=VERTICAL/gap-1
+          [FRAME] "Table Row 1" 918x65 @2735,319 flex=HORIZONTAL
+            [FRAME] "Data" 123x65 @2735,319 flex=VERTICAL
+              [TEXT] "Text" 70x20 @2751,341 fill=#4a0810 :: "UNT-8801" 14px Inter/Regular #4a0810 
+            [FRAME] "Data" 236x65 @2858,319 flex=VERTICAL
+              [TEXT] "Text" 174x20 @2874,341 fill=#1b1b1d :: "Aloula Towers - East Wing" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 98x65 @3093,319 flex=VERTICAL
+              [TEXT] "Text" 55x20 @3109,341 fill=#1b1b1d :: "Floor 24" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 102x20 @3191,342 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 26x20 @3207,342 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x9 @3207,347 flex=VERTICAL
+                  [VECTOR] "Icon" 13x9 @3207,347 fill=#877271
+                [TEXT] "Text" 9x20 @3225,342 fill=#1b1b1d :: "3" 14px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 26x20 @3249,342 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @3249,345 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @3249,345 fill=#877271
+                [TEXT] "Text" 9x20 @3267,342 fill=#1b1b1d :: "2" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 147x65 @3294,319 flex=VERTICAL
+              [TEXT] "Text" 69x20 @3356,341 fill=#1b1b1d :: "1,450,000" 14px Inter/Regular #1b1b1d RIGHT
+            [FRAME] "Data" 121x65 @3441,319 flex=VERTICAL
+              [FRAME] "Overlay" 76x20 @3457,342 fill=#22c55e r=2 flex=HORIZONTAL
+                [TEXT] "Text" 60x20 @3465,342 fill=#15803d :: "AVAILABLE" 10px Inter/Regular #15803d 
+            [FRAME] "Data" 91x61 @3562,321 flex=VERTICAL
+              [FRAME] "Button" 28x28 @3593,338 r=2 flex=HORIZONTAL
+                [FRAME] "Container" 20x20 @3597,342 flex=HORIZONTAL
+                  [VECTOR] "Icon" 20x20 @3597,342 fill=#877271
+          [FRAME] "Table Row 2" 918x66 @2735,383 fill=#f5f3f5 flex=HORIZONTAL
+            [FRAME] "Data" 123x65 @2735,384 flex=VERTICAL
+              [TEXT] "Text" 69x20 @2751,406 fill=#4a0810 :: "UNT-4212" 14px Inter/Regular #4a0810 
+            [FRAME] "Data" 236x65 @2858,384 flex=VERTICAL
+              [TEXT] "Text" 116x20 @2874,406 fill=#1b1b1d :: "Jiwar Residences" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 98x65 @3093,384 flex=VERTICAL
+              [TEXT] "Text" 55x20 @3109,406 fill=#1b1b1d :: "Floor 02" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 102x20 @3191,407 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 26x20 @3207,407 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x9 @3207,412 flex=VERTICAL
+                  [VECTOR] "Icon" 13x9 @3207,412 fill=#877271
+                [TEXT] "Text" 9x20 @3225,407 fill=#1b1b1d :: "2" 14px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 26x20 @3249,407 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @3249,410 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @3249,410 fill=#877271
+                [TEXT] "Text" 9x20 @3267,407 fill=#1b1b1d :: "2" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 147x65 @3294,384 flex=VERTICAL
+              [TEXT] "Text" 59x20 @3366,406 fill=#1b1b1d :: "980,000" 14px Inter/Regular #1b1b1d RIGHT
+            [FRAME] "Data" 121x65 @3441,384 flex=VERTICAL
+              [TEXT] "Text" 30x20 @3457,407 fill=#d97706 :: "HOLD" 10px Inter/Regular #d97706 
+            [FRAME] "Data" 91x61 @3562,386 flex=VERTICAL
+              [FRAME] "Button" 28x28 @3593,403 r=2 flex=HORIZONTAL
+                [FRAME] "Container" 20x20 @3597,407 flex=HORIZONTAL
+                  [VECTOR] "Icon" 20x20 @3597,407 fill=#877271
+          [FRAME] "Table Row 3" 918x66 @2735,448 flex=HORIZONTAL
+            [FRAME] "Data" 123x65 @2735,449 flex=VERTICAL
+              [TEXT] "Text" 72x20 @2751,471 fill=#4a0810 :: "UNT-9905" 14px Inter/Regular #4a0810 
+            [FRAME] "Data" 236x65 @2858,449 flex=VERTICAL
+              [TEXT] "Text" 178x20 @2874,471 fill=#1b1b1d :: "Aloula Towers - Penthouse" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 98x65 @3093,449 flex=VERTICAL
+              [TEXT] "Text" 55x20 @3109,471 fill=#1b1b1d :: "Floor 48" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 102x20 @3191,472 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 26x20 @3207,472 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x9 @3207,477 flex=VERTICAL
+                  [VECTOR] "Icon" 13x9 @3207,477 fill=#877271
+                [TEXT] "Text" 8x20 @3225,472 fill=#1b1b1d :: "5" 14px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 26x20 @3249,472 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @3249,475 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @3249,475 fill=#877271
+                [TEXT] "Text" 9x20 @3266,472 fill=#1b1b1d :: "6" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 147x65 @3294,449 flex=VERTICAL
+              [TEXT] "Text" 72x20 @3353,471 fill=#1b1b1d :: "8,200,000" 14px Inter/Regular #1b1b1d RIGHT
+            [FRAME] "Data" 121x65 @3441,449 flex=VERTICAL
+              [TEXT] "Text" 56x20 @3457,472 fill=#64748b :: "RESERVED" 10px Inter/Regular #64748b 
+            [FRAME] "Data" 91x61 @3562,451 flex=VERTICAL
+              [FRAME] "Button" 28x28 @3593,468 r=2 flex=HORIZONTAL
+                [FRAME] "Container" 20x20 @3597,472 flex=HORIZONTAL
+                  [VECTOR] "Icon" 20x20 @3597,472 fill=#877271
+          [FRAME] "Table Row 4" 918x66 @2735,513 fill=#f5f3f5 flex=HORIZONTAL
+            [FRAME] "Data" 123x65 @2735,514 flex=VERTICAL
+              [TEXT] "Text" 69x20 @2751,536 fill=#4a0810 :: "UNT-1022" 14px Inter/Regular #4a0810 
+            [FRAME] "Data" 236x65 @2858,514 flex=VERTICAL
+              [TEXT] "Text" 111x20 @2874,536 fill=#1b1b1d :: "Heritage Heights" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 98x65 @3093,514 flex=VERTICAL
+              [TEXT] "Text" 52x20 @3109,536 fill=#1b1b1d :: "Floor 10" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 102x20 @3191,537 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 26x20 @3207,537 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x9 @3207,542 flex=VERTICAL
+                  [VECTOR] "Icon" 13x9 @3207,542 fill=#877271
+                [TEXT] "Text" 9x20 @3225,537 fill=#1b1b1d :: "3" 14px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 26x20 @3249,537 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @3249,540 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @3249,540 fill=#877271
+                [TEXT] "Text" 9x20 @3267,537 fill=#1b1b1d :: "3" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 147x65 @3294,514 flex=VERTICAL
+              [TEXT] "Text" 68x20 @3357,536 fill=#1b1b1d :: "2,100,000" 14px Inter/Regular #1b1b1d RIGHT
+            [FRAME] "Data" 121x65 @3441,514 flex=VERTICAL
+              [FRAME] "Overlay" 76x20 @3457,537 fill=#22c55e r=2 flex=HORIZONTAL
+                [TEXT] "Text" 60x20 @3465,537 fill=#15803d :: "AVAILABLE" 10px Inter/Regular #15803d 
+            [FRAME] "Data" 91x61 @3562,516 flex=VERTICAL
+              [FRAME] "Button" 28x28 @3593,533 r=2 flex=HORIZONTAL
+                [FRAME] "Container" 20x20 @3597,537 flex=HORIZONTAL
+                  [VECTOR] "Icon" 20x20 @3597,537 fill=#877271
+          [FRAME] "Table Row 5" 918x66 @2735,578 flex=HORIZONTAL
+            [FRAME] "Data" 123x65 @2735,579 flex=VERTICAL
+              [TEXT] "Text" 70x20 @2751,601 fill=#4a0810 :: "UNT-3301" 14px Inter/Regular #4a0810 
+            [FRAME] "Data" 236x65 @2858,579 flex=VERTICAL
+              [TEXT] "Text" 116x20 @2874,601 fill=#1b1b1d :: "Jiwar Residences" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 98x65 @3093,579 flex=VERTICAL
+              [TEXT] "Text" 55x20 @3109,601 fill=#1b1b1d :: "Floor 08" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 102x20 @3191,601 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 23x20 @3207,601 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x9 @3207,607 flex=VERTICAL
+                  [VECTOR] "Icon" 13x9 @3207,607 fill=#877271
+                [TEXT] "Text" 6x20 @3225,601 fill=#1b1b1d :: "1" 14px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 23x20 @3246,601 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @3246,605 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @3246,605 fill=#877271
+                [TEXT] "Text" 6x20 @3264,601 fill=#1b1b1d :: "1" 14px Inter/Regular #1b1b1d 
+            [FRAME] "Data" 147x65 @3294,579 flex=VERTICAL
+              [TEXT] "Text" 58x20 @3367,601 fill=#1b1b1d :: "650,000" 14px Inter/Regular #1b1b1d RIGHT
+            [FRAME] "Data" 121x65 @3441,579 flex=VERTICAL
+              [TEXT] "Text" 56x20 @3457,602 fill=#64748b :: "RESERVED" 10px Inter/Regular #64748b 
+            [FRAME] "Data" 91x60 @3562,581 flex=VERTICAL
+              [FRAME] "Button" 28x28 @3593,597 r=2 flex=HORIZONTAL
+                [FRAME] "Container" 20x20 @3597,601 flex=HORIZONTAL
+                  [VECTOR] "Icon" 20x20 @3597,601 fill=#877271
+      [FRAME] "Table Pagination" 918x41 @2735,644 fill=#f5f3f5 flex=HORIZONTAL/gap527
+        [FRAME] "Container" 151x16 @2751,657 flex=VERTICAL
+          [TEXT] "Text" 151x16 @2751,657 fill=#877271 :: "Showing 1-5 of 1,248 Units" 12px Inter/Regular #877271 
+        [FRAME] "Container" 175x24 @3462,653 flex=HORIZONTAL/gap4
+          [FRAME] "Button" 17x22 @3462,654 r=2 flex=VERTICAL
+            [FRAME] "Container" 7x12 @3467,659 flex=HORIZONTAL
+              [VECTOR] "Icon" 7x12 @3467,659 fill=#1b1b1d
+          [FRAME] "Button" 21x24 @3484,653 fill=#4a0810 r=2 flex=VERTICAL
+            [TEXT] "Text" 5x16 @3492,657 fill=#ffffff :: "1" 12px Inter/Regular #ffffff CENTER
+          [FRAME] "Button" 23x24 @3508,653 r=2 flex=VERTICAL
+            [TEXT] "Text" 7x16 @3516,657 fill=#1b1b1d :: "2" 12px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Button" 23x24 @3536,653 r=2 flex=VERTICAL
+            [TEXT] "Text" 7x16 @3544,657 fill=#1b1b1d :: "3" 12px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Container" 10x16 @3563,657 flex=VERTICAL
+            [TEXT] "Text" 10x16 @3563,657 fill=#1b1b1d :: "..." 12px Inter/Regular #1b1b1d 
+          [FRAME] "Button" 38x24 @3578,653 r=2 flex=VERTICAL
+            [TEXT] "Text" 22x16 @3586,657 fill=#1b1b1d :: "250" 12px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Button" 17x22 @3620,654 r=2 flex=VERTICAL
+            [FRAME] "Container" 7x12 @3625,659 flex=HORIZONTAL
+              [VECTOR] "Icon" 7x12 @3625,659 fill=#1b1b1d
+    [FRAME] "Section - Metric Snapshot - Asymmetric Layout" 920x179 @2734,710 flex=GRID
+      [FRAME] "Container" 608x179 @2734,710 flex=GRID
+        [FRAME] "Background+Border" 192x179 @2734,710 fill=#ffffff r=8 flex=VERTICAL/gap4
+          [FRAME] "Container" 158x16 @2751,727 flex=VERTICAL
+            [TEXT] "INVENTORY VALUE" 158x16 @2751,727 fill=#877271 :: "INVENTORY VALUE" 12px Inter/Regular #877271 
+          [FRAME] "Container" 158x32 @2751,747 flex=VERTICAL
+            [TEXT] "SAR 242.8M" 158x28 @2751,747 fill=#4a0810 :: "SAR 242.8M" 20px Inter/Regular #4a0810 
+          [FRAME] "Background" 158x4 @2751,783 fill=#f0edef r=12
+            [ROUNDED_RECTANGLE] "Background" 119x4 @2751,783 fill=#4a0810
+        [FRAME] "Background+Border" 192x179 @2942,710 fill=#ffffff r=8 flex=VERTICAL/gap4
+          [FRAME] "Container" 158x16 @2959,727 flex=VERTICAL
+            [TEXT] "AVAILABLE RATIO" 158x16 @2959,727 fill=#877271 :: "AVAILABLE RATIO" 12px Inter/Regular #877271 
+          [FRAME] "Container" 158x32 @2959,747 flex=VERTICAL
+            [TEXT] "62.4%" 158x28 @2959,747 fill=#15803d :: "62.4%" 20px Inter/Regular #15803d 
+          [FRAME] "Background" 158x4 @2959,783 fill=#f0edef r=12
+            [ROUNDED_RECTANGLE] "Background" 95x4 @2959,783 fill=#16a34a
+        [FRAME] "Background+Border" 192x179 @3150,710 fill=#ffffff r=8 flex=VERTICAL/gap4
+          [FRAME] "Container" 158x16 @3167,727 flex=VERTICAL
+            [TEXT] "AVG. PRICE / SQM" 158x16 @3167,727 fill=#877271 :: "AVG. PRICE / SQM" 12px Inter/Regular #877271 
+          [FRAME] "Container" 158x32 @3167,747 flex=VERTICAL
+            [TEXT] "SAR 12,450" 158x28 @3167,747 fill=#1b1b1d :: "SAR 12,450" 20px Inter/Regular #1b1b1d 
+          [FRAME] "Background" 158x4 @3167,783 fill=#f0edef r=12
+            [ROUNDED_RECTANGLE] "Background" 79x4 @3167,783 fill=#725a40
+      [FRAME] "Background" 296x179 @3358,710 fill=#4a0810 r=8 flex=VERTICAL
+        [FRAME] "Subtle geometric pattern background for the card → SVG" 296x179 @3358,710
+          [VECTOR] "Vector" 296x179 @3358,710
+        [FRAME] "Container" 264x147 @3374,726 flex=VERTICAL/gap8
+          [FRAME] "Heading 3" 264x16 @3374,726 flex=VERTICAL
+            [TEXT] "ADMIN QUICK ACTION" 264x16 @3374,726 fill=#ffffff :: "ADMIN QUICK ACTION" 12px Inter/Regular #ffffff 
+          [FRAME] "Container" 264x83 @3374,750 flex=VERTICAL
+            [TEXT] "Download Q3 Full Inventory Disclosure Report (PDF/XLS)" 264x75 @3374,750 fill=#ffffff :: "Download Q3 Full
+Inventory Disclosure
+Report (PDF/XLS)" 20px Inter/Regular #ffffff 
+          [FRAME] "Button" 148x32 @3374,841 fill=#ffffff r=4 flex=HORIZONTAL/gap8
+            [TEXT] "Text" 97x16 @3390,849 fill=#4a0810 :: "GENERATE NOW" 12px Inter/Regular #4a0810 CENTER
+            [FRAME] "Container" 11x11 @3495,851 flex=VERTICAL
+              [VECTOR] "Icon" 11x11 @3495,851 fill=#4a0810
+  [FRAME] "Header - TopAppBar (Authority: JSON)" 1000x64 @2694,15 fill=#fbf8fb flex=HORIZONTAL/gap-355
+    [FRAME] "Container" 978x28 @2734,33 flex=HORIZONTAL
+      [FRAME] "Container" 448x28 @2923,33 flex=VERTICAL
+        [FRAME] "Input" 448x28 @2923,33 fill=#f5f3f5 flex=HORIZONTAL
+          [FRAME] "Container" 368x17 @2963,38 flex=VERTICAL
+            [TEXT] "Search Inventory..." 368x17 @2963,38 fill=#6b7280 :: "Search Inventory..." 14px Inter/Regular #6b7280 
+        [FRAME] "Container" 18x24 @2931,35 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @2931,35 fill=#877271
+    [FRAME] "Container" 238x36 @3474,29 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 32x36 @3474,29 r=12 flex=VERTICAL
+        [FRAME] "Container" 16x20 @3482,37 flex=HORIZONTAL
+          [VECTOR] "Icon" 16x20 @3482,37 fill=#544242
+        [ROUNDED_RECTANGLE] "Background" 8x8 @3494,33 fill=#4a0810 r=12
+      [FRAME] "Button" 36x36 @3522,29 r=12 flex=VERTICAL
+        [FRAME] "Container" 20x20 @3530,37 flex=HORIZONTAL
+          [VECTOR] "Icon" 20x20 @3530,37 fill=#544242
+      [FRAME] "Margin" 9x32 @3687,31 flex=VERTICAL
+      [FRAME] "Container" 97x16 @3574,39 flex=VERTICAL
+        [TEXT] "Text" 97x16 @3574,39 fill=#4a0810 :: "Admin Console" 12px Inter/Regular #4a0810 
+  [FRAME] "Aside - SideNavBar (Authority: JSON)" 280x927 @2414,15 fill=#303032 flex=VERTICAL
+    [FRAME] "Margin" 231x115 @2438,39 flex=VERTICAL
+      [FRAME] "Container" 231x96 @2438,39 flex=HORIZONTAL
+        [FRAME] "Container" 231x183 @2438,-4 flex=VERTICAL
+          [FRAME] "Jiwar Aloula Logo" 215x183 @2446,-4 fill=img:e852a301f0
+    [FRAME] "Nav" 231x699 @2438,154 flex=VERTICAL/gap4
+      [FRAME] "Link" 231x44 @2438,154 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x18 @2454,167 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @2454,167 fill=#e4e2e4
+        [FRAME] "Container" 105x28 @2488,162 flex=VERTICAL
+          [TEXT] "Text" 105x28 @2488,162 fill=#e4e2e4 :: "Dashboard" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @2438,202 fill=#671f23 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x18 @2454,215 flex=VERTICAL
+          [VECTOR] "Icon" 20x18 @2454,215 fill=#ea8586
+        [FRAME] "Container" 92x28 @2490,210 flex=VERTICAL
+          [TEXT] "Text" 92x28 @2490,210 fill=#ea8586 :: "Inventory" 20px Inter/Regular #ea8586 
+      [FRAME] "Link" 231x44 @2438,250 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 24x12 @2454,266 flex=VERTICAL
+          [VECTOR] "Icon" 24x12 @2454,266 fill=#e4e2e4
+        [FRAME] "Container" 99x28 @2494,258 flex=VERTICAL
+          [TEXT] "Text" 99x28 @2494,258 fill=#e4e2e4 :: "Marketers" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @2438,298 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x20 @2454,310 flex=VERTICAL
+          [VECTOR] "Icon" 18x20 @2454,310 fill=#e4e2e4
+        [FRAME] "Container" 125x28 @2488,306 flex=VERTICAL
+          [TEXT] "Text" 125x28 @2488,306 fill=#e4e2e4 :: "Transactions" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @2438,346 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x20 @2454,358 flex=VERTICAL
+          [VECTOR] "Icon" 20x20 @2454,358 fill=#e4e2e4
+        [FRAME] "Container" 81x28 @2490,354 flex=VERTICAL
+          [TEXT] "Settings" 81x28 @2490,354 fill=#e4e2e4 :: "Settings" 20px Inter/Regular #e4e2e4 
+    [FRAME] "HorizontalBorder" 231x65 @2438,853 flex=VERTICAL
+      [FRAME] "Container" 231x40 @2438,878 flex=HORIZONTAL/gap16
+        [FRAME] "Background+Border" 40x40 @2438,878 fill=#671f23 r=12 flex=HORIZONTAL
+          [FRAME] "Administrator Profile" 38x38 @2439,879 fill=img:88f7a67d2c
+        [FRAME] "Container" 85x21 @2494,888 flex=VERTICAL
+          [FRAME] "Container" 85x21 @2494,888 flex=VERTICAL
+            [TEXT] "Text" 85x21 @2494,888 fill=#ffffff :: "Admin Portal" 14px Inter/Regular #ffffff 

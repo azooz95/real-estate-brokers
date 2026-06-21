@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background: #e7e3e6; }
+  [dir="rtl"] { font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif; }
+  ::-webkit-scrollbar { width: 9px; height: 9px; }
+  ::-webkit-scrollbar-thumb { background: #c9c2c6; border-radius: 8px; }
+  .jw-phone::-webkit-scrollbar { width: 0; }
+  @keyframes jwpop { 0% { transform: scale(.7); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+</style>
+</helmet>
+
+<div dir="{{ dir }}" style="min-height: 100vh; background: #e7e3e6;">
+
+  <!-- ===== Prototype navigator (not part of the product) ===== -->
+  <div dir="ltr" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 10px 16px; background: #1b1b1d; color: #e4e2e4; font-family: 'Inter', sans-serif; font-size: 12px;">
+    <span style="font-weight: 700; letter-spacing: .14em; color: #ea8586;">JIWAR ALOULA</span>
+    <span style="opacity: .5;">PROTOTYPE</span>
+    <span style="width: 1px; height: 16px; background: #4a4a4d;"></span>
+    <span style="opacity: .6; text-transform: uppercase; letter-spacing: .1em;">Client</span>
+    <div style="display: flex; gap: 4px;">
+      <sc-for list="{{ clientNav }}" as="it" hint-placeholder-count="6">
+        <button onClick="{{ it.go }}" style="{{ it.btn }}">{{ it.label }}</button>
+      </sc-for>
+    </div>
+    <span style="width: 1px; height: 16px; background: #4a4a4d;"></span>
+    <span style="opacity: .6; text-transform: uppercase; letter-spacing: .1em;">Admin</span>
+    <div style="display: flex; gap: 4px;">
+      <sc-for list="{{ adminNav }}" as="it" hint-placeholder-count="7">
+        <button onClick="{{ it.go }}" style="{{ it.btn }}">{{ it.label }}</button>
+      </sc-for>
+    </div>
+    <div style="margin-inline-start: auto; display: flex; gap: 4px; align-items: center;">
+      <button onClick="{{ setEn }}" style="{{ enBtn }}">EN</button>
+      <button onClick="{{ setAr }}" style="{{ arBtn }}">العربية</button>
+    </div>
+  </div>
+
+  <!-- ===================== MOBILE FLOW ===================== -->
+
+  <!-- 1. HOME -->
+  <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #fbf8fb; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35); position: relative;">
+      <!-- header -->
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px; background: #fbf8fb; position: sticky; top: 0; z-index: 5;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          
+          <img src="assets/img/86442120d5.png" alt="Jiwar Aloula" style="height: 30px;">
+        </div>
+        <button onClick="{{ flipLang }}" style="display: flex; align-items: center; gap: 6px; background: #f4eef0; border: 1px solid #ece0e4; border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600; color: #671f23; font-family: inherit; cursor: pointer;">🌐 {{ langLabel }}</button>
+      </div>
+      <!-- hero -->
+      <div style="position: relative; background: #671f23; padding: 40px 16px 18px; overflow: hidden;">
+        <img src="assets/img/10655a55ec.png" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .14;">
+        <div style="position: relative;">
+          <div style="color: #fff; font-size: 24px; font-weight: 700; line-height: 1.1;">{{ T.hero_title }}</div>
+          <div style="color: #fff; opacity: .88; font-size: 16px; margin-top: 8px; line-height: 1.5;">{{ T.hero_sub }}</div>
+          <button onClick="{{ copyRep }}" style="margin-top: 16px; display: flex; align-items: center; gap: 8px; width: 100%; text-align: start; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 12px; padding: 9px 14px; cursor: pointer; font-family: inherit;">
+            <span style="color: #fff;">👤</span>
+            <span style="color: #fff; font-size: 12px; font-weight: 600; flex: 1;">{{ T.your_rep }} Abdullah Al-Saud</span>
+            <span style="color: #fff; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 5px; opacity: .9;">{{ repCopyLabel }}</span>
+          </button>
+        </div>
+      </div>
+      <!-- projects selector -->
+      <div style="padding: 24px 16px 0;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="font-size: 20px; font-weight: 600; color: #4a0810;">{{ T.our_projects }}</div>
+          <div style="font-size: 12px; font-weight: 600; color: #725a40; letter-spacing: .06em;">{{ T.view_all }}</div>
+        </div>
+        <div style="display: flex; gap: 16px; margin-top: 16px; overflow-x: auto; padding-bottom: 4px;">
+          <sc-for list="{{ homeProjects }}" as="p" hint-placeholder-count="3">
+            <div style="flex: 0 0 auto; width: 160px;">
+              <div style="position: relative; height: 96px; border-radius: 8px; overflow: hidden;">
+                <img src="{{ p.src }}" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0));"></div>
+              </div>
+              <div style="text-align: center; font-size: 12px; font-weight: 600; color: #1b1b1d; margin-top: 8px;">{{ p.name }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <!-- available units -->
+      <div style="padding: 24px 16px 28px;">
+        <div style="font-size: 20px; font-weight: 600; color: #1b1b1d;">{{ T.available_units }}</div>
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 16px;">
+          <sc-for list="{{ homeUnits }}" as="u" hint-placeholder-count="3">
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+              <div style="position: relative; height: 192px;">
+                <img src="{{ u.src }}" style="width: 100%; height: 100%; object-fit: cover; opacity: {{ u.imgOpacity }};">
+                <div style="position: absolute; top: 12px; inset-inline-start: 12px; background: {{ u.badgeBg }}; color: {{ u.badgeFg }}; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 12px;">{{ u.badge }}</div>
+                <button onClick="{{ u.share }}" aria-label="Share apartment" style="position: absolute; top: 12px; inset-inline-end: 12px; width: 36px; height: 36px; display: grid; place-items: center; border: none; background: rgba(255,255,255,.92); border-radius: 50%; color: #671f23; font-size: 16px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,.18);">⤴</button>
+              </div>
+              <div style="padding: 16px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+                  <div>
+                    <div style="font-size: 20px; font-weight: 600; color: {{ u.titleColor }};">{{ u.code }}</div>
+                    <div style="font-size: 14px; color: #544242; margin-top: 4px;">{{ u.meta }}</div>
+                  </div>
+                  <div style="font-size: 20px; font-weight: 700; color: {{ u.priceColor }}; white-space: nowrap;">{{ u.price }}</div>
+                </div>
+                <button onClick="{{ u.cta }}" style="{{ u.ctaStyle }}">{{ u.ctaLabel }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <!-- search FAB -->
+      <button onClick="{{ goProjects }}" style="position: sticky; bottom: 20px; inset-inline-start: calc(100% - 72px); width: 56px; height: 56px; border: none; border-radius: 16px; background: #725a40; color: #fff; font-size: 20px; box-shadow: 0 12px 24px -6px rgba(114,90,64,.6); cursor: pointer;">🔍</button>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- 2. ALL PROJECTS DIRECTORY -->
+  <sc-if value="{{ showProjects }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #fbf8fb; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35);">
+      <div style="display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 16px; background: #fbf8fb;">
+        <button onClick="{{ goHome }}" style="width: 40px; height: 40px; border: none; background: transparent; color: #4a0810; font-size: 18px; cursor: pointer;">‹</button>
+        <img src="assets/img/86442120d5.png" style="height: 30px;">
+      </div>
+      <div style="padding: 24px 16px 40px;">
+        <div style="font-size: 24px; color: #4a0810; font-weight: 600;">{{ T.our_projects }}</div>
+        <div style="font-size: 16px; color: #544242; margin-top: 8px; line-height: 1.5;">{{ T.projects_sub }}</div>
+        <div style="display: flex; gap: 8px; margin-top: 20px;">
+          <div style="flex: 1; display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #eae7ea; border-radius: 8px; padding: 14px;">
+            <span style="color: #544242;">🔍</span>
+            <span style="color: #6b7280; font-size: 16px;">{{ T.search_name }}</span>
+          </div>
+          <div style="width: 44px; height: 49px; display: grid; place-items: center; background: #f0edef; border-radius: 4px; color: #4a0810;">⚙</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;">
+          <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+            <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+              <div style="position: relative; height: 130px;">
+                <img src="{{ p.src }}" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; top: 9px; inset-inline-start: 9px; background: {{ p.badgeBg }}; color: {{ p.badgeFg }}; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 2px;">{{ p.badge }}</div>
+              </div>
+              <div style="padding: 16px;">
+                <div style="font-size: 18px; color: #4a0810; line-height: 1.15;">{{ p.name }}</div>
+                <div style="display: flex; align-items: center; gap: 4px; margin-top: 6px; color: #544242; font-size: 16px;"><span style="color: #bb9e80;">📍</span>{{ p.loc }}</div>
+                <button onClick="{{ goUnits }}" style="width: 100%; margin-top: 14px; background: #4a0810; color: #fff; border: none; border-radius: 4px; padding: 12px; font-size: 15px; font-weight: 600; cursor: pointer; line-height: 1.2;">{{ T.explore_units }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- 3. PROJECT INVENTORY (unit list) -->
+  <sc-if value="{{ showUnits }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #f2f1ed; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35);">
+      <div style="display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 16px; background: #fbf8fb;">
+        <button onClick="{{ goProjects }}" style="width: 40px; height: 40px; border: none; background: transparent; color: #4a0810; font-size: 18px; cursor: pointer;">‹</button>
+        <img src="assets/img/86442120d5.png" style="height: 30px;">
+      </div>
+      <div style="padding: 24px 16px 40px;">
+        <div style="font-size: 24px; color: #4a0810; font-weight: 600;">Al-Yasmeen Towers</div>
+        <div style="display: flex; align-items: center; gap: 4px; margin-top: 4px; color: #544242; font-size: 14px;"><span>📍</span>{{ T.premium_units_riyadh }}</div>
+        <!-- filters -->
+        <div style="background: #fff; border-radius: 16px; padding: 16px; margin-top: 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 13px; color: #4a0810; font-weight: 600; letter-spacing: .04em;">{{ T.unit_type }}</span>
+            <span style="font-size: 10px; color: #544242;">{{ T.select_one }}</span>
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 12px;">
+            <div style="padding: 10px 18px; background: #f5f3f5; border-radius: 4px; font-size: 14px; color: #544242;">{{ T.all }}</div>
+            <div style="padding: 10px 16px; background: #f5f3f5; border-radius: 4px; font-size: 14px; color: #544242;">2 {{ T.rooms }}</div>
+            <div style="padding: 10px 16px; background: #f5f3f5; border-radius: 4px; font-size: 14px; color: #544242;">3 {{ T.rooms }}</div>
+            <div style="padding: 10px 16px; background: #671f23; border-radius: 4px; font-size: 14px; color: #fff;">4 {{ T.rooms }}</div>
+          </div>
+        </div>
+        <!-- unit cards -->
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 16px;">
+          <sc-for list="{{ mUnits }}" as="u" hint-placeholder-count="3">
+            <div style="background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08);">
+              <div style="position: relative; height: 192px;">
+                <img src="{{ u.src }}" style="width: 100%; height: 100%; object-fit: cover; opacity: {{ u.imgOpacity }};">
+                <div style="position: absolute; top: 12px; inset-inline-start: 12px; display: flex; align-items: center; gap: 6px; background: {{ u.badgeBg }}; color: #fff; font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 2px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #fff;"></span>{{ u.badge }}</div>
+                <button onClick="{{ u.share }}" aria-label="Share apartment" style="position: absolute; top: 12px; inset-inline-end: 12px; width: 36px; height: 36px; display: grid; place-items: center; border: none; background: rgba(255,255,255,.92); border-radius: 50%; color: #671f23; font-size: 16px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,.18);">⤴</button>
+              </div>
+              <div style="padding: 16px;">
+                <div style="display: flex; align-items: flex-start; justify-content: space-between;">
+                  <div>
+                    <div style="font-size: 18px; color: #4a0810;">{{ u.code }}</div>
+                    <div style="font-size: 12px; color: #544242; margin-top: 4px; letter-spacing: .03em;">{{ u.sub }}</div>
+                  </div>
+                  <div style="text-align: end;">
+                    <div style="font-size: 18px; color: #1b1b1d;">{{ u.price }}</div>
+                    <div style="font-size: 12px; color: #544242;">{{ u.note }}</div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 16px; margin-top: 14px; padding: 9px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+                  <span style="font-size: 12px; color: #1b1b1d; display: flex; gap: 4px;"><span style="color: {{ u.iconColor }};">🛏</span>{{ u.rooms }}</span>
+                  <span style="font-size: 12px; color: #1b1b1d; display: flex; gap: 4px;"><span style="color: {{ u.iconColor }};">🛁</span>{{ u.bath }}</span>
+                  <span style="font-size: 12px; color: #1b1b1d; display: flex; gap: 4px;"><span style="color: {{ u.iconColor }};">⬚</span>{{ u.area }}</span>
+                </div>
+                <button onClick="{{ u.cta }}" style="{{ u.ctaStyle }}">{{ u.ctaLabel }}</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- 4. UNIT DETAIL -->
+  <sc-if value="{{ showDetail }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #f2f1ed; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35); position: relative;">
+      <div style="display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 16px; background: #fbf8fb; position: sticky; top: 0; z-index: 5;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <button onClick="{{ goUnits }}" style="width: 40px; height: 40px; border: none; background: transparent; color: #4a0810; font-size: 18px; cursor: pointer;">‹</button>
+          <img src="assets/img/86442120d5.png" style="height: 30px;">
+        </div>
+        <button onClick="{{ shareUnit }}" aria-label="Share apartment" style="width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #ece0e4; background: #fbf8fb; border-radius: 50%; color: #671f23; font-size: 17px; cursor: pointer;">⤴</button>
+      </div>
+      <!-- carousel -->
+      <div style="position: relative; height: 300px; background: #dcd9dc;">
+        <img src="assets/img/6d0086420f.png" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; bottom: 16px; inset-inline-start: 16px; background: #4a0810; color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 12px;">{{ T.exterior_view }}</div>
+        <div style="position: absolute; bottom: 18px; inset-inline-end: 16px; display: flex; gap: 8px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #fff;"></span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.5);"></span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.5);"></span>
+        </div>
+      </div>
+      <div style="padding: 24px 16px 120px;">
+        <!-- header info -->
+        <div style="display: flex; justify-content: space-between; gap: 12px;">
+          <div>
+            <div style="display: inline-block; background: #fbdab9; color: #765e44; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 2px;">{{ T.available }}</div>
+            <div style="font-size: 24px; font-weight: 700; color: #4a0810; margin-top: 12px; line-height: 1.15;">The Heritage Suite – Type A1</div>
+            <div style="display: flex; gap: 4px; margin-top: 8px; color: #544242; font-size: 16px;"><span>📍</span>Al-Ula District, Heritage Sector</div>
+          </div>
+          <div style="text-align: end; flex: 0 0 auto;">
+            <div style="font-size: 12px; font-weight: 600; color: #544242;">{{ T.starting_at }}</div>
+            <div style="font-size: 20px; font-weight: 700; color: #2e2e30; line-height: 1.2; margin-top: 4px;">SAR<br>1,450,000</div>
+          </div>
+        </div>
+        <!-- spec matrix -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 24px;">
+          <sc-for list="{{ specs }}" as="s" hint-placeholder-count="3">
+            <div style="background: #fff; border-radius: 8px; padding: 16px 8px; text-align: center; box-shadow: 0 1px 2px rgba(0,0,0,.06);">
+              <div style="font-size: 18px; color: #4a0810;">{{ s.icon }}</div>
+              <div style="font-size: 16px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ s.value }}</div>
+              <div style="font-size: 12px; font-weight: 600; color: #544242; margin-top: 4px; letter-spacing: .03em;">{{ s.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <!-- description -->
+        <div style="margin-top: 24px;">
+          <div style="font-size: 20px; font-weight: 700; color: #4a0810;">{{ T.property_description }}</div>
+          <div style="background: #fff; border-radius: 8px; padding: 17px; margin-top: 16px; color: #544242; font-size: 16px; line-height: 1.55;">
+            <p style="margin: 0 0 16px;">Experience the pinnacle of Heritage Excellence. This Type A1 unit blends traditional architectural motifs with modern engineering. Featuring expansive glass walls that invite the golden Al-Ula light, the residence offers a unique connection to the historic landscape while providing ultimate privacy and climate control.</p>
+            <p style="margin: 0;">High-end finishes including locally sourced stone countertops, charcoal black architectural accents, and state-of-the-art smart home integration. Perfect for those seeking a prestigious residence in the heart of the kingdom's heritage corridor.</p>
+          </div>
+        </div>
+        <!-- amenities -->
+        <div style="margin-top: 24px;">
+          <div style="font-size: 20px; font-weight: 700; color: #4a0810;">{{ T.key_amenities }}</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+            <sc-for list="{{ amenities }}" as="a" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; gap: 12px; background: #f5f3f5; border-radius: 8px; padding: 16px;">
+                <span style="color: #725a40;">{{ a.icon }}</span>
+                <span style="font-size: 12px; font-weight: 600; color: #58432a;">{{ a.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <!-- map -->
+        <div style="margin-top: 24px;">
+          <div style="font-size: 20px; font-weight: 700; color: #4a0810;">{{ T.location_map }}</div>
+          <div style="position: relative; height: 192px; border-radius: 16px; overflow: hidden; margin-top: 16px;">
+            <img src="assets/img/de7d19813f.png" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 32px; height: 36px; background: #4a0810; border-radius: 12px; display: grid; place-items: center; color: #fff;">📍</div>
+          </div>
+        </div>
+      </div>
+      <!-- sticky reserve -->
+      <div style="position: sticky; bottom: 0; padding: 16px; background: #fbf8fb; border-top: 1px solid #eee;">
+        <button onClick="{{ goReserve }}" style="width: 100%; background: #671f23; color: #f2f1ed; border: none; border-radius: 8px; padding: 16px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px -6px rgba(103,31,35,.5);">{{ T.reserve_now }}</button>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- 5. RESERVATION FORM -->
+  <sc-if value="{{ showReserve }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #fbf8fb; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35); position: relative;">
+      <div style="display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 16px; background: #fbf8fb; position: sticky; top: 0; z-index: 5;">
+        <button onClick="{{ goDetail }}" style="width: 40px; height: 40px; border: none; background: transparent; color: #4a0810; font-size: 18px; cursor: pointer;">‹</button>
+        <img src="assets/img/86442120d5.png" style="height: 30px;">
+      </div>
+      <div style="padding: 16px 16px 120px; display: flex; flex-direction: column; gap: 24px;">
+        <!-- summary -->
+        <div style="background: #fff; border-radius: 8px; padding: 17px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <div style="font-size: 20px; font-weight: 600; color: #671f23;">Heritage Suite</div>
+              <div style="font-size: 16px; color: #544242; margin-top: 4px;">{{ T.unit }}: JWR-402</div>
+            </div>
+            <div style="background: #eae7ea; border-radius: 4px; padding: 8px 12px; text-align: center;">
+              <div style="font-size: 16px; color: #544242;">{{ T.floor }}</div>
+              <div style="font-size: 16px; font-weight: 600; color: #1b1b1d;">04</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee;">
+            <div style="font-size: 16px; color: #544242;">{{ T.reservation_deposit }}</div>
+            <div style="font-size: 16px; color: #671f23; font-weight: 600;">SAR 5,000.00</div>
+          </div>
+        </div>
+        <!-- countdown -->
+        <div style="display: flex; align-items: center; gap: 12px; background: #bb9e80; border-radius: 8px; padding: 16px;">
+          <span style="font-size: 20px;">⏳</span>
+          <span style="font-size: 16px; color: #58432a;">{{ T.holding_unit }} 09:59 {{ T.minutes }}</span>
+        </div>
+        <!-- personal info -->
+        <div>
+          <div style="font-size: 20px; font-weight: 600; color: #1b1b1d;">{{ T.personal_information }}</div>
+          <div style="margin-top: 16px;">
+            <div style="font-size: 16px; color: #544242;">{{ T.full_name }}</div>
+            <div style="background: #fff; border: 1px solid #eae7ea; border-radius: 8px; padding: 18px 16px; margin-top: 4px; color: #6b7280; font-size: 16px;">{{ T.enter_full_name }}</div>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="font-size: 16px; color: #544242;">{{ T.phone_number }}</div>
+            <div style="display: flex; margin-top: 4px;">
+              <div style="display: grid; place-items: center; background: #f5f3f5; border: 1px solid #eae7ea; border-inline-end: none; border-radius: 8px 0 0 8px; padding: 0 16px; color: #544242; font-size: 16px;">+966</div>
+              <div style="flex: 1; background: #fff; border: 1px solid #eae7ea; border-radius: 0 8px 8px 0; padding: 18px 16px; color: #6b7280; font-size: 16px;">5X XXX XXXX</div>
+            </div>
+          </div>
+        </div>
+        <!-- payment -->
+        <div>
+          <div style="font-size: 20px; font-weight: 600; color: #1b1b1d;">{{ T.select_payment }}</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+            <sc-for list="{{ payments }}" as="p" hint-placeholder-count="4">
+              <div style="background: #fff; border: 1px solid #eae7ea; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <img src="{{ p.src }}" style="width: 26px; height: 26px; object-fit: contain;">
+                <span style="font-size: 16px; color: #544242;">{{ p.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="position: sticky; bottom: 0; padding: 16px; background: #fbf8fb; border-top: 1px solid #eee;">
+        <button onClick="{{ goSuccess }}" style="width: 100%; background: #671f23; color: #fff; border: none; border-radius: 12px; padding: 16px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 20px -6px rgba(103,31,35,.5);">{{ T.proceed_payment }}</button>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-top: 12px; color: #544242; font-size: 14px;"><span>🔒</span>{{ T.ssl_note }}</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- 6. RESERVATION SUCCESS -->
+  <sc-if value="{{ showSuccess }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; justify-content: center; padding: 28px 16px 60px;">
+    <div class="jw-phone" style="width: 390px; background: #fbf8fb; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 70px -20px rgba(40,8,16,.35);">
+      <div style="display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 16px; background: #fbf8fb;">
+        <img src="assets/img/86442120d5.png" style="height: 30px;">
+      </div>
+      <div style="padding: 32px 16px 40px;">
+        <!-- hero -->
+        <div style="text-align: center;">
+          <div style="width: 96px; height: 96px; border-radius: 16px; background: #b6eedf; display: grid; place-items: center; margin: 0 auto; font-size: 44px; color: #004036; animation: jwpop .5s ease both;">✓</div>
+          <div style="font-size: 24px; color: #4a0810; margin-top: 24px; line-height: 1.2;">{{ T.success_title }}</div>
+          <div style="font-size: 16px; color: #544242; margin-top: 12px; line-height: 1.5;">{{ T.success_sub }}</div>
+        </div>
+        <!-- receipt -->
+        <div style="position: relative; background: #fff; border-radius: 8px; margin-top: 24px; overflow: hidden;">
+          <div style="position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 4px; background: #4a0810;"></div>
+          <div style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 12px; color: #544242; letter-spacing: .06em;">{{ T.reservation_receipt }}</span>
+              <span style="font-size: 16px; color: #4a0810; font-weight: 600;">#RES-8821</span>
+            </div>
+            <div style="margin-top: 16px; display: flex; flex-direction: column;">
+              <sc-for list="{{ receiptRows }}" as="r" hint-placeholder-count="3">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #f0eef0;">
+                  <span style="font-size: 16px; color: #544242;">{{ r.label }}</span>
+                  <span style="font-size: 16px; color: #1b1b1d; font-weight: 500;">{{ r.value }}</span>
+                </div>
+              </sc-for>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px;">
+                <span style="font-size: 16px; color: #544242;">{{ T.status }}</span>
+                <span style="background: #004036; color: #b6eedf; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 12px;">{{ T.confirmed }}</span>
+              </div>
+            </div>
+          </div>
+          <div style="background: #f5f3f5; text-align: center; padding: 16px; border-top: 1px dashed #d7c9c9;">
+            <span style="color: #4a0810; font-size: 14px; font-weight: 600; letter-spacing: .04em;">⬇ {{ T.download_receipt }}</span>
+          </div>
+        </div>
+        <!-- next steps -->
+        <div style="margin-top: 32px;">
+          <div style="font-size: 20px; color: #1b1b1d;">{{ T.next_steps }}</div>
+          <div style="position: relative; margin-top: 24px; padding-inline-start: 36px;">
+            <div style="position: absolute; inset-inline-start: 11px; top: 6px; bottom: 24px; width: 2px; background: #dac1c0;"></div>
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+              <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+                <div style="position: relative;">
+                  <div style="position: absolute; inset-inline-start: -36px; top: 0; width: 24px; height: 24px; border-radius: 12px; background: {{ s.dotBg }}; border: {{ s.dotBorder }}; display: grid; place-items: center; color: #fff; font-size: 11px;">{{ s.dotIcon }}</div>
+                  <div style="font-size: 16px; color: {{ s.titleColor }};">{{ s.title }}</div>
+                  <div style="font-size: 16px; color: #544242; margin-top: 4px; line-height: 1.5;">{{ s.body }}</div>
+                  <sc-if value="{{ s.eta }}" hint-placeholder-val="{{ false }}">
+                    <div style="display: inline-block; background: #fbdab9; color: #1b1b1d; font-size: 11px; padding: 3px 8px; border-radius: 2px; margin-top: 8px;">{{ s.eta }}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <!-- actions -->
+        <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+          <button onClick="{{ goDashboard }}" style="width: 100%; background: #671f23; color: #fff; border: none; border-radius: 8px; padding: 18px; font-size: 18px; cursor: pointer; box-shadow: 0 8px 20px -6px rgba(103,31,35,.5);">{{ T.go_dashboard }}</button>
+          <button style="width: 100%; background: transparent; color: #725a40; border: none; padding: 14px; font-size: 16px; cursor: pointer;">{{ T.support_contact }}</button>
+        </div>
+        <div style="text-align: center; margin-top: 24px; color: #544242; font-size: 12px; line-height: 1.5;">© 2024 Jiwar Aloula Real Estate Investment.<br>{{ T.excellence_tagline }}</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ===================== ADMIN (desktop) ===================== -->
+
+  <!-- LOGIN -->
+  <sc-if value="{{ showLogin }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height: calc(100vh - 44px); display: flex; align-items: center; justify-content: center; background: #fbf8fb; padding: 40px 20px;">
+    <div style="width: 100%; max-width: 1000px; display: grid; grid-template-columns: 1fr 1fr; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(40,8,16,.4);">
+      <!-- left brand panel -->
+      <div style="position: relative; background: #4a0810; padding: 56px 48px; display: flex; flex-direction: column; justify-content: space-between; min-height: 540px;">
+        <img src="assets/img/10655a55ec.png" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .08;">
+        <div style="position: relative;">
+          <img src="assets/img/logo-white.png" style="height: 40px;">
+        </div>
+        <div style="position: relative;">
+          <div style="font-size: 30px; font-weight: 700; color: #fff; line-height: 1.25;">Architectural<br>Precision in<br>Real Estate.</div>
+          <div style="width: 48px; height: 3px; background: #bb9e80; margin: 24px 0;"></div>
+          <div style="color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.6;">Central command for inventory, marketers, and reservation flows across the Jiwar Aloula portfolio.</div>
+        </div>
+        <div style="position: relative; display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.55); font-size: 12px;"><span>🔒</span>{{ T.secure_badge }}</div>
+      </div>
+      <!-- right form -->
+      <div style="padding: 56px 48px; display: flex; flex-direction: column; justify-content: center;">
+        <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.login_title }}</div>
+        <div style="font-size: 15px; color: #544242; margin-top: 8px; line-height: 1.5;">{{ T.login_sub }}</div>
+        <div style="margin-top: 32px;">
+          <div style="font-size: 13px; font-weight: 600; color: #544242; letter-spacing: .03em;">{{ T.username_email }}</div>
+          <div style="display: flex; align-items: center; gap: 10px; background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 14px 16px; margin-top: 6px;"><span style="color: #877271;">✉</span><span style="color: #9b9398; font-size: 15px;">admin@jiwaraloula.com</span></div>
+        </div>
+        <div style="margin-top: 20px;">
+          <div style="font-size: 13px; font-weight: 600; color: #544242; letter-spacing: .03em;">{{ T.password }}</div>
+          <div style="display: flex; align-items: center; gap: 10px; background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 14px 16px; margin-top: 6px;"><span style="color: #877271;">🔒</span><span style="flex: 1; color: #9b9398; font-size: 15px; letter-spacing: .2em;">••••••••••</span><span style="color: #877271;">👁</span></div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 18px;">
+          <label style="display: flex; align-items: center; gap: 8px; color: #544242; font-size: 14px;"><span style="width: 16px; height: 16px; border-radius: 4px; background: #4a0810; color: #fff; display: grid; place-items: center; font-size: 10px;">✓</span>{{ T.remember_me }}</label>
+          <button onClick="{{ goForgot }}" style="background: none; border: none; color: #725a40; font-size: 14px; font-weight: 600; cursor: pointer;">{{ T.forgot_password }}</button>
+        </div>
+        <button onClick="{{ goDashboard }}" style="margin-top: 28px; background: #671f23; color: #fff; border: none; border-radius: 8px; padding: 15px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 10px 24px -8px rgba(103,31,35,.5);">{{ T.sign_in }}</button>
+        <div style="text-align: center; margin-top: 28px; color: #9b9398; font-size: 12px;">{{ T.login_footer }}</div>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- FORGOT PASSWORD -->
+  <sc-if value="{{ showForgot }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height: calc(100vh - 44px); display: flex; align-items: center; justify-content: center; background: #fbf8fb; padding: 40px 20px;">
+    <div style="width: 100%; max-width: 440px; background: #fff; border-radius: 16px; padding: 48px 40px; box-shadow: 0 30px 80px -30px rgba(40,8,16,.4); text-align: center;">
+      <img src="assets/img/86442120d5.png" style="height: 34px;">
+      <div style="width: 64px; height: 64px; border-radius: 16px; background: #f3d9d9; display: grid; place-items: center; margin: 28px auto 0; font-size: 28px; color: #4a0810;">✉</div>
+      <div style="font-size: 22px; font-weight: 700; color: #1b1b1d; margin-top: 20px;">{{ T.reset_title }}</div>
+      <div style="font-size: 15px; color: #544242; margin-top: 8px; line-height: 1.5;">{{ T.reset_sub }}</div>
+      <div style="text-align: start; margin-top: 28px;">
+        <div style="font-size: 13px; font-weight: 600; color: #544242;">{{ T.email_address }}</div>
+        <div style="display: flex; align-items: center; gap: 10px; background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 14px 16px; margin-top: 6px;"><span style="color: #877271;">✉</span><span style="color: #9b9398; font-size: 15px;">you@jiwaraloula.com</span></div>
+      </div>
+      <button style="width: 100%; margin-top: 24px; background: #671f23; color: #fff; border: none; border-radius: 8px; padding: 15px; font-size: 16px; font-weight: 600; cursor: pointer;">{{ T.send_reset }}</button>
+      <button onClick="{{ goLogin }}" style="margin-top: 18px; background: none; border: none; color: #725a40; font-size: 14px; font-weight: 600; cursor: pointer;">‹ {{ T.back_login }}</button>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ADMIN SHELL (dashboard / inventory / marketers / transactions / settings) -->
+  <sc-if value="{{ showAdminShell }}" hint-placeholder-val="{{ false }}">
+  <div style="display: flex; min-height: calc(100vh - 44px); background: #f4f1f3;">
+    <!-- sidebar -->
+    <div style="width: 264px; flex: 0 0 264px; background: #1f1f21; display: flex; flex-direction: column; padding: 24px 16px;">
+      <div style="padding: 0 8px 24px;"><img src="assets/img/logo-white.png" style="height: 62px; width: 149px"></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <sc-for list="{{ adminSideNav }}" as="it" hint-placeholder-count="5">
+          <button onClick="{{ it.go }}" style="{{ it.style }}"><span style="font-size: 16px;">{{ it.icon }}</span>{{ it.label }}</button>
+        </sc-for>
+      </div>
+      <div style="margin-top: auto; display: flex; align-items: center; gap: 12px; padding: 12px 8px; border-top: 1px solid #34343700;">
+        <div style="width: 38px; height: 38px; border-radius: 10px; background: #671f23; color: #fff; display: grid; place-items: center; font-size: 13px; font-weight: 700;">AM</div>
+        <div>
+          <div style="color: #fff; font-size: 13px; font-weight: 600;">Admin Manager</div>
+          <div style="color: #76ac9e; font-size: 11px;">● {{ T.status_active }}</div>
+        </div>
+      </div>
+    </div>
+    <!-- main -->
+    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+      <!-- topbar -->
+      <div style="display: flex; align-items: center; gap: 16px; padding: 16px 28px; background: #fff; border-bottom: 1px solid #ece8eb;">
+        <div style="flex: 1; max-width: 420px; display: flex; align-items: center; gap: 10px; background: #f5f2f4; border-radius: 8px; padding: 10px 14px;"><span style="color: #877271;">🔍</span><span style="color: #9b9398; font-size: 14px;">{{ T.search_inventory }}</span></div>
+        <div style="margin-inline-start: auto; display: flex; align-items: center; gap: 18px;">
+          <span style="color: #544242; font-size: 18px;">🔔</span>
+          <span style="color: #544242; font-size: 12px; font-weight: 600;">{{ T.admin_console }}</span>
+        </div>
+      </div>
+      <!-- content -->
+      <div style="flex: 1; padding: 28px; overflow: auto;">
+
+        <!-- DASHBOARD -->
+        <sc-if value="{{ showDashboard }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.cmd_dashboard }}</div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 20px;">
+            <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+              <div style="background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .06em;">{{ k.label }}</span>
+                  <sc-if value="{{ k.tag }}" hint-placeholder-val="{{ false }}"><span style="background: #dcf3e9; color: #15803d; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 10px;">↑ {{ k.tag }}</span></sc-if>
+                </div>
+                <div style="font-size: 28px; font-weight: 700; color: #4a0810; margin-top: 12px;">{{ k.value }}</div>
+                <sc-if value="{{ k.sub }}" hint-placeholder-val="{{ false }}"><div style="font-size: 12px; color: #15803d; margin-top: 4px;">{{ k.sub }}</div></sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; margin-top: 20px;">
+            <!-- activity -->
+            <div style="background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+              <div style="font-size: 17px; font-weight: 700; color: #1b1b1d;">{{ T.recent_activity }}</div>
+              <div style="display: flex; flex-direction: column; margin-top: 12px;">
+                <sc-for list="{{ activity }}" as="a" hint-placeholder-count="5">
+                  <div style="display: flex; align-items: center; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f1edf0;">
+                    <div style="width: 40px; height: 40px; flex: 0 0 40px; border-radius: 10px; background: {{ a.bg }}; color: {{ a.fg }}; display: grid; place-items: center; font-size: 13px; font-weight: 700;">{{ a.ini }}</div>
+                    <div style="flex: 1; min-width: 0;">
+                      <div style="font-size: 14px; color: #1b1b1d; font-weight: 500;">{{ a.name }}</div>
+                      <div style="font-size: 12px; color: #877271; margin-top: 2px;">{{ a.meta }}</div>
+                    </div>
+                    <sc-if value="{{ a.amt }}" hint-placeholder-val="{{ false }}"><div style="font-size: 14px; font-weight: 700; color: #004036; white-space: nowrap;">{{ a.amt }}</div></sc-if>
+                    <sc-if value="{{ a.tag }}" hint-placeholder-val="{{ false }}"><div style="font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ a.tag }}</div></sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <!-- inventory status -->
+            <div style="background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+              <div style="font-size: 17px; font-weight: 700; color: #1b1b1d;">{{ T.inventory_status }}</div>
+              <div style="text-align: center; margin: 18px 0;">
+                <div style="font-size: 40px; font-weight: 700; color: #4a0810;">540</div>
+                <div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .08em;">{{ T.total_units }}</div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <sc-for list="{{ invStatus }}" as="s" hint-placeholder-count="3">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 13px; color: #544242;"><span>{{ s.label }}</span><span style="font-weight: 600;">{{ s.units }}</span></div>
+                    <div style="height: 8px; background: #f1edf0; border-radius: 5px; margin-top: 6px; overflow: hidden;"><div style="height: 100%; width: {{ s.pct }}%; background: {{ s.color }}; border-radius: 5px;"></div></div>
+                  </div>
+                </sc-for>
+              </div>
+              <button style="width: 100%; margin-top: 22px; background: #4a0810; color: #fff; border: none; border-radius: 8px; padding: 12px; font-size: 12px; font-weight: 600; letter-spacing: .04em; cursor: pointer;">⬇ {{ T.download_inventory }}</button>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px;">
+            <sc-for list="{{ footerStats }}" as="f" hint-placeholder-count="3">
+              <div style="background: #fff; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                <div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .05em;">{{ f.label }}</div>
+                <div style="font-size: 17px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ f.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- INVENTORY -->
+        <sc-if value="{{ showInventory }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.inv_directory }}</div>
+              <div style="font-size: 14px; color: #877271; margin-top: 4px;">540 units across the portfolio</div>
+            </div>
+            <button style="background: #4a0810; color: #fff; border: none; border-radius: 8px; padding: 11px 18px; font-size: 13px; font-weight: 600; cursor: pointer;">{{ T.manual_sync }}</button>
+          </div>
+          <div style="background: #fff; border-radius: 12px; margin-top: 20px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+            <table style="width: 100%; border-collapse: collapse;">
+              <thead>
+                <tr style="background: #faf8fa;">
+                  <th style="text-align: start; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_unitcode }}</th>
+                  <th style="text-align: start; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_project }}</th>
+                  <th style="text-align: start; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_floor }}</th>
+                  <th style="text-align: start; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_specs }}</th>
+                  <th style="text-align: end; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_price }}</th>
+                  <th style="text-align: center; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_status }}</th>
+                  <th style="text-align: center; padding: 14px 20px; font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_actions }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ invRows }}" as="r" hint-placeholder-count="5">
+                  <tr style="border-top: 1px solid #f1edf0;">
+                    <td style="padding: 16px 20px; font-size: 13px; font-weight: 700; color: #4a0810;">{{ r.code }}</td>
+                    <td style="padding: 16px 20px; font-size: 14px; color: #1b1b1d;">{{ r.proj }}</td>
+                    <td style="padding: 16px 20px; font-size: 14px; color: #544242;">{{ r.floor }}</td>
+                    <td style="padding: 16px 20px; font-size: 13px; color: #544242;">{{ r.beds }} Bd · {{ r.baths }} Ba</td>
+                    <td style="padding: 16px 20px; font-size: 14px; font-weight: 600; color: #1b1b1d; text-align: end;">{{ r.price }}</td>
+                    <td style="padding: 16px 20px; text-align: center;"><span style="{{ r.pill }}">{{ r.status }}</span></td>
+                    <td style="padding: 16px 20px; text-align: center;"><button onClick="{{ r.act }}" title="{{ r.actLabel }}" aria-label="{{ r.actLabel }}" style="{{ r.actStyle }}">⚙</button></td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr) 1.2fr; gap: 18px; margin-top: 20px;">
+            <sc-for list="{{ invMetrics }}" as="m" hint-placeholder-count="3">
+              <div style="background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                <div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .05em;">{{ m.label }}</div>
+                <div style="font-size: 24px; font-weight: 700; color: {{ m.color }}; margin-top: 8px;">{{ m.value }}</div>
+              </div>
+            </sc-for>
+            <div style="background: #4a0810; border-radius: 12px; padding: 20px; color: #fff; display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="font-size: 11px; font-weight: 600; color: #ea8586; letter-spacing: .05em;">{{ T.admin_quick_action }}</div>
+              <button onClick="{{ goMarketers }}" style="margin-top: 12px; background: #bb9e80; color: #2e1c0a; border: none; border-radius: 8px; padding: 11px; font-size: 12px; font-weight: 700; letter-spacing: .04em; cursor: pointer;">{{ T.generate_now }}</button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- MARKETERS -->
+        <sc-if value="{{ showMarketers }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.marketer_mgmt }}</div>
+          <div style="font-size: 14px; color: #877271; margin-top: 4px;">{{ T.marketer_mgmt_sub }}</div>
+          <div style="display: grid; grid-template-columns: 1fr 320px; gap: 20px; margin-top: 20px; align-items: start;">
+            <!-- roster table -->
+            <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+              <div style="padding: 18px 20px; font-size: 16px; font-weight: 700; color: #1b1b1d; border-bottom: 1px solid #f1edf0;">{{ T.active_roster }}</div>
+              <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                  <tr style="background: #faf8fa;">
+                    <th style="text-align: start; padding: 12px 20px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_broker }}</th>
+                    <th style="text-align: start; padding: 12px 16px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_url }}</th>
+                    <th style="text-align: center; padding: 12px 16px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_clicks }}</th>
+                    <th style="text-align: center; padding: 12px 16px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_units }}</th>
+                    <th style="text-align: end; padding: 12px 20px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_revenue }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ brokers }}" as="b" hint-placeholder-count="4">
+                    <tr style="border-top: 1px solid #f1edf0;">
+                      <td style="padding: 14px 20px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                          <div style="width: 34px; height: 34px; border-radius: 9px; background: #671f23; color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700;">{{ b.ini }}</div>
+                          <div>
+                            <div style="font-size: 13px; font-weight: 600; color: #1b1b1d;">{{ b.name }}</div>
+                            <div style="font-size: 11px; color: #877271;">{{ b.id }}</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="padding: 14px 16px;"><span style="font-size: 12px; color: #725a40; background: #f5f2f4; padding: 4px 8px; border-radius: 4px;">{{ b.url }}</span></td>
+                      <td style="padding: 14px 16px; text-align: center; font-size: 13px; color: #1b1b1d;">{{ b.clicks }}</td>
+                      <td style="padding: 14px 16px; text-align: center;"><span style="{{ b.upill }}">{{ b.units }}</span></td>
+                      <td style="padding: 14px 20px; text-align: end; font-size: 13px; font-weight: 700; color: #004036;">{{ b.rev }}</td>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+              <div style="padding: 14px 20px; font-size: 12px; color: #877271; border-top: 1px solid #f1edf0;">{{ T.showing_marketers }}</div>
+            </div>
+            <!-- onboard panel -->
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="background: #fff; border-radius: 12px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                <div style="font-size: 16px; font-weight: 700; color: #1b1b1d;">{{ T.onboard_broker }}</div>
+                <div style="margin-top: 16px;">
+                  <div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .05em;">{{ T.broker_full_name }}</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #9b9398; font-size: 14px;">e.g. Mohammed Al-Fares</div>
+                </div>
+                <div style="margin-top: 14px;">
+                  <div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .05em;">{{ T.mobile_number }}</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #9b9398; font-size: 14px;">+966 5X XXX XXXX</div>
+                </div>
+                <button style="width: 100%; margin-top: 18px; background: #671f23; color: #fff; border: none; border-radius: 8px; padding: 13px; font-size: 12px; font-weight: 700; letter-spacing: .04em; cursor: pointer;">🔗 {{ T.generate_link }}</button>
+              </div>
+              <div style="background: #4a0810; border-radius: 12px; padding: 22px; color: #fff;">
+                <div style="font-size: 11px; font-weight: 600; color: #ea8586; letter-spacing: .05em;">{{ T.quick_stats }}</div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 16px;"><span style="color: rgba(255,255,255,.7); font-size: 13px;">{{ T.active_marketers }}</span><span style="font-size: 22px; font-weight: 700;">142</span></div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.12);"><span style="color: rgba(255,255,255,.7); font-size: 13px;">{{ T.total_revenue_mtd }}</span><span style="font-size: 22px; font-weight: 700; color: #bb9e80;">SAR 4.8M</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- TRANSACTIONS -->
+        <sc-if value="{{ showTransactions }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.tx_ledger }}</div>
+              <div style="font-size: 14px; color: #877271; margin-top: 4px; max-width: 520px; line-height: 1.5;">{{ T.tx_sub }}</div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button style="background: #fff; color: #4a0810; border: 1px solid #e3dde1; border-radius: 8px; padding: 10px 16px; font-size: 12px; font-weight: 600; cursor: pointer;">⬇ {{ T.export_csv }}</button>
+              <button style="background: #004036; color: #fff; border: none; border-radius: 8px; padding: 10px 16px; font-size: 12px; font-weight: 600; cursor: pointer;">⬇ {{ T.export_excel }}</button>
+            </div>
+          </div>
+          <div style="background: #fff; border-radius: 12px; margin-top: 20px; overflow: auto; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+            <table style="width: 100%; border-collapse: collapse; min-width: 880px;">
+              <thead>
+                <tr style="background: #faf8fa;">
+                  <th style="text-align: start; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_timestamp }}</th>
+                  <th style="text-align: start; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_ref }}</th>
+                  <th style="text-align: start; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_client }}</th>
+                  <th style="text-align: start; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_property }}</th>
+                  <th style="text-align: end; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_deposit }}</th>
+                  <th style="text-align: start; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_marketer }}</th>
+                  <th style="text-align: center; padding: 13px 18px; font-size: 10px; font-weight: 700; color: #877271; letter-spacing: .05em;">{{ T.th_receipt }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <sc-for list="{{ txRows }}" as="t" hint-placeholder-count="5">
+                  <tr style="border-top: 1px solid #f1edf0;">
+                    <td style="padding: 15px 18px; font-size: 12px; color: #544242; white-space: nowrap;">{{ t.ts }}</td>
+                    <td style="padding: 15px 18px; font-size: 12px; font-weight: 700; color: #4a0810;">{{ t.ref }}</td>
+                    <td style="padding: 15px 18px;">
+                      <div style="font-size: 13px; font-weight: 600; color: #1b1b1d;">{{ t.client }}</div>
+                      <div style="font-size: 11px; color: #877271;">{{ t.phone }}</div>
+                    </td>
+                    <td style="padding: 15px 18px;">
+                      <div style="font-size: 13px; color: #1b1b1d;">{{ t.proj }}</div>
+                      <div style="font-size: 11px; color: #877271;">{{ t.unit }}</div>
+                    </td>
+                    <td style="padding: 15px 18px; text-align: end; font-size: 13px; font-weight: 600; color: #004036;">{{ t.dep }}</td>
+                    <td style="padding: 15px 18px; font-size: 13px; color: #725a40;">{{ t.mkt }}</td>
+                    <td style="padding: 15px 18px; text-align: center;"><button onClick="{{ t.open }}" style="background: #fbf8fb; border: 1px solid #ece4e6; border-radius: 6px; font-size: 12px; color: #4a0810; font-weight: 600; cursor: pointer; padding: 6px 12px;">📄 {{ T.view_receipt }}</button></td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 20px;">
+            <sc-for list="{{ txWidgets }}" as="w" hint-placeholder-count="4">
+              <div style="background: {{ w.bg }}; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+                <div style="font-size: 11px; font-weight: 600; color: {{ w.labColor }}; letter-spacing: .05em;">{{ w.label }}</div>
+                <div style="font-size: 22px; font-weight: 700; color: {{ w.valColor }}; margin-top: 8px;">{{ w.value }}</div>
+                <div style="font-size: 12px; color: {{ w.subColor }}; margin-top: 4px;">{{ w.sub }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- SETTINGS -->
+        <sc-if value="{{ showSettings }}" hint-placeholder-val="{{ false }}">
+        <div style="max-width: 760px;">
+          <div style="font-size: 24px; font-weight: 700; color: #1b1b1d;">{{ T.sys_settings }}</div>
+          <div style="font-size: 14px; color: #877271; margin-top: 4px;">{{ T.sys_settings_sub }}</div>
+          <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
+            <div style="background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+              <div style="font-size: 16px; font-weight: 700; color: #1b1b1d; padding-bottom: 14px; border-bottom: 1px solid #f1edf0;">Financial Parameters</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px;">
+                <div>
+                  <div style="font-size: 12px; font-weight: 600; color: #877271;">Reservation Deposit (SAR)</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #1b1b1d; font-size: 14px; font-weight: 600;">5,000.00</div>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 600; color: #877271;">VAT Rate (%)</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #1b1b1d; font-size: 14px; font-weight: 600;">15</div>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 600; color: #877271;">Reservation Hold Window (min)</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #1b1b1d; font-size: 14px; font-weight: 600;">10</div>
+                </div>
+                <div>
+                  <div style="font-size: 12px; font-weight: 600; color: #877271;">Default Currency</div>
+                  <div style="background: #faf8fa; border: 1px solid #eae7ea; border-radius: 8px; padding: 12px 14px; margin-top: 6px; color: #1b1b1d; font-size: 14px; font-weight: 600;">SAR — Saudi Riyal</div>
+                </div>
+              </div>
+            </div>
+            <div style="background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.05);">
+              <div style="font-size: 16px; font-weight: 700; color: #1b1b1d; padding-bottom: 14px; border-bottom: 1px solid #f1edf0;">Integrations &amp; Notifications</div>
+              <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div><div style="font-size: 14px; font-weight: 600; color: #1b1b1d;">Payment Gateway (mada / STC Pay)</div><div style="font-size: 12px; color: #877271; margin-top: 2px;">Live keys connected</div></div>
+                  <div style="width: 42px; height: 24px; border-radius: 12px; background: #004036; position: relative;"><div style="position: absolute; top: 3px; inset-inline-end: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff;"></div></div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div><div style="font-size: 14px; font-weight: 600; color: #1b1b1d;">SMS Reservation Alerts</div><div style="font-size: 12px; color: #877271; margin-top: 2px;">Notify marketers on each reservation</div></div>
+                  <div style="width: 42px; height: 24px; border-radius: 12px; background: #004036; position: relative;"><div style="position: absolute; top: 3px; inset-inline-end: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff;"></div></div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div><div style="font-size: 14px; font-weight: 600; color: #1b1b1d;">Bilingual Receipts (AR / EN)</div><div style="font-size: 12px; color: #877271; margin-top: 2px;">Attach both languages to PDF</div></div>
+                  <div style="width: 42px; height: 24px; border-radius: 12px; background: #cfcacd; position: relative;"><div style="position: absolute; top: 3px; inset-inline-start: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff;"></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 12px;">
+              <button style="background: #fff; color: #544242; border: 1px solid #e3dde1; border-radius: 8px; padding: 12px 22px; font-size: 14px; font-weight: 600; cursor: pointer;">Cancel</button>
+              <button style="background: #671f23; color: #fff; border: none; border-radius: 8px; padding: 12px 24px; font-size: 14px; font-weight: 600; cursor: pointer;">{{ T.save_changes }}</button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+</div>
+
+<!-- ===================== UNIT DETAIL / OVERRIDE MODAL ===================== -->
+<sc-if value="{{ showModal }}" hint-placeholder-val="{{ false }}">
+<div dir="{{ dir }}" style="position: fixed; inset: 0; z-index: 80; background: rgba(20,8,12,.55); backdrop-filter: blur(2px); display: flex; align-items: center; justify-content: center; padding: 24px;">
+  <div style="width: 100%; max-width: 1180px; max-height: 92vh; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 50px 120px -30px rgba(0,0,0,.6); display: grid; grid-template-columns: 1.04fr 1fr;">
+
+    <!-- LEFT: gallery -->
+    <div style="background: #f4f1f3; display: flex; flex-direction: column; min-height: 0;">
+      <div style="display: flex; border-bottom: 1px solid #ece6e9;">
+        <button onClick="{{ setTabGallery }}" style="{{ galleryTabStyle }}">{{ T.gallery_tab }}</button>
+        <button onClick="{{ setTabBlueprint }}" style="{{ blueprintTabStyle }}">{{ T.blueprint_tab }}</button>
+      </div>
+      <div style="flex: 1; padding: 28px 32px 8px; min-height: 0; display: flex;">
+        <div style="position: relative; flex: 1; border-radius: 6px; overflow: hidden; background: #2a2326;">
+          <sc-if value="{{ modal.showGallery }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ modal.img }}" style="width: 100%; height: 100%; object-fit: cover;">
+          </sc-if>
+          <sc-if value="{{ modal.showBlueprint }}" hint-placeholder-val="{{ false }}">
+            <img src="{{ modal.blueprintImg }}" style="width: 100%; height: 100%; object-fit: cover; opacity: .9;">
+          </sc-if>
+          <sc-if value="{{ modal.showGallery }}" hint-placeholder-val="{{ true }}">
+            <div style="position: absolute; bottom: 16px; inset-inline-end: 16px; display: flex; align-items: center; gap: 8px; background: #1b1b1d; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 8px 14px; border-radius: 6px;">⛶ {{ T.vr_enabled }}</div>
+          </sc-if>
+        </div>
+      </div>
+      <!-- spec strip -->
+      <div style="display: flex; gap: 8px; padding: 20px 32px 28px;">
+        <div style="flex: 1;"><div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .06em;">{{ T.m_bedrooms }}</div><div style="font-size: 18px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ modal.beds }} Units</div></div>
+        <div style="flex: 1;"><div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .06em;">{{ T.m_bathrooms }}</div><div style="font-size: 18px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ modal.baths }} Units</div></div>
+        <div style="flex: 1;"><div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .06em;">{{ T.m_area }}</div><div style="font-size: 18px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ modal.area }}</div></div>
+        <div style="flex: 1;"><div style="font-size: 11px; font-weight: 600; color: #877271; letter-spacing: .06em;">{{ T.m_level }}</div><div style="font-size: 18px; font-weight: 700; color: #1b1b1d; margin-top: 6px;">{{ modal.level }}</div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: details + override -->
+    <div style="padding: 32px; overflow: auto;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span style="{{ modal.badgePill }}">{{ modal.badgeText }}</span>
+          <span style="font-size: 12px; color: #877271; letter-spacing: .04em;">• {{ T.internal_id }}: {{ modal.internalId }}</span>
+        </div>
+        <button onClick="{{ closeModal }}" style="width: 34px; height: 34px; border: none; background: transparent; color: #544242; font-size: 22px; cursor: pointer; line-height: 1;">✕</button>
+      </div>
+      <div style="font-size: 30px; font-weight: 700; color: #1b1b1d; margin-top: 12px; line-height: 1.1;">Unit {{ modal.code }}</div>
+      <div style="font-size: 16px; color: #544242; margin-top: 6px;">{{ modal.phase }}</div>
+
+      <div style="font-size: 12px; font-weight: 700; color: #4a0810; letter-spacing: .08em; margin: 24px 0 14px; padding-bottom: 12px; border-bottom: 1px solid #f1edf0;">{{ T.activity_ownership }}</div>
+
+      <!-- holder card -->
+      <sc-if value="{{ modal.hasHolder }}" hint-placeholder-val="{{ true }}">
+        <div style="border: 1px solid #ece6e9; border-radius: 12px; padding: 18px; display: flex; gap: 16px; align-items: center;">
+          <div style="width: 52px; height: 52px; flex: 0 0 52px; border-radius: 10px; background: #671f23; display: grid; place-items: center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#fff"></circle><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" fill="#fff"></path></svg>
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 700; color: #4a0810; letter-spacing: .06em;">{{ T.current_holder }}</div>
+            <div style="font-size: 20px; font-weight: 700; color: #1b1b1d; margin-top: 2px;">{{ modal.holderName }}</div>
+            <div style="display: flex; gap: 18px; margin-top: 8px; color: #544242; font-size: 13px; flex-wrap: wrap;">
+              <span style="display: flex; align-items: center; gap: 6px;">📞 {{ modal.holderPhone }}</span>
+              <span style="display: flex; align-items: center; gap: 6px;">🕐 {{ modal.holderSince }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+      <!-- available (no holder) -->
+      <sc-if value="{{ modal.noHolder }}" hint-placeholder-val="{{ false }}">
+        <div style="border: 1px dashed #d9cdd0; border-radius: 12px; padding: 18px; display: flex; gap: 16px; align-items: center; background: #fbf8fb;">
+          <div style="width: 52px; height: 52px; flex: 0 0 52px; border-radius: 10px; background: #ece6e9; display: grid; place-items: center; color: #877271;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="#877271"></circle><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" fill="#877271"></path></svg>
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em;">{{ T.current_holder }}</div>
+            <div style="font-size: 18px; font-weight: 700; color: #1b1b1d; margin-top: 2px;">{{ T.no_holder_title }}</div>
+            <div style="font-size: 13px; color: #544242; margin-top: 6px;">{{ T.no_holder_sub }}</div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- timeline -->
+      <div style="position: relative; margin-top: 22px; padding-inline-start: 6px;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <sc-for list="{{ modal.timeline }}" as="e" hint-placeholder-count="2">
+            <div style="display: flex; gap: 14px; align-items: flex-start;">
+              <div style="width: 34px; height: 34px; flex: 0 0 34px; border-radius: 9px; background: #f1edf0; display: grid; place-items: center; font-size: 15px;">{{ e.icon }}</div>
+              <div style="padding-top: 2px;">
+                <div style="font-size: 14px; font-weight: 600; color: #1b1b1d;">{{ e.title }}</div>
+                <div style="font-size: 12px; color: #877271; margin-top: 2px;">{{ e.meta }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <!-- administrative override -->
+      <div style="margin-top: 24px; background: #faf7f8; border: 1px solid #efe7ea; border-radius: 12px; padding: 22px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="color: #4a0810; font-size: 18px;">🛡</span>
+          <span style="font-size: 18px; font-weight: 700; color: #1b1b1d;">{{ T.admin_override }}</span>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em; margin: 18px 0 8px;">{{ T.manual_status_toggle }}</div>
+        <div style="position: relative;">
+          <select value="{{ draftStatus }}" onChange="{{ onStatusChange }}" style="width: 100%; appearance: none; background: #fff; border: 1px solid #e3dde1; border-radius: 8px; padding: 15px 16px; font-size: 16px; font-family: inherit; color: #1b1b1d; cursor: pointer;">
+            <sc-for list="{{ statusOptions }}" as="o" hint-placeholder-count="4">
+              <option value="{{ o.value }}">{{ o.label }}</option>
+            </sc-for>
+          </select>
+          <span style="position: absolute; top: 50%; inset-inline-end: 16px; transform: translateY(-50%); pointer-events: none; color: #877271;">⌄</span>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em; margin: 18px 0 8px;">{{ T.reason_for_change }}</div>
+        <textarea value="{{ draftReason }}" onChange="{{ onReasonChange }}" placeholder="{{ T.reason_placeholder }}" style="width: 100%; min-height: 84px; resize: vertical; background: #fff; border: 1px solid #e3dde1; border-radius: 8px; padding: 14px 16px; font-size: 15px; font-family: inherit; color: #1b1b1d; outline: none;"></textarea>
+        <button onClick="{{ applyStatus }}" style="width: 100%; margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(180deg, #671f23, #4a0810); color: #fff; border: none; border-radius: 10px; padding: 16px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 10px 24px -8px rgba(74,8,16,.55);">🛡 {{ T.apply_status_change }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+<!-- ===================== RECEIPT SIDE PANEL ===================== -->
+<sc-if value="{{ showReceipt }}" hint-placeholder-val="{{ false }}">
+<div dir="{{ dir }}" style="position: fixed; inset: 0; z-index: 90; background: rgba(20,8,12,.5); display: flex; justify-content: flex-end;">
+  <div onClick="{{ closeReceipt }}" style="position: absolute; inset: 0;"></div>
+  <div style="position: relative; width: 540px; max-width: 94vw; height: 100%; background: #f4f1f3; box-shadow: -20px 0 60px -20px rgba(0,0,0,.4); overflow: auto;">
+    <!-- toolbar -->
+    <div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 16px; padding: 16px 22px; background: #e9e5e7;">
+      <button onClick="{{ closeReceipt }}" style="width: 32px; height: 32px; border: none; background: transparent; font-size: 20px; color: #1b1b1d; cursor: pointer;">✕</button>
+      <span style="font-size: 18px; font-weight: 700; color: #1b1b1d;">{{ T.receipt_view }}</span>
+      <div style="margin-inline-start: auto; display: flex; align-items: center; gap: 10px;">
+        <button style="display: flex; align-items: center; gap: 8px; background: transparent; border: none; color: #4a0810; font-size: 12px; font-weight: 700; letter-spacing: .04em; cursor: pointer;">🖨 {{ T.receipt_print }}</button>
+        <button style="display: flex; align-items: center; gap: 8px; background: #4a0810; color: #fff; border: none; border-radius: 8px; padding: 10px 16px; font-size: 12px; font-weight: 700; letter-spacing: .04em; cursor: pointer;">⬇ {{ T.receipt_download }}</button>
+      </div>
+    </div>
+    <!-- document -->
+    <div style="background: #fff; margin: 0;">
+      <div style="height: 4px; background: #4a0810;"></div>
+      <!-- header -->
+      <div style="position: relative; padding: 32px; background: linear-gradient(180deg, #faf3f4, #fff);">
+        <img src="assets/img/86442120d5.png" style="height: 26px;">
+        <div style="display: flex; justify-content: space-between; gap: 16px; margin-top: 28px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #004036; font-size: 12px; font-weight: 700; letter-spacing: .04em;">✓ {{ T.receipt_verified }}</div>
+            <div style="font-size: 32px; font-weight: 700; color: #1b1b1d; margin-top: 10px; line-height: 1.1;">{{ T.reservation_receipt_title }}</div>
+            <div style="font-size: 13px; color: #544242; margin-top: 8px;">{{ T.reference_label }} <span style="font-weight: 700; color: #1b1b1d;">{{ receipt.ref }}</span> • {{ receipt.date }}</div>
+          </div>
+          <div style="text-align: end; font-size: 13px; color: #544242; line-height: 1.7;">
+            <div style="font-weight: 700; color: #4a0810; letter-spacing: .05em; font-size: 12px;">{{ T.heritage_excellence }}</div>
+            <div>{{ T.rec_dev_addr1 }}</div><div>{{ T.rec_dev_addr2 }}</div><div>{{ T.rec_dev_addr3 }}</div>
+          </div>
+        </div>
+        <div style="height: 1px; background: #efdfe1; margin-top: 24px;"></div>
+      </div>
+      <!-- details -->
+      <div style="padding: 0 32px 32px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em; padding-bottom: 10px; border-bottom: 1px solid #f1edf0;">{{ T.client_details }}</div>
+            <div style="font-size: 20px; font-weight: 700; color: #1b1b1d; margin-top: 16px;">{{ receipt.client }}</div>
+            <div style="font-size: 13px; color: #544242; margin-top: 8px; display: flex; flex-direction: column; gap: 4px;">
+              
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em; padding-bottom: 10px; border-bottom: 1px solid #f1edf0;">{{ T.property_information }}</div>
+            <div style="font-size: 20px; font-weight: 700; color: #1b1b1d; margin-top: 16px;">{{ receipt.unit }}</div>
+            <div style="font-size: 13px; color: #544242; margin-top: 8px;">{{ receipt.proj }} • {{ receipt.floor }}</div>
+            <div style="display: flex; gap: 8px; margin-top: 12px;">
+              <span style="display: flex; align-items: center; gap: 6px; background: #f1edf0; border-radius: 6px; padding: 5px 10px; font-size: 13px; color: #1b1b1d;">🛏 {{ receipt.beds }}</span>
+              <span style="display: flex; align-items: center; gap: 6px; background: #f1edf0; border-radius: 6px; padding: 5px 10px; font-size: 13px; color: #1b1b1d;">🛁 {{ receipt.baths }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- financial -->
+        <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em; padding-bottom: 10px; border-bottom: 1px solid #f1edf0; margin-top: 32px;">{{ T.financial_breakdown }}</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px;">
+          <span style="font-size: 15px; color: #1b1b1d;">{{ T.initial_deposit }}</span>
+          <span style="font-size: 15px; color: #1b1b1d;">{{ receipt.dep }} SAR</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+          <span style="font-size: 15px; color: #1b1b1d;">{{ T.admin_fees }}</span>
+          <span style="font-size: 15px; color: #004036; font-weight: 600;">{{ T.included }}</span>
+        </div>
+        <!-- total -->
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; background: #f6ecee; border-radius: 10px; padding: 24px; margin-top: 24px;">
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: #1b1b1d; letter-spacing: .04em;">{{ T.total_paid }}</div>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 12px; font-weight: 700; color: #4a0810; letter-spacing: .04em;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #4a0810;"></span>{{ T.transaction_completed }}</div>
+          </div>
+          <div style="text-align: end;">
+            <div style="font-size: 30px; font-weight: 700; color: #4a0810; line-height: 1;">{{ receipt.dep }} <span style="font-size: 16px;">SAR</span></div>
+            <div style="font-size: 12px; color: #9a7a7e; margin-top: 6px;">{{ receipt.words }}</div>
+          </div>
+        </div>
+        <div style="height: 1px; background: #f1edf0; margin: 28px 0;"></div>
+        <!-- agent + legal -->
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 20px; align-items: start;">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: #877271; letter-spacing: .06em;">{{ T.assigned_agent }}</div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-top: 14px;">
+              <div style="width: 38px; height: 38px; border-radius: 50%; background: #f6d9d9; color: #4a0810; display: grid; place-items: center; font-size: 12px; font-weight: 700;">{{ receipt.mktIni }}</div>
+              <span style="font-size: 15px; color: #1b1b1d;">{{ receipt.mkt }}</span>
+            </div>
+          </div>
+          <div style="font-size: 12px; color: #9b9398; line-height: 1.6; text-align: end;">{{ T.receipt_legal }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 440, &quot;height&quot;: 900}}">
+const IMG = 'assets/img/';
+const STR = {
+  en: {
+    hero_title: 'Heritage Excellence', hero_sub: 'Exclusive Real Estate Opportunities in the Heart of Tradition.',
+    your_rep: 'Your Dedicated Representative:', our_projects: 'Our Projects', view_all: 'VIEW ALL',
+    available_units: 'Available Units', projects_sub: 'Discover our collection of premium residential communities designed for refined living.',
+    search_name: 'Search by name...', explore_units: 'EXPLORE UNITS', premium_units_riyadh: 'Premium Residential Units in North Riyadh',
+    unit_type: 'UNIT TYPE', select_one: 'Select one', all: 'All', rooms: 'Rooms',
+    available: 'AVAILABLE', starting_at: 'STARTING AT', property_description: 'Property Description', key_amenities: 'Key Amenities',
+    location_map: 'Location Map', reserve_now: 'RESERVE THIS UNIT NOW', bedrooms: 'BEDROOMS', bathrooms: 'BATHROOMS', sqm_area: 'SQM AREA',
+    unit: 'Unit', floor: 'Floor', reservation_deposit: 'Reservation Deposit', holding_unit: 'Holding this unit for you for', minutes: 'minutes',
+    personal_information: 'Personal Information', full_name: 'Full Name', enter_full_name: 'Enter your full name', phone_number: 'Phone Number',
+    select_payment: 'Select Payment Method', proceed_payment: 'Proceed to Secure Payment', ssl_note: 'Secure 256-bit SSL encrypted payment',
+    exterior_view: 'EXTERIOR VIEW',
+    success_title: 'Unit Successfully Reserved!', success_sub: "Your heritage excellence journey begins here. We've secured your preferred unit.",
+    reservation_receipt: 'RESERVATION RECEIPT', status: 'Status', confirmed: 'CONFIRMED', download_receipt: 'DOWNLOAD PDF RECEIPT',
+    next_steps: 'Next Steps', go_dashboard: 'Go to Dashboard', support_contact: 'Support Agent Contact', excellence_tagline: 'Excellence in Heritage Development.',
+    unit_code: 'Unit Code', deposit_amount: 'Deposit Amount', attributed_marketer: 'Attributed Marketer',
+    // admin
+    nav_dashboard: 'Dashboard', nav_inventory: 'Inventory', nav_brokers: 'Brokers', nav_transactions: 'Transactions', nav_settings: 'Settings',
+    admin_portal: 'Admin Portal', status_active: 'Status: Active', admin_console: 'Admin Console', search_inventory: 'Search Inventory...',
+    login_title: 'Administrative Terminal Login', login_sub: 'Enter your credentials to access the central command dashboard.',
+    username_email: 'Username or Email', password: 'Password', remember_me: 'Remember me', forgot_password: 'Forgot Password?', sign_in: 'Sign In',
+    secure_badge: 'Secure Encryption Standard Active', login_footer: '© 2024 Jiwar Aloula. Architectural Precision in Real Estate.',
+    reset_title: 'Reset Your Password', reset_sub: "Enter your email address and we'll send you a reset link.", email_address: 'Email Address', send_reset: 'Send Reset Link', back_login: 'Back to Login',
+    marketer_mgmt: 'Marketer Management', marketer_mgmt_sub: 'Overview of affiliate partnerships and performance metrics.',
+    onboard_broker: 'Onboard New Broker', broker_full_name: 'BROKER FULL NAME', mobile_number: 'MOBILE NUMBER', generate_link: 'GENERATE DYNAMIC TRACKING LINK',
+    quick_stats: 'QUICK STATS', active_marketers: 'Active Marketers', total_revenue_mtd: 'Total Revenue (MTD)', active_roster: 'Active Broker Roster',
+    th_broker: 'BROKER NAME', th_contact: 'CONTACT ID', th_url: 'GENERATED URL', th_clicks: 'CLICKS', th_units: 'UNITS RESERVED', th_revenue: 'REVENUE GENERATED',
+    showing_marketers: 'Showing 4 of 142 Active Marketers',
+    cmd_dashboard: 'Central Command', recent_activity: 'Recent Activity', inventory_status: 'Inventory Status', total_units: 'TOTAL UNITS',
+    download_inventory: 'DOWNLOAD FULL INVENTORY REPORT', market_sentiment: 'Market Sentiment', verification_queue: 'Verification Queue', platform_load: 'Platform Load',
+    inv_directory: 'Inventory Master Directory', manual_sync: '+ Manual Project Sync', clear_all: 'Clear All',
+    th_unitcode: 'UNIT CODE', th_project: 'PROJECT NAME', th_floor: 'FLOOR', th_specs: 'SPECS', th_price: 'PRICE (SAR)', th_status: 'STATUS', th_actions: 'Actions',
+    inventory_value: 'INVENTORY VALUE', available_ratio: 'AVAILABLE RATIO', avg_price_sqm: 'AVG. PRICE / SQM', admin_quick_action: 'ADMIN QUICK ACTION', generate_now: 'GENERATE NOW',
+    th_actions: 'ACTIONS', hold_unit: 'HOLD UNIT', release_unit: 'RELEASE', reserved_lock: 'RESERVED', manage_unit: 'MANAGE',
+    on_hold_badge: 'ON HOLD', available_badge: 'AVAILABLE', internal_id: 'INTERNAL ID',
+    activity_ownership: 'ACTIVITY & OWNERSHIP', current_holder: 'CURRENT HOLDER',
+    no_holder_title: 'No Current Holder', no_holder_sub: 'This unit is available — place a hold to begin a reservation.',
+    admin_override: 'Administrative Override', manual_status_toggle: 'MANUAL STATUS TOGGLE',
+    reason_for_change: 'REASON FOR CHANGE', reason_placeholder: 'Document the reason for this manual override...',
+    apply_status_change: 'Apply Status Change', gallery_tab: 'Gallery', blueprint_tab: 'Architectural Blueprint',
+    vr_enabled: 'INTERACTIVE VR VIEW ENABLED', m_bedrooms: 'BEDROOMS', m_bathrooms: 'BATHROOMS', m_area: 'AREA', m_level: 'LEVEL',
+    opt_available: 'Available', opt_hold: 'On Hold', opt_reserved: 'Confirmed Reservation', opt_cancelled: 'Cancelled',
+    deposit_received: 'Deposit Received', verified_system: 'Verified by System',
+    lead_assigned: 'Lead Assigned to', marketing_hub: 'Marketing Hub',
+    unit_published: 'Unit Published', synced_pms: 'Synced from PMS',
+    tx_ledger: 'Transaction Audit Ledger', tx_sub: 'Comprehensive historical record of property reservations and deposit flows.', export_csv: 'EXPORT TO CSV', export_excel: 'EXPORT TO EXCEL',
+    th_timestamp: 'TIMESTAMP', th_ref: 'REF ID', th_client: 'CLIENT NAME', th_phone: 'CLIENT PHONE', th_property: 'PROPERTY (PROJECT + UNIT)', th_deposit: 'DEPOSIT (SAR)', th_marketer: 'MARKETER', th_receipt: 'RECEIPT',
+    view_receipt: 'View', daily_volume: 'DAILY VOLUME', audit_health: 'AUDIT HEALTH',
+    receipt_view: 'View Receipt', receipt_print: 'PRINT', receipt_download: 'DOWNLOAD PDF',
+    receipt_verified: 'TRANSACTION VERIFIED', reservation_receipt_title: 'Reservation Receipt', reference_label: 'Reference:',
+    heritage_excellence: 'HERITAGE EXCELLENCE', rec_dev_addr1: 'Real Estate Development', rec_dev_addr2: 'King Fahad Rd, Riyadh', rec_dev_addr3: 'Kingdom of Saudi Arabia',
+    client_details: 'CLIENT DETAILS', property_information: 'PROPERTY INFORMATION', financial_breakdown: 'FINANCIAL BREAKDOWN',
+    initial_deposit: 'Initial Reservation Deposit', admin_fees: 'Admin & Processing Fees', included: 'Included',
+    total_paid: 'TOTAL PAID AMOUNT', transaction_completed: 'TRANSACTION COMPLETED', assigned_agent: 'ASSIGNED AGENT',
+    receipt_legal: 'This digital document is a valid proof of transaction for the specified unit. For further assistance, contact our main office.',
+    sys_settings: 'System Settings', sys_settings_sub: 'Manage global configurations, financial parameters, and system integrations.',
+    save_changes: 'Save Changes'
+  },
+  ar: {
+    hero_title: 'تميّز التراث', hero_sub: 'فرص عقارية حصرية في قلب الأصالة.',
+    your_rep: 'ممثلك المخصص:', our_projects: 'مشاريعنا', view_all: 'عرض الكل',
+    available_units: 'الوحدات المتاحة', projects_sub: 'اكتشف مجموعتنا من المجتمعات السكنية الفاخرة المصممة للعيش الرفيع.',
+    search_name: 'ابحث بالاسم...', explore_units: 'استكشف الوحدات', premium_units_riyadh: 'وحدات سكنية فاخرة في شمال الرياض',
+    unit_type: 'نوع الوحدة', select_one: 'اختر واحدة', all: 'الكل', rooms: 'غرف',
+    available: 'متاحة', starting_at: 'يبدأ من', property_description: 'وصف العقار', key_amenities: 'المرافق الرئيسية',
+    location_map: 'خريطة الموقع', reserve_now: 'احجز هذه الوحدة الآن', bedrooms: 'غرف نوم', bathrooms: 'حمامات', sqm_area: 'متر مربع',
+    unit: 'وحدة', floor: 'الطابق', reservation_deposit: 'عربون الحجز', holding_unit: 'نحتفظ لك بهذه الوحدة لمدة', minutes: 'دقيقة',
+    personal_information: 'المعلومات الشخصية', full_name: 'الاسم الكامل', enter_full_name: 'أدخل اسمك الكامل', phone_number: 'رقم الجوال',
+    select_payment: 'اختر طريقة الدفع', proceed_payment: 'المتابعة للدفع الآمن', ssl_note: 'دفع مشفّر وآمن 256-bit SSL',
+    exterior_view: 'منظر خارجي',
+    success_title: 'تم حجز الوحدة بنجاح!', success_sub: 'تبدأ رحلتك نحو التميّز هنا. لقد قمنا بتأمين وحدتك المفضلة.',
+    reservation_receipt: 'إيصال الحجز', status: 'الحالة', confirmed: 'مؤكد', download_receipt: 'تحميل إيصال PDF',
+    next_steps: 'الخطوات التالية', go_dashboard: 'الذهاب إلى لوحة التحكم', support_contact: 'التواصل مع الدعم', excellence_tagline: 'التميز في التطوير التراثي.',
+    unit_code: 'رمز الوحدة', deposit_amount: 'مبلغ العربون', attributed_marketer: 'المسوّق المنسوب',
+    nav_dashboard: 'لوحة التحكم', nav_inventory: 'المخزون', nav_brokers: 'الوسطاء', nav_transactions: 'المعاملات', nav_settings: 'الإعدادات',
+    admin_portal: 'بوابة الإدارة', status_active: 'الحالة: نشط', admin_console: 'وحدة التحكم', search_inventory: 'ابحث في المخزون...',
+    login_title: 'تسجيل دخول الإدارة', login_sub: 'أدخل بياناتك للوصول إلى لوحة القيادة المركزية.',
+    username_email: 'اسم المستخدم أو البريد', password: 'كلمة المرور', remember_me: 'تذكرني', forgot_password: 'نسيت كلمة المرور؟', sign_in: 'تسجيل الدخول',
+    secure_badge: 'معيار التشفير الآمن مُفعّل', login_footer: '© 2024 جوار الأولى. الدقة المعمارية في العقار.',
+    reset_title: 'إعادة تعيين كلمة المرور', reset_sub: 'أدخل بريدك الإلكتروني وسنرسل لك رابط إعادة التعيين.', email_address: 'البريد الإلكتروني', send_reset: 'إرسال الرابط', back_login: 'العودة لتسجيل الدخول',
+    marketer_mgmt: 'إدارة المسوّقين', marketer_mgmt_sub: 'نظرة عامة على شراكات التسويق ومقاييس الأداء.',
+    onboard_broker: 'تسجيل وسيط جديد', broker_full_name: 'اسم الوسيط الكامل', mobile_number: 'رقم الجوال', generate_link: 'إنشاء رابط تتبّع ديناميكي',
+    quick_stats: 'إحصائيات سريعة', active_marketers: 'المسوّقون النشطون', total_revenue_mtd: 'إجمالي الإيرادات (الشهر)', active_roster: 'قائمة الوسطاء النشطين',
+    th_broker: 'اسم الوسيط', th_contact: 'رقم الاتصال', th_url: 'الرابط المُنشأ', th_clicks: 'النقرات', th_units: 'وحدات محجوزة', th_revenue: 'الإيرادات المُحققة',
+    showing_marketers: 'عرض 4 من 142 مسوّقًا نشطًا',
+    cmd_dashboard: 'القيادة المركزية', recent_activity: 'النشاط الأخير', inventory_status: 'حالة المخزون', total_units: 'إجمالي الوحدات',
+    download_inventory: 'تحميل تقرير المخزون الكامل', market_sentiment: 'مزاج السوق', verification_queue: 'قائمة التحقق', platform_load: 'حمل المنصة',
+    inv_directory: 'دليل المخزون الرئيسي', manual_sync: '+ مزامنة يدوية', clear_all: 'مسح الكل',
+    th_unitcode: 'رمز الوحدة', th_project: 'اسم المشروع', th_floor: 'الطابق', th_specs: 'المواصفات', th_price: 'السعر (ريال)', th_status: 'الحالة', th_actions: 'إجراءات',
+    inventory_value: 'قيمة المخزون', available_ratio: 'نسبة المتاح', avg_price_sqm: 'متوسط السعر / م²', admin_quick_action: 'إجراء سريع', generate_now: 'إنشاء الآن',
+    th_actions: 'إجراءات', hold_unit: 'تعليق الوحدة', release_unit: 'إلغاء التعليق', reserved_lock: 'محجوزة', manage_unit: 'إدارة',
+    on_hold_badge: 'معلّقة', available_badge: 'متاحة', internal_id: 'المعرّف الداخلي',
+    activity_ownership: 'النشاط والملكية', current_holder: 'الحائز الحالي',
+    no_holder_title: 'لا يوجد حائز حالي', no_holder_sub: 'هذه الوحدة متاحة — قم بتعليقها لبدء الحجز.',
+    admin_override: 'تجاوز إداري', manual_status_toggle: 'تبديل الحالة يدويًا',
+    reason_for_change: 'سبب التغيير', reason_placeholder: 'وثّق سبب هذا التجاوز اليدوي...',
+    apply_status_change: 'تطبيق تغيير الحالة', gallery_tab: 'المعرض', blueprint_tab: 'المخطط المعماري',
+    vr_enabled: 'عرض الواقع الافتراضي مُفعّل', m_bedrooms: 'غرف النوم', m_bathrooms: 'الحمامات', m_area: 'المساحة', m_level: 'الطابق',
+    opt_available: 'متاحة', opt_hold: 'معلّقة', opt_reserved: 'حجز مؤكد', opt_cancelled: 'ملغاة',
+    deposit_received: 'تم استلام العربون', verified_system: 'تم التحقق بواسطة النظام',
+    lead_assigned: 'تم إسناد العميل إلى', marketing_hub: 'مركز التسويق',
+    unit_published: 'تم نشر الوحدة', synced_pms: 'مزامنة من نظام الإدارة',
+    tx_ledger: 'سجل تدقيق المعاملات', tx_sub: 'سجل تاريخي شامل لحجوزات العقارات وتدفقات العربون.', export_csv: 'تصدير CSV', export_excel: 'تصدير Excel',
+    th_timestamp: 'الوقت', th_ref: 'المرجع', th_client: 'اسم العميل', th_phone: 'جوال العميل', th_property: 'العقار (المشروع + الوحدة)', th_deposit: 'العربون (ريال)', th_marketer: 'المسوّق', th_receipt: 'الإيصال',
+    view_receipt: 'عرض', daily_volume: 'الحجم اليومي', audit_health: 'سلامة التدقيق',
+    receipt_view: 'عرض الإيصال', receipt_print: 'طباعة', receipt_download: 'تحميل PDF',
+    receipt_verified: 'تم التحقق من المعاملة', reservation_receipt_title: 'إيصال الحجز', reference_label: 'المرجع:',
+    heritage_excellence: 'تميّز التراث', rec_dev_addr1: 'التطوير العقاري', rec_dev_addr2: 'طريق الملك فهد، الرياض', rec_dev_addr3: 'المملكة العربية السعودية',
+    client_details: 'بيانات العميل', property_information: 'معلومات العقار', financial_breakdown: 'التفصيل المالي',
+    initial_deposit: 'عربون الحجز المبدئي', admin_fees: 'الرسوم الإدارية والتشغيلية', included: 'مشمولة',
+    total_paid: 'إجمالي المبلغ المدفوع', transaction_completed: 'اكتملت المعاملة', assigned_agent: 'الوكيل المعيّن',
+    receipt_legal: 'هذا المستند الرقمي إثبات صالح للمعاملة الخاصة بالوحدة المحددة. لمزيد من المساعدة، يرجى التواصل مع مكتبنا الرئيسي.',
+    sys_settings: 'إعدادات النظام', sys_settings_sub: 'إدارة الإعدادات العامة والمعايير المالية وتكاملات النظام.',
+    save_changes: 'حفظ التغييرات'
+  }
+};
+
+class Component extends DCLogic {
+  state = { screen: 'm_home', lang: 'en', holds: {}, selectedCode: null, modalTab: 'gallery', draftStatus: '', draftReason: '', receiptIdx: null, repCopied: false };
+  go(s){ this.setState({ screen: s }); try { window.scrollTo(0,0); } catch(e){} }
+  setUnitStatus(code, status){ this.setState(s => ({ holds: { ...s.holds, [code]: status } })); }
+  _base(code){ return ({ 'UNT-8801':'AVAILABLE','UNT-4212':'HOLD','UNT-9905':'RESERVED','UNT-1022':'AVAILABLE','UNT-3301':'RESERVED' })[code] || 'AVAILABLE'; }
+  openUnit(code){ const cur = this.state.holds[code] || this._base(code); this.setState({ selectedCode: code, modalTab: 'gallery', draftStatus: cur, draftReason: '' }); }
+  closeModal(){ this.setState({ selectedCode: null }); }
+  applyStatus(){ const c = this.state.selectedCode; if (!c) return; this.setState(s => ({ holds: { ...s.holds, [c]: s.draftStatus }, selectedCode: null })); }
+  renderVals(){
+    const lang = this.state.lang, dir = lang === 'ar' ? 'rtl' : 'ltr';
+    const T = {}; for (const k in STR.en) T[k] = (STR[lang] && STR[lang][k]) || STR.en[k];
+    const screen = this.state.screen;
+    const go = (s) => () => this.go(s);
+    const navBtn = (active) => 'border:none;cursor:pointer;font:inherit;padding:5px 10px;border-radius:6px;font-size:12px;'
+      + (active ? 'background:#671f23;color:#fff;' : 'background:#2f2f31;color:#cfcacd;');
+    const langBtn = (active) => 'border:none;cursor:pointer;font:inherit;padding:5px 12px;border-radius:6px;font-size:12px;'
+      + (active ? 'background:#ea8586;color:#3f0209;font-weight:600;' : 'background:#2f2f31;color:#cfcacd;');
+
+    const clientDefs = [['Home','m_home'],['Projects','m_projects'],['Units','m_units'],['Detail','m_detail'],['Reserve','m_reserve'],['Success','m_success']];
+    const adminDefs = [['Login','login'],['Forgot','forgot'],['Dashboard','dashboard'],['Inventory','inventory'],['Brokers','marketers'],['Transactions','transactions'],['Settings','settings']];
+    const clientNav = clientDefs.map(([label,key]) => ({ label, go: go(key), btn: navBtn(screen===key) }));
+    const adminNav = adminDefs.map(([label,key]) => ({ label, go: go(key), btn: navBtn(screen===key) }));
+
+    const ctaFilled = 'width:100%;margin-top:16px;background:#4a0810;color:#fff;border:none;border-radius:4px;padding:14px;font-size:12px;font-weight:600;letter-spacing:.05em;cursor:pointer;';
+    const ctaDisabled = 'width:100%;margin-top:16px;background:#e4e2e4;color:#544242;border:none;border-radius:4px;padding:14px;font-size:12px;font-weight:600;letter-spacing:.05em;cursor:default;';
+
+    const homeProjects = [
+      { name: 'Al-Yasmeen Towers', src: IMG+'779f533864.jpg' },
+      { name: 'Jiwar Residencies', src: IMG+'4d328f73c2.jpg' },
+      { name: 'Heritage Plaza', src: IMG+'12d836caf9.jpg' }
+    ];
+    const shareCard = (label) => () => {
+      const data = { title: label + ' — Jiwar Aloula', text: 'Check out this unit at Jiwar Aloula', url: (typeof location!=='undefined' ? location.href : '') };
+      try {
+        if (navigator.share) { navigator.share(data); }
+        else if (navigator.clipboard) { navigator.clipboard.writeText(data.url); alert(lang==='ar' ? 'تم نسخ رابط الوحدة' : 'Unit link copied to clipboard'); }
+      } catch(e) {}
+    };
+    const homeUnits = [
+      { code:'JWR-101 Luxury Suite', meta:'Floor 12 • 3 Bedrooms • 180 sqm', price:'SAR 1.2M', src:IMG+'7134cb9936.png', badge:T.available, badgeBg:'#004036', badgeFg:'#76ac9e', titleColor:'#4a0810', priceColor:'#1b1b1d', imgOpacity:1, ctaLabel:'VIEW DETAILS & RESERVE', ctaStyle:ctaFilled, cta:go('m_detail') },
+      { code:'JWR-204 Skyline Loft', meta:'Floor 18 • 2 Bedrooms • 145 sqm', price:'SAR 980K', src:IMG+'0ed3f941c3.png', badge:'Reserved', badgeBg:'#877271', badgeFg:'#544242', titleColor:'#544242', priceColor:'#544242', imgOpacity:.6, ctaLabel:'RESERVED', ctaStyle:ctaDisabled, cta:go('m_units') },
+      { code:'JWR-305 Garden View', meta:'Floor 2 • 4 Bedrooms • 220 sqm', price:'SAR 1.8M', src:IMG+'2c64e8cb36.png', badge:'New Release', badgeBg:'#004036', badgeFg:'#76ac9e', titleColor:'#4a0810', priceColor:'#1b1b1d', imgOpacity:1, ctaLabel:'VIEW DETAILS & RESERVE', ctaStyle:ctaFilled, cta:go('m_detail') }
+    ].map(u => ({ ...u, share: shareCard(u.code) }));
+    const projects = [
+      { name:'Al-Yasmeen Towers', loc:'North Riyadh', src:IMG+'b96715f1d5.jpg', badge:'RESERVED', badgeBg:'#4a0810', badgeFg:'#fff' },
+      { name:'Jiwar Residencies', loc:'Heritage Corridor', src:IMG+'3b684231a6.jpg', badge:'AVAILABLE', badgeBg:'#004036', badgeFg:'#b6eedf' },
+      { name:'Heritage Heights', loc:'Diplomatic Quarter', src:IMG+'c89aedd981.jpg', badge:'AVAILABLE', badgeBg:'#004036', badgeFg:'#b6eedf' }
+    ];
+    const uA = 'width:100%;margin-top:14px;background:#671f23;color:#fff;border:none;border-radius:4px;padding:12px;font-size:12px;font-weight:600;letter-spacing:.04em;cursor:pointer;';
+    const uR = 'width:100%;margin-top:14px;background:#544242;color:#fff;border:none;border-radius:4px;padding:12px;font-size:12px;font-weight:600;letter-spacing:.04em;cursor:default;opacity:.7;';
+    const mUnits = [
+      { code:'Unit JWR-101', sub:'LUXURY 3-BEDROOM SUITE', price:'SAR 1,200,000', note:'Incl. VAT', rooms:'3 Rooms', bath:'2 Bath', area:'185 sqm', src:IMG+'127dabc11f.png', badge:'AVAILABLE', badgeBg:'rgba(0,64,54,.85)', iconColor:'#c5a059', imgOpacity:1, ctaLabel:'VIEW DETAILS & RESERVE', ctaStyle:uA, cta:go('m_detail') },
+      { code:'Unit JWR-102', sub:'STANDARD 2-BEDROOM', price:'SAR 980,000', note:'Incl. VAT', rooms:'2 Rooms', bath:'2 Bath', area:'142 sqm', src:IMG+'29d8146683.png', badge:'RESERVED', badgeBg:'rgba(84,66,66,.9)', iconColor:'#877271', imgOpacity:.55, ctaLabel:'RESERVED', ctaStyle:uR, cta:go('m_units') },
+      { code:'Unit JWR-105', sub:'PENTHOUSE COLLECTION', price:'SAR 2,450,000', note:'Premium', rooms:'4 Rooms', bath:'4 Bath', area:'320 sqm', src:IMG+'d0ede1ec14.png', badge:'HOLD', badgeBg:'rgba(197,160,89,.95)', iconColor:'#c5a059', imgOpacity:1, ctaLabel:'INQUIRE FOR AVAILABILITY', ctaStyle:uA, cta:go('m_detail') }
+    ].map(u => ({ ...u, share: shareCard(u.code) }));
+    const specs = [
+      { icon:'🛏', value:'3', label:T.bedrooms },
+      { icon:'🛁', value:'2', label:T.bathrooms },
+      { icon:'⬚', value:'145', label:T.sqm_area }
+    ];
+    const amenities = [
+      { icon:'🅿', label:'Private Parking' }, { icon:'❄', label:'Central HVAC' },
+      { icon:'🌿', label:'Heritage Terrace' }, { icon:'🛡', label:'24/7 Security' }
+    ];
+    const payments = [
+      { label:'MADA', src:IMG+'953c23eb00.jpg' }, { label:'STC PAY', src:IMG+'9d789de405.jpg' },
+      { label:'APPLE PAY', src:IMG+'810ee4e987.jpg' }, { label:'CREDIT CARD', src:IMG+'90356f40c4.jpg' }
+    ];
+    const receiptRows = [
+      { label:T.unit_code, value:'AL-ULA-042' },
+      { label:T.deposit_amount, value:'SAR 25,000.00' },
+      { label:T.attributed_marketer, value:'Fahad Al-Mubarak' }
+    ];
+    const steps = [
+      { title:'Payment Confirmed', body:'Your deposit has been securely processed via our heritage portal.', dotBg:'#4a0810', dotBorder:'none', dotIcon:'✓', titleColor:'#1b1b1d', eta:'' },
+      { title:'Sales Team Contact', body:'A dedicated property consultant will reach out to you within 24 hours.', dotBg:'#fbf8fb', dotBorder:'2px solid #4a0810', dotIcon:'', titleColor:'#1b1b1d', eta:'ESTIMATED: WED, 10:00 AM' },
+      { title:'Contract Execution', body:'Finalize your purchase agreement at our corporate offices or via E-Signature.', dotBg:'#fbf8fb', dotBorder:'2px solid #dac1c0', dotIcon:'', titleColor:'#877271', eta:'' }
+    ];
+
+    // ===== ADMIN DATA =====
+    const adminItems = [['dashboard',T.nav_dashboard,'▦'],['inventory',T.nav_inventory,'▤'],['marketers',T.nav_brokers,'◷'],['transactions',T.nav_transactions,'⇄'],['settings',T.nav_settings,'⚙']];
+    const adminSideNav = adminItems.map(([key,label,icon]) => ({
+      key, label, icon, go: go(key), active: screen===key,
+      style: 'display:flex;align-items:center;gap:16px;padding:11px 16px;border-radius:4px;cursor:pointer;font-size:14px;border:none;width:100%;text-align:start;background:'+(screen===key?'#671f23':'transparent')+';color:'+(screen===key?'#ea8586':'#e4e2e4')+';'
+    }));
+    const kpis = [
+      { label:'TOTAL SALES VOLUME', value:'SAR 142.5M', sub:'+5 today', tag:'12%' },
+      { label:'ACTIVE RESERVATIONS', value:'128', sub:'', tag:'' },
+      { label:'TOTAL LIVE MARKETERS', value:'45', sub:'', tag:'' },
+      { label:'INVENTORY OCCUPANCY', value:'78%', sub:'', tag:'' }
+    ];
+    const activity = [
+      { ini:'AA', name:'Ahmed Al-Saud reserved Unit 402', meta:'via Marketer Khalid • 2 minutes ago', amt:'SAR 4.2M', tag:'', bg:'#fbe3c9', fg:'#281804' },
+      { ini:'MB', name:'Mona Bin Jawi initiated inquiry for Villa Al-Nakheel', meta:'via Marketer Sarah • 15 minutes ago', amt:'', tag:'INQUIRY', bg:'#f3d9d9', fg:'#3f0209' },
+      { ini:'KA', name:'Khalil Al-Otaibi cancelled reservation for Unit 108', meta:'System automated update • 1 hour ago', amt:'', tag:'', bg:'#cfeee6', fg:'#00201a' },
+      { ini:'RA', name:'Rayan Abdullah completed payment for Penthouse 12', meta:'via Marketer Omar • 3 hours ago', amt:'SAR 8.9M', tag:'', bg:'#e8dcc9', fg:'#765e44' },
+      { ini:'SH', name:'Sultan Hussain joined as a Registered Marketer', meta:'Admin Approved • 5 hours ago', amt:'', tag:'', bg:'#e4e2e4', fg:'#1b1b1d' }
+    ];
+    const invStatus = [
+      { label:'Available', units:'324 Units', pct:60, color:'#004036' },
+      { label:'Reserved', units:'135 Units', pct:25, color:'#877271' },
+      { label:'Hold', units:'81 Units', pct:15, color:'#c5a059' }
+    ];
+    const footerStats = [
+      { label:T.market_sentiment, value:'Highly Bullish' },
+      { label:T.verification_queue, value:'12 Requests Pending' },
+      { label:T.platform_load, value:'Normal (0.2s)' }
+    ];
+    const stPill = (tone) => {
+      const m = { green:['#dcf3e9','#15803d'], amber:['#fdebd2','#d97706'], slate:['#e7eaef','#64748b'] }[tone] || ['#eee','#555'];
+      return 'display:inline-block;background:'+m[0]+';color:'+m[1]+';font-size:10px;font-weight:700;letter-spacing:.05em;padding:4px 10px;border-radius:12px;';
+    };
+    const toneFor = (s) => s==='AVAILABLE' ? 'green' : s==='HOLD' ? 'amber' : 'slate';
+    const invBase = [
+      { code:'UNT-8801', proj:'Aloula Towers - East Wing', floor:'Floor 24', beds:'3', baths:'2', price:'1,450,000', status:'AVAILABLE' },
+      { code:'UNT-4212', proj:'Jiwar Residences', floor:'Floor 02', beds:'2', baths:'2', price:'980,000', status:'HOLD' },
+      { code:'UNT-9905', proj:'Aloula Towers - Penthouse', floor:'Floor 48', beds:'5', baths:'6', price:'8,200,000', status:'RESERVED' },
+      { code:'UNT-1022', proj:'Heritage Heights', floor:'Floor 10', beds:'3', baths:'3', price:'2,100,000', status:'AVAILABLE' },
+      { code:'UNT-3301', proj:'Jiwar Residences', floor:'Floor 08', beds:'1', baths:'1', price:'650,000', status:'RESERVED' }
+    ];
+    const iconBtn = 'width:34px;height:34px;display:inline-grid;place-items:center;border-radius:8px;font-size:15px;cursor:pointer;background:#fbf8fb;color:#671f23;border:1px solid #ece4e6;';
+    const actBtn = { hold: iconBtn, release: iconBtn, manage: iconBtn };
+    const invRows = invBase.map(r => {
+      const status = this.state.holds[r.code] || r.status;
+      const isReserved = status==='RESERVED', isHold = status==='HOLD';
+      return {
+        ...r, status, pill: stPill(toneFor(status)),
+        actLabel: isReserved ? T.manage_unit : isHold ? T.release_unit : T.hold_unit,
+        actStyle: isReserved ? actBtn.manage : isHold ? actBtn.release : actBtn.hold,
+        act: () => this.openUnit(r.code)
+      };
+    });
+    // ----- Unit detail / override modal -----
+    const unitMeta = {
+      'UNT-8801': { phase:'Aloula Towers - East Wing', internalId:'TX-88010', area:'210 m²', level:'24', img:'assets/img/7134cb9936.png', holder:null },
+      'UNT-4212': { phase:'Jiwar Residences - Phase I', internalId:'TX-42120', area:'142 m²', level:'02', img:'assets/img/0ed3f941c3.png', holder:{ name:'On administrative hold', phone:'Internal — no client yet', since:'Held 1 day ago' } },
+      'UNT-9905': { phase:'Aloula Towers - Penthouse', internalId:'TX-99050', area:'320 m²', level:'48', img:'assets/img/d0ede1ec14.png', holder:{ name:'Fahad Al-Rashidi', phone:'+966 50 123 4567', since:'Reserved 2 days ago' } },
+      'UNT-1022': { phase:'Heritage Heights - Phase II', internalId:'TX-10220', area:'245 m²', level:'10', img:'assets/img/2c64e8cb36.png', holder:null },
+      'UNT-3301': { phase:'Jiwar Residences - Phase II', internalId:'TX-33010', area:'118 m²', level:'08', img:'assets/img/127dabc11f.png', holder:{ name:'Mariam Saleh', phone:'+966 55 987 6543', since:'Reserved 5 days ago' } }
+    };
+    const sel = this.state.selectedCode;
+    const modalTab = this.state.modalTab;
+    let modal = null;
+    if (sel) {
+      const row = invBase.find(r => r.code === sel) || {};
+      const meta = unitMeta[sel] || {};
+      const status = this.state.holds[sel] || row.status;
+      const hasHolder = !!meta.holder;
+      modal = {
+        code: sel, phase: meta.phase, internalId: meta.internalId,
+        badgeText: status==='AVAILABLE' ? T.available_badge : status==='HOLD' ? T.on_hold_badge : T.reserved_lock,
+        badgePill: stPill(toneFor(status)),
+        img: meta.img, blueprintImg: 'assets/img/de7d19813f.png', showGallery: modalTab !== 'blueprint', showBlueprint: modalTab === 'blueprint',
+        beds: row.beds, baths: row.baths, area: meta.area, level: meta.level,
+        hasHolder, noHolder: !hasHolder,
+        holderName: hasHolder ? meta.holder.name : '', holderPhone: hasHolder ? meta.holder.phone : '', holderSince: hasHolder ? meta.holder.since : '',
+        timeline: hasHolder ? [
+          { icon:'💳', title: T.deposit_received, meta: T.verified_system + ' • Mar 14, 10:24 AM' },
+          { icon:'📋', title: T.lead_assigned + ' Sarah K.', meta: T.marketing_hub + ' • Mar 12, 09:15 AM' }
+        ] : [
+          { icon:'📤', title: T.unit_published, meta: T.synced_pms + ' • Mar 10, 08:00 AM' },
+          { icon:'🔄', title: T.synced_pms, meta: 'PMS • Mar 09, 23:00' }
+        ]
+      };
+    }
+    const modalTabStyle = (active) => 'flex:1;padding:18px 20px;background:'+(active?'#fbf8fb':'transparent')+';border:none;cursor:pointer;font-size:16px;font-weight:600;font-family:inherit;color:'+(active?'#4a0810':'#877271')+';border-bottom:'+(active?'2px solid #4a0810':'2px solid transparent')+';';
+    const statusOptions = [['AVAILABLE',T.opt_available],['HOLD',T.opt_hold],['RESERVED',T.opt_reserved],['CANCELLED',T.opt_cancelled]].map(([value,label]) => ({ value, label }));
+    const invMetrics = [
+      { label:T.inventory_value, value:'SAR 242.8M', color:'#4a0810' },
+      { label:T.available_ratio, value:'62.4%', color:'#15803d' },
+      { label:T.avg_price_sqm, value:'SAR 12,450', color:'#1b1b1d' }
+    ];
+    const unitsPill = (tone) => {
+      const m = { green:['#b6eedf','#174f45'], amber:['#feddbc','#58432a'] }[tone] || ['#eee','#555'];
+      return 'display:inline-block;background:'+m[0]+';color:'+m[1]+';font-size:12px;font-weight:600;padding:4px 10px;border-radius:12px;';
+    };
+    const brokers = [
+      { ini:'HM', name:'Hassan Mansoor', id:'ID-98210', url:'jiw.ar/hassan_m', clicks:'2,410', units:'12 Units', upill:unitsPill('green'), rev:'SAR 450,000' },
+      { ini:'FA', name:'Fatima Al-Sudairy', id:'ID-98211', url:'jiw.ar/fatima_s', clicks:'1,890', units:'8 Units', upill:unitsPill('green'), rev:'SAR 310,000' },
+      { ini:'YI', name:'Yousef Ibrahim', id:'ID-98212', url:'jiw.ar/yousef_i', clicks:'940', units:'3 Units', upill:unitsPill('amber'), rev:'SAR 125,000' },
+      { ini:'LB', name:'Laila Bashar', id:'ID-98213', url:'jiw.ar/laila_b', clicks:'3,100', units:'15 Units', upill:unitsPill('green'), rev:'SAR 590,000' }
+    ];
+    const txRows = [
+      { ts:'2023-10-24 14:22:11', date:'Oct 24, 2023', ref:'#TRX-9981', client:'Fahad Al-Harbi', email:'f.alharbi@example.com', phone:'+966 50 123 4567', proj:'Al-Nargis Residence', unit:'Unit 4B-102', floor:'Floor 4', beds:'3', baths:'2', dep:'5,000.00', words:'Five Thousand Saudi Riyals Only', mkt:'Sultan Ibrahim', mktIni:'SI' },
+      { ts:'2023-10-24 13:45:04', date:'Oct 24, 2023', ref:'#TRX-9980', client:'Mariam Saleh', email:'m.saleh@example.com', phone:'+966 55 987 6543', proj:'Jiwar Tower I', unit:'Unit P-12', floor:'Floor 12', beds:'2', baths:'2', dep:'5,000.00', words:'Five Thousand Saudi Riyals Only', mkt:'Noura Salem', mktIni:'NS' },
+      { ts:'2023-10-24 11:10:55', date:'Oct 24, 2023', ref:'#TRX-9979', client:'Khalid Bin Walid', email:'k.binwalid@example.com', phone:'+966 54 332 1100', proj:'The Courtyard Villas', unit:'Villa 09-A', floor:'Ground', beds:'5', baths:'4', dep:'5,000.00', words:'Five Thousand Saudi Riyals Only', mkt:'Sultan Ibrahim', mktIni:'SI' },
+      { ts:'2023-10-23 17:01:22', date:'Oct 23, 2023', ref:'#TRX-9978', client:'Ahmed Qassim', email:'a.qassim@example.com', phone:'+966 50 998 7766', proj:'Al-Nargis Residence', unit:'Unit 2A-305', floor:'Floor 3', beds:'3', baths:'2', dep:'5,000.00', words:'Five Thousand Saudi Riyals Only', mkt:'Faisal Aziz', mktIni:'FA' },
+      { ts:'2023-10-23 15:33:10', date:'Oct 23, 2023', ref:'#TRX-9977', client:'Hassan Tariq', email:'h.tariq@example.com', phone:'+966 56 776 5544', proj:'Skyline Heights', unit:'Penthouse 402', floor:'Floor 40', beds:'4', baths:'5', dep:'5,000.00', words:'Five Thousand Saudi Riyals Only', mkt:'Noura Salem', mktIni:'NS' }
+    ].map((r,i) => ({ ...r, open: () => this.setState({ receiptIdx: i }) }));
+    const receipt = this.state.receiptIdx != null ? txRows[this.state.receiptIdx] : null;
+    const txWidgets = [
+      { label:T.daily_volume, value:'SAR 1.2M', sub:'+14.2% vs Yesterday', subColor:'#15803d', bg:'#ffffff', valColor:'#1b1b1d', labColor:'#877271' },
+      { label:'ACTIVE RESERVATIONS', value:'42 Units', sub:'8 Pending Approval', subColor:'#4a0810', bg:'#ffffff', valColor:'#1b1b1d', labColor:'#877271' },
+      { label:'MARKETER LEADER', value:'Sultan I.', sub:'12 Closures this week', subColor:'#544242', bg:'#ffffff', valColor:'#1b1b1d', labColor:'#877271' },
+      { label:T.audit_health, value:'100%', sub:'All records reconciled', subColor:'#76ac9e', bg:'#004036', valColor:'#ffffff', labColor:'#76ac9e' }
+    ];
+    const adminShellScreens = ['dashboard','inventory','marketers','transactions','settings'];
+
+    return {
+      lang, dir, T, screen,
+      clientNav, adminNav,
+      adminSideNav, kpis, activity, invStatus, footerStats, invRows, invMetrics, brokers, txRows, txWidgets,
+      receipt, showReceipt: !!receipt, closeReceipt: () => this.setState({ receiptIdx: null }),
+      showLogin: screen==='login', showForgot: screen==='forgot',
+      showAdminShell: adminShellScreens.indexOf(screen)>=0,
+      showDashboard: screen==='dashboard', showInventory: screen==='inventory',
+      showMarketers: screen==='marketers', showTransactions: screen==='transactions', showSettings: screen==='settings',
+      goLogin: go('login'), goForgot: go('forgot'), goMarketers: go('marketers'),
+      showModal: !!sel, modal, modalTab,
+      galleryTabStyle: modalTabStyle(modalTab !== 'blueprint'), blueprintTabStyle: modalTabStyle(modalTab === 'blueprint'),
+      setTabGallery: () => this.setState({ modalTab: 'gallery' }), setTabBlueprint: () => this.setState({ modalTab: 'blueprint' }),
+      closeModal: () => this.closeModal(), applyStatus: () => this.applyStatus(),
+      statusOptions, draftStatus: this.state.draftStatus, draftReason: this.state.draftReason,
+      onStatusChange: (e) => this.setState({ draftStatus: e.target.value }),
+      onReasonChange: (e) => this.setState({ draftReason: e.target.value }),
+      setEn: () => this.setState({ lang:'en' }), setAr: () => this.setState({ lang:'ar' }),
+      flipLang: () => this.setState({ lang: lang==='en' ? 'ar' : 'en' }), langLabel: lang==='en' ? 'العربية' : 'EN',
+      repCopyLabel: this.state.repCopied ? (lang==='ar' ? '✓ تم النسخ' : '✓ Copied') : '📞',
+      copyRep: () => {
+        const phone = '+966501234567';
+        try { if (navigator.clipboard) navigator.clipboard.writeText(phone); } catch(e) {}
+        this.setState({ repCopied: true });
+        setTimeout(() => this.setState({ repCopied: false }), 1800);
+      },
+      shareUnit: () => {
+        const data = { title: 'The Heritage Suite – Type A1 — Jiwar Aloula', text: 'Check out this unit at Jiwar Aloula', url: (typeof location!=='undefined' ? location.href : '') };
+        try {
+          if (navigator.share) { navigator.share(data); }
+          else if (navigator.clipboard) { navigator.clipboard.writeText(data.url); alert(lang==='ar' ? 'تم نسخ رابط الوحدة' : 'Unit link copied to clipboard'); }
+        } catch(e) {}
+      },
+      enBtn: langBtn(lang==='en'), arBtn: langBtn(lang==='ar'),
+      showHome: screen==='m_home', showProjects: screen==='m_projects', showUnits: screen==='m_units',
+      showDetail: screen==='m_detail', showReserve: screen==='m_reserve', showSuccess: screen==='m_success',
+      goHome: go('m_home'), goProjects: go('m_projects'), goUnits: go('m_units'),
+      goDetail: go('m_detail'), goReserve: go('m_reserve'), goSuccess: go('m_success'), goDashboard: go('dashboard'),
+      homeProjects, homeUnits, projects, mUnits, specs, amenities, payments, receiptRows, steps
+    };
+  }
+}
+</script>
+</body>
+</html>

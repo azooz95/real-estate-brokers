@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(sudo -u postgres psql -c \"SELECT 1\")",
+      "Bash(psql -U postgres -h localhost -c \"SELECT 1\")",
+      "Bash(psql -U azooz -h localhost -d postgres -c \"SELECT current_user\")",
+      "Bash(psql -d postgres -c \"SELECT current_user\")",
+      "Bash(npx prisma *)",
+      "Bash(npx tsc *)",
+      "Bash(PGPASSWORD=jiwar_dev_pw psql *)",
+      "Bash(set -e)",
+      "Bash(curl -s http://localhost:8000/api/health)",
+      "Bash(curl -s http://localhost:8000/api/projects)",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s \"http://localhost:8000/api/projects\")",
+      "Bash(curl -s -b /tmp/cookies.txt -X PATCH http://localhost:8000/api/units/JWR-101/status -H \"Content-Type: application/json\" -d '{\"status\":\"hold\",\"reason\":\"Reserved for VIP client review\"}')",
+      "Bash(curl -s -b /tmp/cookies.txt -X PUT http://localhost:8000/api/settings -H \"Content-Type: application/json\" -d '{\"reservationDeposit\":\"6000\",\"vatRate\":\"15\",\"holdWindowMinutes\":\"15\",\"currency\":\"SAR\",\"integrations\":{\"paymentGateway\":true,\"smsAlerts\":false,\"bilingualReceipts\":true}}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" -X POST http://localhost:8000/api/auth/forgot -H \"Content-Type: application/json\" -d '{\"email\":\"admin@jiwaraloula.com\"}')",
+      "Bash(curl -s -b /tmp/cookies.txt -X PATCH http://localhost:8000/api/units/JWR-101/status -H \"Content-Type: application/json\" -d '{\"status\":\"available\",\"reason\":\"test reset\"}')",
+      "Bash(curl -s -b /tmp/cookies.txt -X PUT http://localhost:8000/api/settings -H \"Content-Type: application/json\" -d '{\"reservationDeposit\":5000,\"vatRate\":15,\"holdWindowMinutes\":10,\"currency\":\"SAR\",\"integrations\":{\"paymentGateway\":true,\"smsAlerts\":true,\"bilingualReceipts\":false}}')",
+      "Bash(cp /tmp/test-smtp.js ./test-smtp.cjs)",
+      "Bash(node test-smtp.cjs)",
+      "Bash(rm test-smtp.cjs)"
+    ]
+  }
+}

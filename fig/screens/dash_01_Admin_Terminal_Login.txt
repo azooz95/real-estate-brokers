@@ -1,0 +1,54 @@
+[FRAME] "Admin Terminal Login" 1280x1021 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [ROUNDED_RECTANGLE] "Pattern Overlay" 1280x1023 @-1617,46 fill=#fbf8fb,img:10655a55ec
+  [FRAME] "Main - Login Container" 448x650 @-1201,243 flex=VERTICAL
+    [FRAME] "Logo Section:margin" 192x100 @-1073,243 flex=VERTICAL
+      [FRAME] "Logo Section" 192x76 @-1073,243 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 192x76 @-1073,243 fill=img:8c1601d0f5
+    [FRAME] "Login Card" 416x510 @-1185,344 fill=#ffffff r=4 flex=VERTICAL/gap24
+      [FRAME] "Header Text" 334x80 @-1144,385 flex=VERTICAL/gap4
+        [FRAME] "Heading 1" 334x28 @-1144,385 flex=VERTICAL
+          [TEXT] "Text" 288x28 @-1121,385 fill=#4a0810 :: "Administrative Terminal Login" 20px Inter/Regular #4a0810 CENTER
+        [FRAME] "Container" 334x48 @-1144,417 flex=VERTICAL
+          [TEXT] "Text" 328x48 @-1141,417 fill=#544242 :: "Enter your credentials to access the central
+command dashboard." 16px Inter/Regular #544242 CENTER
+      [FRAME] "Form:margin" 334x324 @-1144,489 flex=VERTICAL
+        [FRAME] "Form" 334x308 @-1144,489 flex=VERTICAL/gap16
+          [FRAME] "Username" 334x78 @-1144,489 flex=VERTICAL/gap4
+            [FRAME] "Label" 334x16 @-1144,489 flex=VERTICAL
+              [TEXT] "Username or Email" 334x16 @-1144,489 fill=#544242 :: "Username or Email" 12px Inter/Regular #544242 
+            [FRAME] "Container" 334x58 @-1144,509 flex=HORIZONTAL
+              [FRAME] "Input" 334x58 @-1144,509 fill=#f5f3f5 flex=VERTICAL
+                [FRAME] "Container" 276x19 @-1103,528 flex=VERTICAL
+                  [TEXT] "admin@jiwaraloula.com" 276x19 @-1103,528 fill=#6b7280 :: "admin@jiwaraloula.com" 16px Inter/Regular #6b7280 
+              [VECTOR] "Icon" 15x15 @-1123,531 fill=#877271
+          [FRAME] "Password" 334x78 @-1144,583 flex=VERTICAL/gap4
+            [FRAME] "Label" 334x16 @-1144,583 flex=VERTICAL
+              [TEXT] "Password" 334x16 @-1144,583 fill=#544242 :: "Password" 12px Inter/Regular #544242 
+            [FRAME] "Container" 334x58 @-1144,603 flex=HORIZONTAL
+              [FRAME] "Input" 334x58 @-1144,603 fill=#f5f3f5 flex=VERTICAL
+                [FRAME] "Container" 228x19 @-1103,622 flex=VERTICAL
+                  [TEXT] "••••••••" 228x19 @-1103,622 fill=#6b7280 :: "••••••••" 16px Inter/Regular #6b7280 
+              [VECTOR] "Icon" 15x19 @-1123,622 fill=#877271
+              [FRAME] "Button" 21x14 @-847,620 flex=HORIZONTAL
+                [FRAME] "Container" 21x14 @-847,620 flex=VERTICAL
+                  [VECTOR] "Icon" 21x14 @-847,620 fill=#877271
+          [FRAME] "Utilities" 334x32 @-1144,677 flex=HORIZONTAL/gap91
+            [FRAME] "Label" 130x24 @-1144,681 flex=HORIZONTAL/gap4
+              [ROUNDED_RECTANGLE] "Input" 16x16 @-1144,685 fill=#ffffff r=2
+              [FRAME] "Container" 110x24 @-1124,681 flex=VERTICAL
+                [TEXT] "Text" 110x24 @-1124,681 fill=#544242 :: "Remember me" 16px Inter/Regular #544242 
+            [FRAME] "Link" 114x16 @-924,685 flex=VERTICAL
+              [TEXT] "Text" 114x16 @-924,685 fill=#671f23 :: "Forgot Password?" 12px Inter/Regular #671f23 
+          [FRAME] "Button - Action:margin" 334x72 @-1144,725 flex=VERTICAL
+            [FRAME] "Button - Action" 334x56 @-1144,741 fill=#671f23 r=4 flex=VERTICAL
+              [ROUNDED_RECTANGLE] "Button - Action:shadow" 334x56 @-1144,741 fill=#ffffff r=4
+              [TEXT] "Text" 53x24 @-1003,757 fill=#ffffff :: "Sign In" 16px Inter/Regular #ffffff CENTER
+    [FRAME] "Security Badge (Contextual addition for "High Security Feel"):margin" 236x40 @-1095,854 flex=VERTICAL
+      [FRAME] "Security Badge (Contextual addition for "High Security Feel")" 236x16 @-1095,878 flex=HORIZONTAL/gap4
+        [FRAME] "Container" 10x13 @-1095,879 flex=VERTICAL
+          [VECTOR] "Icon" 10x13 @-1095,879 fill=#544242
+        [FRAME] "Container" 222x16 @-1081,878 flex=VERTICAL
+          [TEXT] "Text" 222x16 @-1081,878 fill=#544242 :: "Secure Encryption Standard Active" 12px Inter/Regular #544242 
+  [FRAME] "Footer" 1280x64 @-1617,1003 flex=VERTICAL
+    [FRAME] "Container" 1184x16 @-1569,1027 flex=VERTICAL
+      [TEXT] "Text" 378x16 @-1166,1027 fill=#544242 :: "© 2024 Jiwar Aloula. Architectural Precision in Real Estate." 12px Inter/Regular #544242 CENTER

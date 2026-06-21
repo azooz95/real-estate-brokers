@@ -1,0 +1,103 @@
+[FRAME] "Html → Body" 390x1620 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Main" 390x1601 @869,18 flex=VERTICAL
+    [FRAME] "Section - Hero & Marketer Banner" 390x230 @869,82 fill=#671f23 flex=VERTICAL
+      [ROUNDED_RECTANGLE] "Image" 390x230 @869,82 fill=img:10655a55ec
+      [FRAME] "Container" 358x150 @885,122 flex=VERTICAL/gap4
+        [FRAME] "Heading 1" 358x32 @885,122 flex=VERTICAL
+          [TEXT] "Heritage Excellence" 358x32 @885,122 fill=#ffffff :: "Heritage Excellence" 24px Inter/Bold #ffffff 
+        [FRAME] "Container" 358x60 @885,158 flex=VERTICAL
+          [TEXT] "Exclusive Real Estate Opportunities in the Heart of Tradition." 358x48 @885,158 fill=#ffffff :: "Exclusive Real Estate Opportunities in the
+Heart of Tradition." 16px Inter/Regular #ffffff 
+        [FRAME] "Personalized Banner" 357x50 @885,222 fill=#ffffff r=12 flex=HORIZONTAL/gap8
+          [FRAME] "Container" 13x12 @902,241 flex=VERTICAL
+            [VECTOR] "Icon" 13x12 @902,241 fill=#ffffff
+          [FRAME] "Container" 302x32 @923,231 flex=VERTICAL
+            [TEXT] "Text" 284x32 @923,231 fill=#ffffff :: "Your Dedicated Representative: Abdullah Al-
+Saud" 12px Inter/Semi Bold #ffffff 
+    [FRAME] "Section - Project Selector (Horizontal Scroll)" 390x212 @869,312 flex=VERTICAL/gap8
+      [FRAME] "Container" 390x28 @869,336 flex=HORIZONTAL/gap177
+        [FRAME] "Heading 2" 120x28 @885,336 flex=VERTICAL
+          [TEXT] "Text" 120x28 @885,336 fill=#4a0810 :: "Our Projects" 20px Inter/Semi Bold #4a0810 
+        [FRAME] "Link" 62x16 @1181,348 flex=VERTICAL
+          [TEXT] "Text" 62x16 @1181,348 fill=#725a40 :: "VIEW ALL" 12px Inter/Semi Bold #725a40 
+      [FRAME] "Container" 390x128 @869,372
+        [FRAME] "Project Item 1" 160x120 @885,372 flex=VERTICAL/gap8
+          [FRAME] "Overlay+Border+Shadow" 160x96 @885,372 fill=#ffffff r=8 flex=VERTICAL
+            [FRAME] "AB6AXuBcdAVyNq7Vkl3hKmJ_syQj-kNroOopylR9mVmNVZuQ8rhHzSiAcMuPTrAtVUQSCGlslvSW1gSkrvXXbt5eGDrjRZoH9HHFErp7_bq0SxOrzPbhlscfpkc5pJiVLGFCpmM95Xse39iwlrRrQs1sl7kVHHJ_gVB4I5Xd2KCzzlc6OM66I8QxO4IVWqVSGbT8TfZYemzyQf8Pm7WR7ed4qfA-VJQOwk4xKgVM6bjGlExzNWLrZpfhqVel4ifmd0-nBcS2QDmucjQQ1nU" 158x94 @886,373 fill=img:779f533864
+            [ROUNDED_RECTANGLE] "Gradient" 158x94 @886,373 fill=grad:#00000099>#00000000
+          [FRAME] "Container" 160x16 @885,476 flex=VERTICAL
+            [TEXT] "Text" 126x16 @902,476 fill=#1b1b1d :: "Al-Yasmeen Towers" 12px Inter/Semi Bold #1b1b1d CENTER
+        [FRAME] "Project Item 2" 160x120 @1061,372 flex=VERTICAL/gap8
+          [FRAME] "Overlay+Border+Shadow" 160x96 @1061,372 fill=#ffffff r=8 flex=VERTICAL
+            [FRAME] "AB6AXuDRrB8SJ4ZiWBMfyIP-Z6H1FZH-1PaSugocyZABr_g4lqU2ylaUiwjB6UUTZuyI-2QDzxKPEdCZ7otAuqB_Y3-zUctg4E0ROGUlJl-_7iVyRmvN6UJmFvwmPjHCmS_EP8JnjJJgY5HBCipGsCliTawSY_lg2Ky-HQYCque2t5rphWiB9W0Pjp76abulY8KBM5eI2GpKviz9HUIue82K8yFmwhqBgOd05sfOMiuv5WMVWFhLCtUsn1lY4-WSxdHbuIe2jCVXDJQVSTM" 158x94 @1062,373 fill=img:4d328f73c2
+            [ROUNDED_RECTANGLE] "Gradient" 158x94 @1062,373 fill=grad:#00000099>#00000000
+          [FRAME] "Container" 160x16 @1061,476 flex=VERTICAL
+            [TEXT] "Text" 115x16 @1083,476 fill=#1b1b1d :: "Jiwar Residencies" 12px Inter/Semi Bold #1b1b1d CENTER
+        [FRAME] "Project Item 3" 160x120 @1237,372 flex=VERTICAL/gap8
+          [FRAME] "Overlay+Border+Shadow" 160x96 @1237,372 fill=#ffffff r=8 flex=VERTICAL
+            [FRAME] "AB6AXuBCNPQc2BCCnGLp0aziVGF4IIboD8auMozfUBtIhDzGGfSroHGt0AHzBI7nMiVkGurL6sYYF5B6oQjgqC0ML_9LgsHHO21cs5IeGB_nzFNu60qoViam5j07E9PjgTqssVc90FXg9EkpnZMCXbLSCahQeN8j2R29laIwdySzynO9mY7FnlfUsXJhwtu-pB2QxvQ9tPbsPIXdadKc7Cr6uQGGZTH166-kXSkK-Axr9SYEDX_QigEMH2GQknhPvqxtDqdqEduMezKjGTA" 158x94 @1238,373 fill=img:12d836caf9
+            [ROUNDED_RECTANGLE] "Gradient" 158x94 @1238,373 fill=grad:#00000099>#00000000
+          [FRAME] "Container" 160x16 @1237,476 flex=VERTICAL
+            [TEXT] "Text" 93x16 @1271,476 fill=#1b1b1d :: "Heritage Plaza" 12px Inter/Semi Bold #1b1b1d CENTER
+    [FRAME] "Section - Property Feed" 390x1095 @869,524 flex=VERTICAL/gap24
+      [FRAME] "Heading 3" 358x33 @885,524 flex=VERTICAL
+        [TEXT] "Text" 143x28 @885,524 fill=#1b1b1d :: "Available Units" 20px Inter/Semi Bold #1b1b1d 
+      [FRAME] "Card Variant A: Available" 358x330 @885,581 fill=#ffffff r=8 flex=VERTICAL
+        [FRAME] "Container" 356x192 @886,582 flex=VERTICAL
+          [FRAME] "AB6AXuCH4KbZhRmjew2-JU2CfBZVV1bnlAC6bmGw9uZGWw0UpY7yWhghWIifnbP7rFaOuMaOHPa3hSNxx5FIp0WrYZIFab0rYjZ89IIUx0NPs8ldTLdJ6KETW6gPa8ghN5xheffqjN0JrJ08GuPPzGUDKruZ-5EVlczL9iseQA4XD5dENbEZP_a8998SRtG1etAzvI_85twcXzbbw5AdLdpgJRKkZo4S1Y28FQi98qql8GxIrjfQKPJfaVgTaXk6fi3sCdgZolcJ0oLg3AY" 356x192 @886,582 fill=img:7134cb9936
+          [FRAME] "Container" 90x23 @1136,594 flex=VERTICAL
+            [FRAME] "Background" 90x23 @1136,594 fill=#004036 r=12 flex=HORIZONTAL
+              [TEXT] "Text" 58x16 @1152,598 fill=#76ac9e :: "Available" 12px Inter/Semi Bold #76ac9e 
+        [FRAME] "Container" 356x136 @886,774 flex=VERTICAL/gap8
+          [FRAME] "Container" 324x48 @902,790 flex=HORIZONTAL/gap13
+            [FRAME] "Container" 219x48 @902,790 flex=VERTICAL
+              [FRAME] "Heading 4" 219x28 @902,790 flex=VERTICAL
+                [TEXT] "Text" 211x28 @902,790 fill=#4a0810 :: "JWR-101 Luxury Suite" 20px Inter/Semi Bold #4a0810 
+              [FRAME] "Container" 219x20 @902,818 flex=VERTICAL
+                [TEXT] "Text" 219x20 @902,818 fill=#544242 :: "Floor 12 • 3 Bedrooms • 180 sqm" 14px Inter/Regular #544242 
+            [TEXT] "Text" 92x28 @1134,790 fill=#1b1b1d :: "SAR 1.2M" 20px Inter/Bold #1b1b1d 
+          [FRAME] "Button" 324x48 @902,846 fill=#4a0810 r=4 flex=HORIZONTAL
+            [TEXT] "Text" 178x16 @975,862 fill=#ffffff :: "VIEW DETAILS & RESERVE" 12px Inter/Semi Bold #ffffff CENTER
+      [FRAME] "Card Variant B: Reserved" 358x330 @885,935 fill=#ffffff r=8 flex=VERTICAL
+        [FRAME] "Overlay" 356x192 @886,936 fill=#ffffff flex=VERTICAL
+          [FRAME] "AB6AXuAyqbHtPcN6GFnVQySk78bYbFz-ia5EvDO4BdxRNON6lAVpF5q5rdA35p72_i6QdsAx8J-Qskzh7R1gidtzQE7muHtAlM1pgQxejOcy1vCXPIoaaHhM3_velVin7srUcCHMk2rRMhpYXbU1Tqkznk6ihXFRyRb7nCmPhfAEAWGIbKR9nqp6YF9sOwsuAKpbzNfr_kov0KMW41r5Vm3hQbQbSryk3PUcH-ugR3MsHMdIo6TcHRlKFJnoT5Ubg4r3-zHvYSTcHL38CTw" 356x192 @886,936 fill=img:0ed3f941c3
+          [FRAME] "Container" 92x23 @1134,948 flex=VERTICAL
+            [FRAME] "Background" 92x23 @1134,948 fill=#877271 r=12 flex=HORIZONTAL
+              [TEXT] "Text" 60x16 @1150,952 fill=#544242 :: "Reserved" 12px Inter/Semi Bold #544242 
+        [FRAME] "Container" 356x136 @886,1128 flex=VERTICAL/gap8
+          [FRAME] "Container" 324x48 @902,1144 flex=HORIZONTAL/gap6
+            [FRAME] "Container" 219x48 @902,1144 flex=VERTICAL
+              [FRAME] "Heading 4" 219x28 @902,1144 flex=VERTICAL
+                [TEXT] "Text" 211x28 @902,1144 fill=#544242 :: "JWR-204 Skyline Loft" 20px Inter/Semi Bold #544242 
+              [FRAME] "Container" 219x20 @902,1172 flex=VERTICAL
+                [TEXT] "Text" 219x20 @902,1172 fill=#544242 :: "Floor 18 • 2 Bedrooms • 145 sqm" 14px Inter/Regular #544242 
+            [TEXT] "Text" 99x28 @1127,1144 fill=#544242 :: "SAR 980K" 20px Inter/Bold #544242 
+          [FRAME] "Button" 324x48 @902,1200 fill=#e4e2e4 r=4 flex=HORIZONTAL
+            [TEXT] "Text" 72x16 @1028,1216 fill=#544242 :: "RESERVED" 12px Inter/Semi Bold #544242 CENTER
+      [FRAME] "Card Variant A: Available" 358x330 @885,1289 fill=#ffffff r=8 flex=VERTICAL
+        [FRAME] "Container" 356x192 @886,1290 flex=VERTICAL
+          [FRAME] "AB6AXuCi6O3igjoeLJwdZWtiqRQaXcksVosgTWSOISzSpdx09mq6DyBffUTEFwieXNmmkUS97N6arjI-IJbyzORgJAXCP8ezT_ga2may-WcZFmgnmTpHATL8j3haneM5rAMEmOQ8Exh7E5FSGDzRlBOdD_YcvhCNV6W4_himJcq6-8IU-Okerg6NV5CfFBGYvB7NTkryG_KOtTxvtItw4eu438mdrS-ui2m1qDiIx9Y8gZuL2dT4_KJlVmm4oQNaAjmwh_2x0LHaAllVCDk" 356x192 @886,1290 fill=img:2c64e8cb36
+          [FRAME] "Container" 113x23 @1113,1302 flex=VERTICAL
+            [FRAME] "Background" 113x23 @1113,1302 fill=#004036 r=12 flex=HORIZONTAL
+              [TEXT] "Text" 81x16 @1129,1306 fill=#76ac9e :: "New Release" 12px Inter/Semi Bold #76ac9e 
+        [FRAME] "Container" 356x136 @886,1482 flex=VERTICAL/gap8
+          [FRAME] "Container" 324x48 @902,1498 flex=HORIZONTAL/gap11
+            [FRAME] "Container" 221x48 @902,1498 flex=VERTICAL
+              [FRAME] "Heading 4" 221x28 @902,1498 flex=VERTICAL
+                [TEXT] "Text" 221x28 @902,1498 fill=#4a0810 :: "JWR-305 Garden View" 20px Inter/Semi Bold #4a0810 
+              [FRAME] "Container" 221x20 @902,1526 flex=VERTICAL
+                [TEXT] "Text" 216x20 @902,1526 fill=#544242 :: "Floor 2 • 4 Bedrooms • 220 sqm" 14px Inter/Regular #544242 
+            [TEXT] "Text" 92x28 @1134,1498 fill=#1b1b1d :: "SAR 1.8M" 20px Inter/Bold #1b1b1d 
+          [FRAME] "Button" 324x48 @902,1554 fill=#4a0810 r=4 flex=HORIZONTAL
+            [TEXT] "Text" 178x16 @975,1570 fill=#ffffff :: "VIEW DETAILS & RESERVE" 12px Inter/Semi Bold #ffffff CENTER
+  [FRAME] "Button - Interactive Search FAB" 56x56 @1187,1486 fill=#725a40 r=12 flex=HORIZONTAL
+    [ROUNDED_RECTANGLE] "Button - Interactive Search FAB:shadow" 56x56 @1187,1486 fill=#ffffff r=12
+    [FRAME] "Container" 18x18 @1206,1505 flex=VERTICAL
+      [VECTOR] "Icon" 18x18 @1206,1505 fill=#ffffff
+  [FRAME] "Header - TopAppBar" 390x64 @869,18 fill=#fbf8fb flex=HORIZONTAL
+    [FRAME] "Container" 136x40 @885,30 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 40x40 @885,30 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 16x16 @897,42 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @897,42 fill=#4a0810
+      [FRAME] "Container" 80x32 @941,34 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 80x32 @941,34 fill=img:86442120d5

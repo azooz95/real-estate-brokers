@@ -1,0 +1,111 @@
+[FRAME] "Reservation Success" 390x1603 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Header Navigation (Simplified for Success State)" 390x64 @3098,13 fill=#fbf8fb flex=HORIZONTAL/gap144
+    [FRAME] "Container" 174x32 @3254,29 flex=VERTICAL
+    [FRAME] "Button" 40x40 @3432,25 r=12 flex=HORIZONTAL
+      [FRAME] "Container" 14x14 @3445,38 flex=VERTICAL
+        [VECTOR] "Icon" 14x14 @3445,38 fill=#544242
+    [FRAME] "Container" 136x40 @3114,25 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 40x40 @3114,25 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 16x16 @3126,37 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @3126,37 fill=#4a0810
+      [FRAME] "Container" 80x32 @3170,29 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 80x32 @3170,29 fill=img:86442120d5
+  [FRAME] "Main" 390x1502 @3098,13 flex=VERTICAL/gap24
+    [ROUNDED_RECTANGLE] "Background Pattern Decor" 390x1502 @3098,13 fill=#fbf8fb,img:10655a55ec
+    [FRAME] "Success Animation Hero" 358x256 @3114,109 flex=VERTICAL
+      [FRAME] "Margin" 96x112 @3245,109 flex=VERTICAL
+        [FRAME] "Background+Shadow" 96x96 @3245,109 fill=#b6eedf r=12 flex=HORIZONTAL
+          [FRAME] "SVG" 48x48 @3269,133
+            [VECTOR] "Vector" 32x22 @3277,145
+      [FRAME] "Heading 1" 358x64 @3114,221 flex=VERTICAL
+        [TEXT] "Unit Successfully Reserved!" 203x64 @3191,221 fill=#4a0810 :: "Unit Successfully
+Reserved!" 24px Inter/Regular #4a0810 CENTER
+      [FRAME] "Margin" 280x80 @3153,285 flex=VERTICAL
+        [FRAME] "Container" 280x72 @3153,293 flex=VERTICAL
+          [TEXT] "Text" 249x72 @3168,293 fill=#544242 :: "Your heritage excellence journey
+begins here. We've secured your
+preferred unit." 16px Inter/Regular #544242 CENTER
+    [FRAME] "Digital Receipt Card" 358x373 @3114,389 fill=#ffffff r=8 flex=VERTICAL
+      [FRAME] "Container" 356x283 @3115,406 flex=VERTICAL/gap16
+        [FRAME] "Container" 308x24 @3139,430 flex=HORIZONTAL/gap74
+          [FRAME] "Container" 147x16 @3139,434 flex=VERTICAL
+            [TEXT] "RESERVATION RECEIPT" 147x16 @3139,434 fill=#544242 :: "RESERVATION RECEIPT" 12px Inter/Regular #544242 
+          [FRAME] "Container" 86x24 @3361,430 flex=VERTICAL
+            [TEXT] "Text" 86x24 @3361,430 fill=#4a0810 :: "#RES-8821" 16px Inter/Regular #4a0810 
+        [FRAME] "Container" 308x195 @3139,470 flex=VERTICAL/gap8
+          [FRAME] "HorizontalBorder" 308x41 @3139,470 flex=HORIZONTAL/gap138
+            [FRAME] "Container" 75x24 @3139,478 flex=VERTICAL
+              [TEXT] "Text" 75x24 @3139,478 fill=#544242 :: "Unit Code" 16px Inter/Regular #544242 
+            [FRAME] "Container" 95x24 @3352,478 flex=VERTICAL
+              [TEXT] "Text" 95x24 @3352,478 fill=#1b1b1d :: "AL-ULA-042" 16px Inter/Regular #1b1b1d 
+          [FRAME] "HorizontalBorder" 308x41 @3139,519 flex=HORIZONTAL/gap73
+            [FRAME] "Container" 121x24 @3139,527 flex=VERTICAL
+              [TEXT] "Text" 121x24 @3139,527 fill=#544242 :: "Deposit Amount" 16px Inter/Regular #544242 
+            [FRAME] "Container" 113x24 @3334,527 flex=VERTICAL
+              [TEXT] "Text" 113x24 @3334,527 fill=#1b1b1d :: "SAR 25,000.00" 16px Inter/Regular #1b1b1d 
+          [FRAME] "HorizontalBorder" 308x41 @3139,568 flex=HORIZONTAL/gap21
+            [FRAME] "Container" 147x24 @3139,576 flex=VERTICAL
+              [TEXT] "Text" 147x24 @3139,576 fill=#544242 :: "Attributed Marketer" 16px Inter/Regular #544242 
+            [FRAME] "Container" 140x24 @3307,576 flex=VERTICAL
+              [TEXT] "Text" 140x24 @3307,576 fill=#1b1b1d :: "Fahad Al-Mubarak" 16px Inter/Regular #1b1b1d 
+          [FRAME] "Container" 308x48 @3139,617 flex=HORIZONTAL/gap153
+            [FRAME] "Container" 48x24 @3139,633 flex=VERTICAL
+              [TEXT] "Text" 48x24 @3139,633 fill=#544242 :: "Status" 16px Inter/Regular #544242 
+            [FRAME] "Background" 108x24 @3340,633 fill=#004036 r=12 flex=VERTICAL
+              [TEXT] "Text" 84x16 @3352,637 fill=#b6eedf :: "CONFIRMED" 12px Inter/Regular #b6eedf 
+      [FRAME] "Receipt Perforation Effect" 356x16 @3115,689
+        [FRAME] "Margin" -12x12 @3131,691
+          [ROUNDED_RECTANGLE] "Background+Border" 12x12 @3107,691 fill=#fbf8fb r=12
+        [ROUNDED_RECTANGLE] "Horizontal Divider" 332x2 @3127,696
+        [FRAME] "Margin" 0x12 @3455,691 flex=VERTICAL
+          [ROUNDED_RECTANGLE] "Background+Border" 12x12 @3455,691 fill=#fbf8fb r=12
+      [FRAME] "Background" 356x56 @3115,705 fill=#f5f3f5 flex=VERTICAL
+        [FRAME] "Button" 218x24 @3184,721 flex=HORIZONTAL/gap8
+          [FRAME] "Container" 9x9 @3184,728 flex=VERTICAL
+            [VECTOR] "Icon" 9x9 @3184,728 fill=#4a0810
+          [TEXT] "Text" 201x24 @3201,721 fill=#4a0810 :: "DOWNLOAD PDF RECEIPT" 16px Inter/Regular #4a0810 CENTER
+      [ROUNDED_RECTANGLE] "Architectural Line Detail" 4x355 @3115,406 fill=#4a0810
+    [FRAME] "Vertical Timeline Next Steps" 358x405 @3114,786 flex=VERTICAL/gap40
+      [FRAME] "Heading 2" 342x28 @3122,786 flex=VERTICAL
+        [TEXT] "Next Steps" 342x28 @3122,786 fill=#1b1b1d :: "Next Steps" 20px Inter/Regular #1b1b1d 
+      [FRAME] "Container" 342x337 @3122,854 flex=VERTICAL/gap40
+        [ROUNDED_RECTANGLE] "Timeline Line" 2x321 @3133,862 fill=#dac1c0
+        [FRAME] "Step 1" 310x76 @3154,854 flex=VERTICAL
+          [FRAME] "Container" 310x76 @3154,854 flex=VERTICAL/gap4
+            [FRAME] "Heading 3" 310x24 @3154,854 flex=VERTICAL
+              [TEXT] "Payment Confirmed" 310x24 @3154,854 fill=#1b1b1d :: "Payment Confirmed" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Container" 310x48 @3154,882 flex=VERTICAL
+              [TEXT] "Your deposit has been securely processed via our heritage portal." 310x48 @3154,882 fill=#544242 :: "Your deposit has been securely
+processed via our heritage portal." 16px Inter/Regular #544242 
+          [FRAME] "Background" 24x24 @3125,854 fill=#4a0810 r=12 flex=HORIZONTAL
+            [FRAME] "Container" 10x7 @3132,862 flex=VERTICAL
+              [VECTOR] "Icon" 10x7 @3132,862 fill=#ffffff
+        [FRAME] "Step 2" 310x105 @3154,970 flex=VERTICAL
+          [FRAME] "Container" 310x105 @3154,970 flex=VERTICAL/gap4
+            [FRAME] "Heading 3" 310x24 @3154,970 flex=VERTICAL
+              [TEXT] "Sales Team Contact" 310x24 @3154,970 fill=#1b1b1d :: "Sales Team Contact" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Container" 310x52 @3154,998 flex=VERTICAL
+              [TEXT] "A dedicated property consultant will reach out to you within 24 hours." 310x48 @3154,998 fill=#544242 :: "A dedicated property consultant will
+reach out to you within 24 hours." 16px Inter/Regular #544242 
+            [FRAME] "Background" 169x21 @3154,1054 fill=#fbdab9 r=2 flex=HORIZONTAL
+              [TEXT] "Text" 153x17 @3162,1056 fill=#1b1b1d :: "ESTIMATED: WED, 10:00 AM" 11px Inter/Regular #1b1b1d 
+          [FRAME] "Background+Border" 24x24 @3125,970 fill=#fbf8fb r=12 flex=HORIZONTAL
+            [ROUNDED_RECTANGLE] "Background" 8x8 @3133,978 fill=#4a0810 r=12
+        [FRAME] "Step 3" 310x76 @3154,1115 flex=VERTICAL
+          [FRAME] "Container" 310x76 @3154,1115 flex=VERTICAL/gap4
+            [FRAME] "Heading 3" 310x24 @3154,1115 flex=VERTICAL
+              [TEXT] "Contract Execution" 310x24 @3154,1115 fill=#877271 :: "Contract Execution" 16px Inter/Regular #877271 
+            [FRAME] "Container" 310x48 @3154,1143 flex=VERTICAL
+              [TEXT] "Finalize your purchase agreement at our corporate offices or via E-Signature." 310x48 @3154,1143 fill=#544242 :: "Finalize your purchase agreement at our
+corporate offices or via E-Signature." 16px Inter/Regular #544242 
+          [ROUNDED_RECTANGLE] "Background+Border" 24x24 @3125,1115 fill=#fbf8fb r=12
+    [FRAME] "Final Action Buttons" 358x172 @3114,1215 flex=VERTICAL/gap16
+      [FRAME] "Button" 358x64 @3114,1255 fill=#671f23 r=8 flex=HORIZONTAL
+        [ROUNDED_RECTANGLE] "Button:shadow" 358x64 @3114,1255 fill=#ffffff r=8
+        [TEXT] "Text" 194x32 @3196,1271 fill=#ea8586 :: "Go to Dashboard" 24px Inter/Regular #ea8586 CENTER
+      [FRAME] "Button" 358x52 @3114,1335 r=8 flex=HORIZONTAL
+        [TEXT] "Text" 180x24 @3203,1349 fill=#725a40 :: "Support Agent Contact" 16px Inter/Regular #725a40 CENTER
+  [FRAME] "Navigation Shell Placeholder (Suppressed for Success State - Simple Footer instead)" 390x101 @3098,1515 fill=#fbf8fb flex=VERTICAL
+    [FRAME] "Container" 358x36 @3114,1548 flex=VERTICAL
+      [TEXT] "Text" 252x36 @3167,1548 fill=#544242 :: "© 2024 Jiwar Aloula Real Estate Investment.
+Excellence in Heritage Development." 12px Inter/Regular #544242 CENTER

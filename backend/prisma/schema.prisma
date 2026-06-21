@@ -1,0 +1,122 @@
+// Jiwar Aloula — Property Reservation Platform
+// Domain model mirrors design_handoff_jiwar_reservation/README.md
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UnitStatus {
+  available
+  hold
+  reserved
+  cancelled
+}
+
+enum PaymentMethod {
+  mada
+  stc
+  apple
+  card
+}
+
+enum ReservationStatus {
+  confirmed
+  cancelled
+}
+
+enum BrokerStatus {
+  active
+  suspended
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  location  String
+  image     String
+  createdAt DateTime @default(now())
+  units     Unit[]
+}
+
+model Unit {
+  id          String     @id @default(cuid())
+  code        String     @unique
+  title       String
+  price       Int
+  priceNote   String?
+  rooms       Int
+  baths       Int
+  area        Int
+  floor       String?
+  location    String?
+  deposit     Int?
+  status         UnitStatus @default(available)
+  statusReason   String?
+  statusChangedAt DateTime?
+  image       String
+  description Json?
+  amenities   Json?
+  gallery     Json?
+  map         String?
+  createdAt   DateTime   @default(now())
+
+  projectId    String
+  project      Project       @relation(fields: [projectId], references: [id])
+  reservations Reservation[]
+
+  @@index([projectId])
+}
+
+model Broker {
+  id           String       @id
+  name         String
+  mobile       String
+  status       BrokerStatus @default(active)
+  clicks       Int          @default(0)
+  createdAt    DateTime     @default(now())
+
+  reservations Reservation[]
+}
+
+model Reservation {
+  id            String            @id
+  clientName    String
+  clientPhone   String
+  deposit       Int
+  paymentMethod PaymentMethod
+  status        ReservationStatus @default(confirmed)
+  createdAt     DateTime          @default(now())
+
+  unitId   String
+  unit     Unit    @relation(fields: [unitId], references: [id])
+  brokerId String?
+  broker   Broker? @relation(fields: [brokerId], references: [id], onDelete: SetNull)
+
+  @@index([unitId])
+  @@index([brokerId])
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model Settings {
+  id                 Int     @id @default(1)
+  reservationDeposit Int
+  vatRate            Int
+  holdWindowMinutes  Int
+  currency           String
+  paymentGateway     Boolean @default(true)
+  smsAlerts          Boolean @default(true)
+  bilingualReceipts  Boolean @default(false)
+}

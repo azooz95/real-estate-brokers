@@ -1,0 +1,197 @@
+[FRAME] "Html → Body" 1280x1023 @0,0 fill=#ffffff,#fbf8fb,grad:#4a08100a>#4a081000 flex=VERTICAL
+  [FRAME] "Main Content Area" 1000x959 @36,1392 flex=VERTICAL
+    [FRAME] "Background Content Placeholder" 920x500 @76,1432 flex=GRID
+      [FRAME] "Container" 605x500 @76,1432 flex=VERTICAL/gap24
+        [ROUNDED_RECTANGLE] "Background+Border+Shadow" 605x256 @76,1432 fill=#ffffff r=8
+        [FRAME] "Container" 605x128 @76,1712 flex=GRID
+          [ROUNDED_RECTANGLE] "Background+Border+Shadow" 186x128 @76,1712 fill=#ffffff r=8
+          [ROUNDED_RECTANGLE] "Background+Border+Shadow" 186x128 @286,1712 fill=#ffffff r=8
+          [ROUNDED_RECTANGLE] "Background+Border+Shadow" 186x128 @496,1712 fill=#ffffff r=8
+      [ROUNDED_RECTANGLE] "Background+Border+Shadow" 291x500 @705,1432 fill=#ffffff r=8
+  [FRAME] "Header - Top App Bar (Shared Component)" 1000x64 @36,1328 fill=#fbf8fb flex=HORIZONTAL/gap216
+    [FRAME] "Background+Border" 384x46 @76,1337 fill=#f5f3f5 r=12 flex=HORIZONTAL/gap16
+      [FRAME] "Container" 18x18 @93,1351 flex=VERTICAL
+        [VECTOR] "Icon" 18x18 @93,1351 fill=#877271
+      [FRAME] "Input" 316x36 @127,1342 flex=VERTICAL
+        [FRAME] "Container" 292x17 @139,1351 flex=VERTICAL
+          [TEXT] "Search reservations or units..." 292x17 @139,1351 fill=#6b7280 :: "Search reservations or units..." 14px Inter/Regular #6b7280 
+    [FRAME] "Container" 308x40 @688,1340 flex=HORIZONTAL/gap24
+      [FRAME] "Button" 32x36 @688,1342 r=12 flex=VERTICAL
+        [FRAME] "Container" 16x20 @696,1350 flex=HORIZONTAL
+          [VECTOR] "Icon" 16x20 @696,1350 fill=#544242
+        [ROUNDED_RECTANGLE] "Background" 8x8 @704,1350 fill=#4a0810 r=12
+      [FRAME] "Button" 36x36 @744,1342 r=12 flex=VERTICAL
+        [FRAME] "Container" 20x20 @752,1350 flex=HORIZONTAL
+          [VECTOR] "Icon" 20x20 @752,1350 fill=#544242
+      [ROUNDED_RECTANGLE] "Vertical Divider" 1x32 @804,1344 fill=#dac1c0
+      [FRAME] "Container" 167x40 @829,1340 flex=HORIZONTAL/gap8
+        [FRAME] "Container" 119x31 @829,1344 flex=VERTICAL
+          [FRAME] "Container" 119x16 @829,1344 flex=VERTICAL
+            [TEXT] "Text" 74x16 @874,1344 fill=#1b1b1d :: "Admin User" 12px Inter/Regular #1b1b1d RIGHT
+          [FRAME] "Container" 119x15 @829,1360 flex=VERTICAL
+            [TEXT] "Text" 119x15 @829,1360 fill=#877271 :: "SYSTEM CONTROLLER" 10px Inter/Regular #877271 RIGHT
+        [FRAME] "Background+Border" 40x40 @956,1340 fill=#fbdab9 r=12 flex=VERTICAL
+          [FRAME] "Administrator Profile" 38x38 @957,1341 fill=img:90356f40c4
+  [FRAME] "Aside - Sidebar (Shared Component)" 280x1023 @-244,1328 fill=#303032 flex=VERTICAL
+    [FRAME] "Margin" 231x184 @-220,1352 flex=VERTICAL
+      [FRAME] "Container" 231x120 @-220,1352 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 48x48 @-220,1352
+        [FRAME] "Heading 1" 231x56 @-220,1400 flex=VERTICAL
+          [TEXT] "Jiwar Aloula" 231x40 @-220,1416 fill=#ffb3b2 :: "Jiwar Aloula" 32px Inter/Regular #ffb3b2 
+        [FRAME] "Container" 231x16 @-220,1456 flex=VERTICAL
+          [TEXT] "Admin Panel" 231x16 @-220,1456 fill=#e4e2e4 :: "Admin Panel" 12px Inter/Regular #e4e2e4 
+    [FRAME] "Nav" 231x791 @-220,1536 flex=VERTICAL/gap8
+      [FRAME] "Link" 231x44 @-220,1536 fill=#671f23 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x18 @-204,1549 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @-204,1549 fill=#ea8586
+        [FRAME] "Container" 105x28 @-170,1544 flex=VERTICAL
+          [TEXT] "Text" 105x28 @-170,1544 fill=#ea8586 :: "Dashboard" 20px Inter/Regular #ea8586 
+      [FRAME] "Link" 231x44 @-220,1588 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x18 @-204,1601 flex=VERTICAL
+          [VECTOR] "Icon" 20x18 @-204,1601 fill=#e4e2e4
+        [FRAME] "Container" 92x28 @-168,1596 flex=VERTICAL
+          [TEXT] "Text" 92x28 @-168,1596 fill=#e4e2e4 :: "Inventory" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @-220,1640 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 24x12 @-204,1656 flex=VERTICAL
+          [VECTOR] "Icon" 24x12 @-204,1656 fill=#e4e2e4
+        [FRAME] "Container" 99x28 @-164,1648 flex=VERTICAL
+          [TEXT] "Text" 99x28 @-164,1648 fill=#e4e2e4 :: "Marketers" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @-220,1692 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x20 @-204,1704 flex=VERTICAL
+          [VECTOR] "Icon" 18x20 @-204,1704 fill=#e4e2e4
+        [FRAME] "Container" 125x28 @-170,1700 flex=VERTICAL
+          [TEXT] "Text" 125x28 @-170,1700 fill=#e4e2e4 :: "Transactions" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @-220,1744 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x20 @-204,1756 flex=VERTICAL
+          [VECTOR] "Icon" 20x20 @-204,1756 fill=#e4e2e4
+        [FRAME] "Container" 80x28 @-168,1752 flex=VERTICAL
+          [TEXT] "Text" 80x28 @-168,1752 fill=#e4e2e4 :: "Settings" 20px Inter/Regular #e4e2e4 
+  [FRAME] "THE MODAL OVERLAY (RESERVED VARIANT)" 1280x1023 @-244,1328 fill=#1b1b1d flex=HORIZONTAL
+    [FRAME] "Background+Shadow" 1152x850 @-180,1415 fill=#ffffff r=16 flex=HORIZONTAL
+      [FRAME] "Left Column: Media Hub" 576x850 @-180,1415 fill=#ffffff
+        [FRAME] "Tabbed Header" 575x63 @-180,1415 flex=HORIZONTAL
+          [FRAME] "Button" 288x62 @-180,1415 fill=#4a0810 flex=VERTICAL
+            [TEXT] "Text" 69x28 @-71,1431 fill=#4a0810 :: "Gallery" 20px Inter/Regular #4a0810 CENTER
+          [FRAME] "Button" 288x62 @108,1415 flex=VERTICAL
+            [TEXT] "Text" 218x28 @142,1431 fill=#544242 :: "Architectural Blueprint" 20px Inter/Regular #544242 CENTER
+        [FRAME] "Quick Specs Bar" 575x92 @-180,2173 fill=#f5f3f5 flex=GRID
+          [FRAME] "Container" 120x43 @-156,2198 flex=VERTICAL
+            [FRAME] "Container" 120x15 @-156,2198 flex=VERTICAL
+              [TEXT] "Text" 58x15 @-125,2198 fill=#877271 :: "BEDROOMS" 10px Inter/Regular #877271 CENTER
+            [FRAME] "Container" 120x28 @-156,2213 flex=VERTICAL
+              [TEXT] "Text" 68x28 @-130,2213 fill=#1b1b1d :: "3 Units" 20px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Container" 120x43 @-20,2198 flex=VERTICAL
+            [FRAME] "Container" 120x15 @-20,2198 flex=VERTICAL
+              [TEXT] "Text" 65x15 @7,2198 fill=#877271 :: "BATHROOMS" 10px Inter/Regular #877271 CENTER
+            [FRAME] "Container" 120x28 @-20,2213 flex=VERTICAL
+              [TEXT] "Text" 86x28 @-3,2213 fill=#1b1b1d :: "2.5 Units" 20px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Container" 120x43 @116,2198 flex=VERTICAL
+            [FRAME] "Container" 120x15 @116,2198 flex=VERTICAL
+              [TEXT] "Text" 28x15 @162,2198 fill=#877271 :: "AREA" 10px Inter/Regular #877271 CENTER
+            [FRAME] "Container" 120x28 @116,2213 flex=VERTICAL
+              [TEXT] "Text" 70x28 @140,2213 fill=#1b1b1d :: "245 m²" 20px Inter/Regular #1b1b1d CENTER
+          [FRAME] "Container" 120x43 @251,2198 flex=VERTICAL
+            [FRAME] "Container" 120x15 @251,2198 flex=VERTICAL
+              [TEXT] "Text" 31x15 @296,2198 fill=#877271 :: "LEVEL" 10px Inter/Regular #877271 CENTER
+            [FRAME] "Container" 120x28 @251,2213 flex=VERTICAL
+              [TEXT] "Text" 27x28 @298,2213 fill=#1b1b1d :: "04" 20px Inter/Regular #1b1b1d CENTER
+        [FRAME] "Viewport Content" 575x695 @-180,1478 fill=#f0edef flex=VERTICAL
+          [FRAME] "Luxurious Interior" 495x615 @-140,1518 fill=img:8e1c298239 r=8
+          [FRAME] "Overlay+OverlayBlur" 278x32 @93,2117 fill=#1b1b1d r=4 flex=HORIZONTAL/gap8
+            [FRAME] "Container" 12x8 @109,2129 flex=VERTICAL
+              [VECTOR] "Icon" 12x8 @109,2129 fill=#ffffff
+            [FRAME] "Container" 227x16 @128,2125 flex=VERTICAL
+              [TEXT] "Text" 227x16 @128,2125 fill=#ffffff :: "INTERACTIVE VR VIEW ENABLED" 12px Inter/Regular #ffffff 
+      [FRAME] "Right Column: Timeline & Metadata" 576x850 @396,1415 fill=#ffffff
+        [FRAME] "Header" 576x147 @396,1415 flex=HORIZONTAL/gap205
+          [FRAME] "Container" 251x91 @436,1455 flex=VERTICAL
+            [FRAME] "Container" 251x23 @436,1455 flex=HORIZONTAL/gap8
+              [FRAME] "Background" 68x23 @436,1455 fill=#fbdab9 r=2 flex=VERTICAL
+                [TEXT] "Text" 52x15 @444,1459 fill=#765e44 :: "RESERVED" 10px Inter/Regular #765e44 
+              [FRAME] "Container" 124x15 @512,1459 flex=VERTICAL
+                [TEXT] "Text" 124x15 @512,1459 fill=#877271 :: "• INTERNAL ID: TX-99201" 10px Inter/Regular #877271 
+            [FRAME] "Heading 2" 251x44 @436,1478 flex=VERTICAL
+              [TEXT] "Text" 211x40 @436,1482 fill=#1b1b1d :: "Unit JWR-402" 32px Inter/Regular #1b1b1d 
+            [FRAME] "Container" 251x24 @436,1522 flex=VERTICAL
+              [TEXT] "Text" 251x24 @436,1522 fill=#544242 :: "The Heights Residence - Phase II" 16px Inter/Regular #544242 
+          [FRAME] "Button" 30x30 @902,1455 r=12 flex=VERTICAL
+            [FRAME] "Container" 14x14 @910,1463 flex=HORIZONTAL
+              [VECTOR] "Icon" 14x14 @910,1463 fill=#544242
+        [FRAME] "Timeline/Audit Section Content" 576x713 @396,1562 flex=VERTICAL/gap24
+          [FRAME] "Container" 496x291 @436,1562 flex=VERTICAL/gap16
+            [FRAME] "Heading 3" 496x21 @436,1562 flex=VERTICAL
+              [TEXT] "Text" 168x16 @436,1562 fill=#4a0810 :: "ACTIVITY & OWNERSHIP" 12px Inter/Regular #4a0810 
+            [FRAME] "Client Info Card with Pattern" 496x126 @436,1599 fill=#ffffff r=8 flex=VERTICAL
+              [FRAME] "image" 60x60 @437,1600
+                [VECTOR] "Vector" 40x40 @437,1600 fill=#4a0810
+              [FRAME] "Container" 446x76 @461,1624 flex=HORIZONTAL/gap24
+                [FRAME] "Background" 56x56 @461,1624 fill=#671f23 r=12 flex=HORIZONTAL
+                  [FRAME] "Container" 20x20 @479,1642 flex=VERTICAL
+                    [VECTOR] "Icon" 20x20 @479,1642 fill=#ea8586
+                [FRAME] "Container" 326x76 @541,1624 flex=VERTICAL/gap4
+                  [FRAME] "Container" 326x16 @541,1624 flex=VERTICAL
+                    [TEXT] "CURRENT HOLDER" 326x16 @541,1624 fill=#4a0810 :: "CURRENT HOLDER" 12px Inter/Regular #4a0810 
+                  [FRAME] "Heading 4" 326x28 @541,1644 flex=VERTICAL
+                    [TEXT] "Fahad Al-Rashidi" 326x28 @541,1644 fill=#1b1b1d :: "Fahad Al-Rashidi" 20px Inter/Regular #1b1b1d 
+                  [FRAME] "Container" 326x24 @541,1676 flex=HORIZONTAL/gap16
+                    [FRAME] "Container" 136x20 @541,1680 flex=HORIZONTAL/gap4
+                      [FRAME] "Container" 11x11 @541,1684 flex=VERTICAL
+                        [VECTOR] "Icon" 11x11 @541,1684 fill=#544242
+                      [FRAME] "Container" 121x20 @556,1680 flex=VERTICAL
+                        [TEXT] "Text" 121x20 @556,1680 fill=#544242 :: "+966 50 123 4567" 14px Inter/Regular #544242 
+                    [FRAME] "Container" 155x20 @693,1680 flex=HORIZONTAL/gap4
+                      [FRAME] "Container" 12x12 @693,1684 flex=VERTICAL
+                        [VECTOR] "Icon" 12x12 @693,1684 fill=#544242
+                      [FRAME] "Container" 139x20 @708,1680 flex=VERTICAL
+                        [TEXT] "Text" 139x20 @708,1680 fill=#544242 :: "Reserved 2 days ago" 14px Inter/Regular #544242 
+                [ROUNDED_RECTANGLE] "Button" 16x16 @891,1624 r=4
+            [FRAME] "Audit History Timeline" 496x112 @436,1741 flex=VERTICAL/gap16
+              [FRAME] "Deposit Received" 488x52 @444,1749 flex=HORIZONTAL/gap16
+                [FRAME] "Background+Border" 32x32 @444,1749 fill=#eae7ea r=12 flex=HORIZONTAL
+                  [FRAME] "Container" 13x9 @454,1760 flex=VERTICAL
+                    [VECTOR] "Icon" 13x9 @454,1760 fill=#4a0810
+                [ROUNDED_RECTANGLE] "Vertical Divider" 1x36 @459,1781 fill=#dac1c0
+                [FRAME] "Container" 218x52 @492,1749 flex=VERTICAL
+                  [FRAME] "Container" 218x20 @492,1749 flex=VERTICAL
+                    [TEXT] "Text" 118x20 @492,1749 fill=#1b1b1d :: "Deposit Received" 14px Inter/Regular #1b1b1d 
+                  [FRAME] "Container" 218x16 @492,1769 flex=VERTICAL
+                    [TEXT] "Text" 218x16 @492,1769 fill=#877271 :: "Verified by System • Mar 14, 10:24 AM" 12px Inter/Regular #877271 
+              [FRAME] "Lead Assigned" 488x36 @444,1817 flex=HORIZONTAL/gap16
+                [FRAME] "Background+Border" 32x32 @444,1817 fill=#eae7ea r=12 flex=HORIZONTAL
+                  [FRAME] "Container" 11x12 @455,1827 flex=VERTICAL
+                    [VECTOR] "Icon" 11x12 @455,1827 fill=#877271
+                [FRAME] "Container" 195x36 @492,1817 flex=VERTICAL
+                  [FRAME] "Container" 195x20 @492,1817 flex=VERTICAL
+                    [TEXT] "Text" 178x20 @492,1817 fill=#1b1b1d :: "Lead Assigned to Sarah K." 14px Inter/Regular #1b1b1d 
+                  [FRAME] "Container" 195x16 @492,1837 flex=VERTICAL
+                    [TEXT] "Text" 195x16 @492,1837 fill=#877271 :: "Marketing Hub • Mar 12, 09:15 AM" 12px Inter/Regular #877271 
+          [FRAME] "Administrative Override Console" 496x398 @436,1877 fill=#fbf8fb r=8 flex=VERTICAL/gap24
+            [FRAME] "Container" 446x28 @461,1902 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 16x20 @461,1906 flex=VERTICAL
+                [VECTOR] "Icon" 16x20 @461,1906 fill=#4a0810
+              [FRAME] "Heading 3" 230x28 @493,1902 flex=VERTICAL
+                [TEXT] "Text" 230x28 @493,1902 fill=#1b1b1d :: "Administrative Override" 20px Inter/Regular #1b1b1d 
+            [FRAME] "Form" 446x280 @461,1954 flex=VERTICAL/gap24
+              [FRAME] "Container" 446x80 @461,1954 flex=VERTICAL/gap4
+                [FRAME] "Label" 446x16 @461,1954 flex=VERTICAL
+                  [TEXT] "MANUAL STATUS TOGGLE" 446x16 @461,1954 fill=#544242 :: "MANUAL STATUS TOGGLE" 12px Inter/Regular #544242 
+                [FRAME] "Container" 446x60 @461,1974 flex=VERTICAL
+                  [FRAME] "Options" 446x60 @461,1974 fill=#ffffff r=4 flex=HORIZONTAL
+                    [FRAME] "image clip" 446x60 @461,1974 flex=VERTICAL
+                      [FRAME] "image" 24x24 @873,1992
+                        [VECTOR] "Vector" 10x5 @880,2001
+                    [FRAME] "Container" 386x24 @479,1992 flex=VERTICAL
+                      [TEXT] "Confirmed Reservation" 386x24 @479,1992 fill=#1b1b1d :: "Confirmed Reservation" 16px Inter/Regular #1b1b1d 
+                  [FRAME] "Container" 12x24 @879,1992 flex=VERTICAL
+                    [VECTOR] "Icon" 12x7 @879,1992 fill=#544242
+              [FRAME] "Container" 446x96 @461,2058 flex=VERTICAL/gap4
+                [FRAME] "Label" 446x16 @461,2058 flex=VERTICAL
+                  [TEXT] "REASON FOR CHANGE" 446x16 @461,2058 fill=#544242 :: "REASON FOR CHANGE" 12px Inter/Regular #544242 
+                [FRAME] "Textarea" 446x76 @461,2078 fill=#ffffff r=4 flex=HORIZONTAL
+                  [FRAME] "Container" 410x20 @479,2096 flex=VERTICAL
+                    [TEXT] "Document the reason for this manual override..." 410x20 @479,2096 fill=#6b7280 :: "Document the reason for this manual override..." 14px Inter/Regular #6b7280 
+              [FRAME] "Button" 446x56 @461,2178 fill=#4a0810 r=4 flex=HORIZONTAL/gap16
+                [ROUNDED_RECTANGLE] "Button:shadow" 446x56 @461,2178 fill=#ffffff r=4
+                [FRAME] "Container" 16x20 @588,2196 flex=VERTICAL
+                  [VECTOR] "Icon" 16x20 @588,2196 fill=#ffffff
+                [TEXT] "Text" 159x24 @620,2194 fill=#ffffff :: "Apply Status Change" 16px Inter/Regular #ffffff CENTER

@@ -1,0 +1,222 @@
+[FRAME] "Marketer Link Engine - Success State" 1280x1055 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "Main Content Area" 1000x1055 @723,2816 fill=#fbf8fb flex=VERTICAL
+    [ROUNDED_RECTANGLE] "Image" 1000x1055 @723,2816 fill=img:10655a55ec
+    [FRAME] "Canvas" 1000x1046 @723,2816 flex=VERTICAL/gap40
+      [FRAME] "Breadcrumbs / Page Title" 920x64 @763,2912 flex=VERTICAL
+        [FRAME] "Heading 2" 920x40 @763,2912 flex=VERTICAL
+          [TEXT] "Marketer Management" 920x40 @763,2912 fill=#1b1b1d :: "Marketer Management" 32px Inter/Regular #1b1b1d 
+        [FRAME] "Container" 920x24 @763,2952 flex=VERTICAL
+          [TEXT] "Overview of affiliate partnerships and performance metrics." 920x24 @763,2952 fill=#544242 :: "Overview of affiliate partnerships and performance metrics." 16px Inter/Regular #544242 
+      [FRAME] "Success State Section (Bento Style)" 920x284 @763,3016 flex=GRID
+        [FRAME] "Background+Border+Shadow" 605x284 @763,3016 fill=#ffffff r=4 flex=HORIZONTAL/gap40
+          [FRAME] "Container" 96x96 @788,3110 flex=VERTICAL
+            [FRAME] "Background" 96x96 @788,3110 fill=#b6eedf r=12 flex=HORIZONTAL
+              [FRAME] "Container" 40x40 @816,3138 flex=VERTICAL
+                [VECTOR] "Icon" 40x40 @816,3138 fill=#002821
+          [FRAME] "Container" 419x230 @924,3043 flex=VERTICAL/gap4
+            [FRAME] "Heading 3" 419x80 @924,3043 flex=VERTICAL
+              [TEXT] "Tracking Link Generated Successfully!" 419x80 @924,3043 fill=#1b1b1d :: "Tracking Link Generated
+Successfully!" 32px Inter/Regular #1b1b1d 
+            [FRAME] "Container" 419x36 @924,3127 flex=VERTICAL
+              [TEXT] "Abdullah Al-Fahad has been onboarded to the system." 419x24 @924,3127 fill=#544242 :: "Abdullah Al-Fahad has been onboarded to the system." 16px Inter/Regular #544242 
+            [FRAME] "Background+Border" 419x66 @924,3167 fill=#f5f3f5 r=4 flex=HORIZONTAL/gap16
+              [FRAME] "Code" 230x24 @941,3188 flex=VERTICAL
+                [TEXT] "jiw.ar/abdullah_f_98214" 230x24 @941,3188 fill=#4a0810 :: "jiw.ar/abdullah_f_98214" 16px Inter/Regular #4a0810 
+              [FRAME] "Button" 139x32 @1187,3184 fill=#4a0810 r=2 flex=HORIZONTAL/gap8
+                [FRAME] "Container" 13x15 @1211,3193 flex=VERTICAL
+                  [VECTOR] "Icon" 13x15 @1211,3193 fill=#ffffff
+                [TEXT] "Text" 70x16 @1232,3192 fill=#ffffff :: "COPY LINK" 12px Inter/Regular #ffffff CENTER
+            [FRAME] "Button" 226x36 @924,3237 flex=HORIZONTAL/gap8
+              [FRAME] "Container" 12x12 @924,3259 flex=VERTICAL
+                [VECTOR] "Icon" 12x12 @924,3259 fill=#4a0810
+              [TEXT] "Text" 206x16 @944,3257 fill=#4a0810 :: "ONBOARD ANOTHER MARKETER" 12px Inter/Regular #4a0810 CENTER
+        [FRAME] "Background+Border" 291x284 @1392,3016 fill=#f5f3f5 r=4 flex=VERTICAL
+          [FRAME] "Container" 133x80 @1581,3251 flex=VERTICAL
+            [VECTOR] "Icon" 133x80 @1581,3251 fill=#1b1b1d
+          [FRAME] "Container" 241x104 @1417,3041 flex=VERTICAL/gap16
+            [FRAME] "Heading 4" 241x16 @1417,3041 flex=VERTICAL
+              [TEXT] "QUICK STATS" 241x16 @1417,3041 fill=#544242 :: "QUICK STATS" 12px Inter/Regular #544242 
+            [FRAME] "Container" 241x72 @1417,3073 flex=VERTICAL/gap16
+              [FRAME] "Container" 241x28 @1417,3073 flex=HORIZONTAL/gap94
+                [FRAME] "Container" 112x20 @1417,3081 flex=VERTICAL
+                  [TEXT] "Text" 112x20 @1417,3081 fill=#1b1b1d :: "Active Marketers" 14px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 35x28 @1623,3073 flex=VERTICAL
+                  [TEXT] "Text" 35x28 @1623,3073 fill=#1b1b1d :: "143" 20px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 241x28 @1417,3117 flex=HORIZONTAL/gap10
+                [FRAME] "Container" 139x20 @1417,3125 flex=VERTICAL
+                  [TEXT] "Text" 139x20 @1417,3125 fill=#1b1b1d :: "Total Revenue (MTD)" 14px Inter/Regular #1b1b1d 
+                [FRAME] "Container" 91x28 @1567,3117 flex=VERTICAL
+                  [TEXT] "Text" 91x28 @1567,3117 fill=#4a0810 :: "SAR 1.2M" 20px Inter/Regular #4a0810 
+      [FRAME] "Roster Table Section" 920x482 @763,3340 fill=#ffffff r=4 flex=VERTICAL
+        [FRAME] "Background" 918x60 @764,3365 fill=#303032 flex=HORIZONTAL/gap552
+          [FRAME] "Container" 248x28 @788,3381 flex=HORIZONTAL/gap8
+            [FRAME] "Container" 18x16 @788,3387 flex=VERTICAL
+              [VECTOR] "Icon" 18x16 @788,3387 fill=#ffb3b2
+            [FRAME] "Heading 3" 222x28 @814,3381 flex=VERTICAL
+              [TEXT] "Text" 222x28 @814,3381 fill=#ffffff :: "Active Marketer Roster" 20px Inter/Regular #ffffff 
+          [FRAME] "Container" 50x16 @1608,3387 flex=HORIZONTAL/gap16
+            [FRAME] "Button" 18x12 @1608,3387 flex=VERTICAL
+              [VECTOR] "Icon" 18x12 @1608,3387 fill=#e4e2e4
+            [FRAME] "Button" 16x16 @1642,3387 flex=VERTICAL
+              [VECTOR] "Icon" 16x16 @1642,3387 fill=#e4e2e4
+        [FRAME] "Table" 918x316 @764,3425 flex=VERTICAL/gap-1
+          [FRAME] "Header → Row" 918x66 @764,3425 fill=#eae7ea flex=HORIZONTAL
+            [FRAME] "Cell" 197x65 @764,3425 flex=VERTICAL
+              [TEXT] "Text" 113x16 @788,3449 fill=#1b1b1d :: "MARKETER NAME" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Cell" 122x64 @961,3425 flex=VERTICAL
+              [TEXT] "Text" 63x32 @985,3441 fill=#1b1b1d :: "CONTACT
+ID" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Cell" 192x65 @1084,3425 flex=VERTICAL
+              [TEXT] "Text" 106x16 @1108,3449 fill=#1b1b1d :: "GENERATED URL" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Cell" 96x65 @1276,3425 flex=VERTICAL
+              [TEXT] "Text" 48x16 @1300,3449 fill=#1b1b1d :: "CLICKS" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Cell" 144x64 @1371,3425 flex=VERTICAL
+              [TEXT] "Text" 67x32 @1395,3441 fill=#1b1b1d :: "UNITS
+RESERVED" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Cell" 167x64 @1515,3425 flex=VERTICAL
+              [TEXT] "Text" 77x32 @1539,3441 fill=#1b1b1d :: "REVENUE
+GENERATED" 12px Inter/Regular #1b1b1d 
+          [FRAME] "Body" 918x252 @764,3490 flex=VERTICAL/gap-1
+            [FRAME] "Row 0 (Newly Added)" 918x81 @764,3490 fill=#b6eedf flex=HORIZONTAL
+              [FRAME] "Data" 197x80 @764,3490 flex=HORIZONTAL/gap25
+                [TEXT] "Text" 93x48 @788,3506 fill=#1b1b1d :: "Abdullah Al-
+Fahad" 16px Inter/Regular #1b1b1d 
+                [FRAME] "Background" 31x24 @906,3518 fill=#4a0810 r=2 flex=VERTICAL
+                  [TEXT] "Text" 23x24 @910,3518 fill=#ffffff :: "NEW" 10px Inter/Regular #ffffff 
+              [FRAME] "Data" 122x81 @961,3490 flex=VERTICAL
+                [TEXT] "Text" 70x20 @985,3520 fill=#544242 :: "ID-98214" 16px Inter/Regular #544242 
+              [FRAME] "Data" 168x22 @1084,3519 flex=HORIZONTAL/gap8
+                [FRAME] "Code" 120x22 @1108,3519 fill=#f5f3f5 r=2 flex=VERTICAL
+                  [TEXT] "Text" 101x14 @1116,3523 fill=#4a0810 :: "jiw.ar/abdullah_f" 12px Liberation Mono/Regular #4a0810 
+                [FRAME] "Button" 11x13 @1236,3523 flex=VERTICAL
+                  [VECTOR] "Icon" 11x13 @1236,3523 fill=#544242
+              [FRAME] "Data" 120x81 @1252,3490 flex=VERTICAL
+                [TEXT] "Text" 10x20 @1300,3520 fill=#1b1b1d :: "0" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 144x81 @1371,3490 flex=VERTICAL
+                [FRAME] "Background" 57x23 @1395,3519 fill=#dac1c0 r=12 flex=HORIZONTAL
+                  [TEXT] "Text" 41x15 @1403,3523 fill=#544242 :: "0 Units" 12px Inter/Regular #544242 
+              [FRAME] "Data" 167x81 @1515,3490 flex=VERTICAL
+                [TEXT] "Text" 46x20 @1539,3520 fill=#1b1b1d :: "SAR 0" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Row 1" 918x58 @764,3570 flex=HORIZONTAL
+              [FRAME] "Data" 197x57 @764,3571 flex=VERTICAL
+                [TEXT] "Text" 127x24 @788,3587 fill=#1b1b1d :: "Hassan Mansoor" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 122x57 @961,3571 flex=VERTICAL
+                [TEXT] "Text" 69x20 @985,3589 fill=#544242 :: "ID-98210" 16px Inter/Regular #544242 
+              [FRAME] "Data" 168x22 @1084,3588 flex=HORIZONTAL/gap8
+                [FRAME] "Code" 120x22 @1108,3588 fill=#f5f3f5 r=2 flex=VERTICAL
+                  [TEXT] "Text" 101x14 @1116,3592 fill=#4a0810 :: "jiw.ar/hassan_m" 12px Liberation Mono/Regular #4a0810 
+                [FRAME] "Button" 11x13 @1236,3592 flex=VERTICAL
+                  [VECTOR] "Icon" 11x13 @1236,3592 fill=#544242
+              [FRAME] "Data" 120x57 @1252,3571 flex=VERTICAL
+                [TEXT] "Text" 41x20 @1300,3589 fill=#1b1b1d :: "2,410" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 144x57 @1371,3571 flex=VERTICAL
+                [FRAME] "Background" 62x23 @1395,3588 fill=#b6eedf r=12 flex=HORIZONTAL
+                  [TEXT] "Text" 46x15 @1403,3592 fill=#174f45 :: "12 Units" 12px Inter/Regular #174f45 
+              [FRAME] "Data" 167x57 @1515,3571 flex=VERTICAL
+                [TEXT] "Text" 100x20 @1539,3589 fill=#1b1b1d :: "SAR 450,000" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Row 2" 918x58 @764,3627 flex=HORIZONTAL
+              [FRAME] "Data" 197x57 @764,3628 flex=VERTICAL
+                [TEXT] "Text" 135x24 @788,3644 fill=#1b1b1d :: "Fatima Al-Sudairy" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 122x57 @961,3628 flex=VERTICAL
+                [TEXT] "Text" 66x20 @985,3646 fill=#544242 :: "ID-98211" 16px Inter/Regular #544242 
+              [FRAME] "Data" 168x22 @1084,3645 flex=HORIZONTAL/gap8
+                [FRAME] "Code" 120x22 @1108,3645 fill=#f5f3f5 r=2 flex=VERTICAL
+                  [TEXT] "Text" 101x14 @1116,3649 fill=#4a0810 :: "jiw.ar/fatima_s" 12px Liberation Mono/Regular #4a0810 
+                [FRAME] "Button" 11x13 @1236,3649 flex=VERTICAL
+                  [VECTOR] "Icon" 11x13 @1236,3649 fill=#544242
+              [FRAME] "Data" 120x57 @1252,3628 flex=VERTICAL
+                [TEXT] "Text" 41x20 @1300,3646 fill=#1b1b1d :: "1,890" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 144x57 @1371,3628 flex=VERTICAL
+                [FRAME] "Background" 57x23 @1395,3645 fill=#b6eedf r=12 flex=HORIZONTAL
+                  [TEXT] "Text" 41x15 @1403,3649 fill=#174f45 :: "8 Units" 12px Inter/Regular #174f45 
+              [FRAME] "Data" 167x57 @1515,3628 flex=VERTICAL
+                [TEXT] "Text" 97x20 @1539,3646 fill=#1b1b1d :: "SAR 310,000" 16px Inter/Regular #1b1b1d 
+            [FRAME] "Row 3" 918x58 @764,3684 flex=HORIZONTAL
+              [FRAME] "Data" 197x56 @764,3685 flex=VERTICAL
+                [TEXT] "Text" 113x24 @788,3701 fill=#1b1b1d :: "Yousef Ibrahim" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 122x57 @961,3685 flex=VERTICAL
+                [TEXT] "Text" 69x20 @985,3703 fill=#544242 :: "ID-98212" 16px Inter/Regular #544242 
+              [FRAME] "Data" 168x22 @1084,3702 flex=HORIZONTAL/gap8
+                [FRAME] "Code" 120x22 @1108,3702 fill=#f5f3f5 r=2 flex=VERTICAL
+                  [TEXT] "Text" 101x14 @1116,3706 fill=#4a0810 :: "jiw.ar/yousef_i" 12px Liberation Mono/Regular #4a0810 
+                [FRAME] "Button" 11x13 @1236,3706 flex=VERTICAL
+                  [VECTOR] "Icon" 11x13 @1236,3706 fill=#544242
+              [FRAME] "Data" 120x57 @1252,3685 flex=VERTICAL
+                [TEXT] "Text" 30x20 @1300,3703 fill=#1b1b1d :: "940" 16px Inter/Regular #1b1b1d 
+              [FRAME] "Data" 144x57 @1371,3685 flex=VERTICAL
+                [FRAME] "Background" 57x23 @1395,3702 fill=#feddbc r=12 flex=HORIZONTAL
+                  [TEXT] "Text" 41x15 @1403,3706 fill=#58432a :: "3 Units" 12px Inter/Regular #58432a 
+              [FRAME] "Data" 167x57 @1515,3685 flex=VERTICAL
+                [TEXT] "Text" 96x20 @1539,3703 fill=#1b1b1d :: "SAR 125,000" 16px Inter/Regular #1b1b1d 
+        [FRAME] "Background" 918x80 @764,3741 fill=#f5f3f5 flex=HORIZONTAL/gap488
+          [FRAME] "Container" 230x20 @788,3771 flex=VERTICAL
+            [TEXT] "Text" 230x20 @788,3771 fill=#544242 :: "Showing 5 of 143 Active Marketers" 14px Inter/Italic #544242 
+          [FRAME] "Container" 152x32 @1506,3765 flex=HORIZONTAL/gap8
+            [FRAME] "Button" 32x32 @1506,3765 r=2 flex=HORIZONTAL
+              [FRAME] "Container" 6x9 @1519,3777 flex=VERTICAL
+                [VECTOR] "Icon" 6x9 @1519,3777 fill=#544242
+            [FRAME] "Button" 32x32 @1546,3765 fill=#4a0810 r=2 flex=HORIZONTAL
+              [TEXT] "Text" 6x16 @1559,3773 fill=#ffffff :: "1" 12px Inter/Regular #ffffff CENTER
+            [FRAME] "Button" 32x32 @1586,3765 r=2 flex=HORIZONTAL
+              [TEXT] "Text" 10x24 @1597,3769 fill=#544242 :: "2" 16px Inter/Regular #544242 CENTER
+            [FRAME] "Button" 32x32 @1626,3765 r=2 flex=HORIZONTAL
+              [FRAME] "Container" 6x9 @1639,3777 flex=VERTICAL
+                [VECTOR] "Icon" 6x9 @1639,3777 fill=#544242
+  [FRAME] "Header - Top App Bar" 1000x64 @723,2816 fill=#fbf8fb flex=HORIZONTAL/gap365
+    [FRAME] "Container" 683x28 @763,2834 flex=HORIZONTAL
+      [FRAME] "Container" 683x28 @763,2834 flex=VERTICAL
+        [FRAME] "Input" 683x28 @763,2834 fill=#f5f3f5 r=4 flex=HORIZONTAL
+          [FRAME] "Container" 631x17 @803,2839 flex=VERTICAL
+            [TEXT] "Search marketers..." 631x17 @803,2839 fill=#6b7280 :: "Search marketers..." 14px Inter/Regular #6b7280 
+        [FRAME] "Container" 15x20 @779,2838 flex=VERTICAL
+          [VECTOR] "Icon" 15x15 @779,2838 fill=#544242
+    [FRAME] "Container" 237x32 @1446,2832 flex=HORIZONTAL/gap24
+      [FRAME] "Button" 24x28 @1446,2834 r=12 flex=VERTICAL
+        [VECTOR] "Icon" 16x20 @1450,2838 fill=#544242
+      [FRAME] "Button" 28x28 @1494,2834 r=12 flex=VERTICAL
+        [VECTOR] "Icon" 20x20 @1498,2838 fill=#544242
+      [FRAME] "Margin" 17x32 @1546,2832 flex=VERTICAL
+        [ROUNDED_RECTANGLE] "Vertical Divider" 1x32 @1554,2832 fill=#dac1c0
+      [FRAME] "Container" 96x16 @1587,2840 flex=VERTICAL
+        [TEXT] "Text" 96x16 @1587,2840 fill=#4a0810 :: "Admin Console" 12px Inter/Regular #4a0810 
+  [FRAME] "Aside - Sidebar Navigation" 280x1055 @443,2816 fill=#303032 flex=VERTICAL
+    [FRAME] "Nav" 231x827 @467,2955 flex=VERTICAL/gap8
+      [FRAME] "Link" 231x44 @467,2955 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x18 @483,2968 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @483,2968 fill=#e4e2e4
+        [FRAME] "Container" 105x28 @517,2963 flex=VERTICAL
+          [TEXT] "Text" 105x28 @517,2963 fill=#e4e2e4 :: "Dashboard" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @467,3007 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x18 @483,3020 flex=VERTICAL
+          [VECTOR] "Icon" 20x18 @483,3020 fill=#e4e2e4
+        [FRAME] "Container" 92x28 @519,3015 flex=VERTICAL
+          [TEXT] "Text" 92x28 @519,3015 fill=#e4e2e4 :: "Inventory" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @467,3059 fill=#671f23 r=4 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 24x12 @483,3075 flex=VERTICAL
+          [VECTOR] "Icon" 24x12 @483,3075 fill=#ea8586
+        [FRAME] "Container" 99x28 @523,3067 flex=VERTICAL
+          [TEXT] "Text" 99x28 @523,3067 fill=#ea8586 :: "Marketers" 20px Inter/Regular #ea8586 
+      [FRAME] "Link" 231x44 @467,3111 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 18x20 @483,3123 flex=VERTICAL
+          [VECTOR] "Icon" 18x20 @483,3123 fill=#e4e2e4
+        [FRAME] "Container" 125x28 @517,3119 flex=VERTICAL
+          [TEXT] "Text" 125x28 @517,3119 fill=#e4e2e4 :: "Transactions" 20px Inter/Regular #e4e2e4 
+      [FRAME] "Link" 231x44 @467,3163 flex=HORIZONTAL/gap16
+        [FRAME] "Container" 20x20 @483,3175 flex=VERTICAL
+          [VECTOR] "Icon" 20x20 @483,3175 fill=#e4e2e4
+        [FRAME] "Container" 80x28 @519,3171 flex=VERTICAL
+          [TEXT] "Text" 80x28 @519,3171 fill=#e4e2e4 :: "Settings" 20px Inter/Regular #e4e2e4 
+    [FRAME] "HorizontalBorder" 231x65 @467,3782 flex=VERTICAL
+      [FRAME] "Container" 231x40 @467,3807 flex=HORIZONTAL/gap16
+        [FRAME] "Background+Border" 40x40 @467,3807 fill=#671f23 r=12 flex=HORIZONTAL
+          [FRAME] "Administrator Profile" 38x38 @468,3808 fill=img:88f7a67d2c
+        [FRAME] "Container" 89x37 @523,3809 flex=VERTICAL
+          [FRAME] "Container" 89x21 @523,3809 flex=VERTICAL
+            [TEXT] "Text" 85x21 @523,3809 fill=#ffffff :: "Admin Portal" 14px Inter/Regular #ffffff 
+          [FRAME] "Container" 89x16 @523,3830 flex=VERTICAL
+            [TEXT] "Text" 89x16 @523,3830 fill=#e4e2e4 :: "Status: Active" 12px Inter/Regular #e4e2e4 
+    [FRAME] "Margin" 231x115 @467,2840 flex=VERTICAL
+      [FRAME] "Margin" 231x115 @467,2840 flex=VERTICAL
+        [FRAME] "Container" 231x96 @467,2840 flex=HORIZONTAL
+          [FRAME] "Container" 231x183 @467,2797 flex=VERTICAL
+            [FRAME] "Jiwar Aloula Logo" 215x183 @475,2797 fill=img:e852a301f0

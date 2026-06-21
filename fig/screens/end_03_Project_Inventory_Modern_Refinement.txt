@@ -1,0 +1,171 @@
+[FRAME] "Project Inventory - Modern Refinement" 425x1818 @0,0 fill=#ffffff
+  [FRAME] "Body" 425x1817 @1765,18 fill=#f2f1ed flex=VERTICAL
+    [FRAME] "Main" 425x1687 @1765,18 flex=VERTICAL/gap24
+      [FRAME] "Project Context Section" 393x56 @1781,114 flex=VERTICAL/gap4
+        [FRAME] "Heading 2" 393x32 @1781,114 flex=VERTICAL
+          [TEXT] "Al-Yasmeen Towers" 393x32 @1781,114 fill=#4a0810 :: "Al-Yasmeen Towers" 24px Inter/Regular #4a0810 
+        [FRAME] "Container" 393x20 @1781,150 flex=HORIZONTAL/gap4
+          [FRAME] "Container" 11x13 @1781,153 flex=VERTICAL
+            [VECTOR] "Icon" 11x13 @1781,153 fill=#544242
+          [TEXT] "Text" 278x20 @1796,150 fill=#544242 :: "Premium Residential Units in North Riyadh" 14px Inter/Regular #544242 
+      [FRAME] "Section - Filter Bar" 393x327 @1781,194 flex=VERTICAL/gap16
+        [FRAME] "Unit Type Filter Card" 393x110 @1781,194 fill=#ffffff r=16 flex=VERTICAL/gap12
+          [FRAME] "Container" 359x20 @1798,211 flex=HORIZONTAL/gap234
+            [FRAME] "Heading 3" 75x20 @1798,211
+              [TEXT] "Text" 75x20 @1798,210 fill=#4a0810 :: "UNIT TYPE" 13px Inter/Regular #4a0810 
+            [FRAME] "Container" 50x15 @2107,213 flex=VERTICAL
+              [TEXT] "Text" 50x15 @2107,213 fill=#544242 :: "Select one" 10px Inter/Regular #544242 
+          [FRAME] "Container" 359x44 @1798,242 flex=HORIZONTAL/gap8
+            [FRAME] "Button" 70x40 @1798,242 fill=#f5f3f5 r=4 flex=VERTICAL
+              [TEXT] "Text" 16x20 @1825,252 fill=#544242 :: "All" 14px Inter/Regular #544242 CENTER
+            [FRAME] "Button" 89x40 @1876,242 fill=#f5f3f5 r=4 flex=VERTICAL
+              [TEXT] "Text" 58x20 @1893,252 fill=#544242 :: "2 Rooms" 14px Inter/Regular #544242 CENTER
+            [FRAME] "Button" 89x40 @1973,242 fill=#f5f3f5 r=4 flex=VERTICAL
+              [TEXT] "Text" 58x20 @1990,252 fill=#544242 :: "3 Rooms" 14px Inter/Regular #544242 CENTER
+            [FRAME] "Button" 88x40 @2069,242 fill=#671f23 r=4 flex=VERTICAL
+              [ROUNDED_RECTANGLE] "Button:shadow" 88x40 @2069,242 fill=#ffffff r=4
+              [TEXT] "Text" 59x20 @2085,252 fill=#ffffff :: "4 Rooms" 14px Inter/Regular #ffffff CENTER
+        [FRAME] "Preferences Filter Card" 393x202 @1781,319 fill=#ffffff r=16 flex=VERTICAL/gap12
+          [FRAME] "Container" 359x20 @1798,336 flex=HORIZONTAL/gap235
+            [FRAME] "Heading 3" 100x20 @1798,336
+              [TEXT] "Text" 100x20 @1798,335 fill=#4a0810 :: "PREFERENCES" 13px Inter/Regular #4a0810 
+            [FRAME] "Container" 12x7 @2145,342 flex=VERTICAL
+              [VECTOR] "Icon" 12x7 @2145,342 fill=#4a0810
+          [FRAME] "Container" 359x136 @1798,368 flex=VERTICAL/gap16
+            [FRAME] "View Toggle" 359x65 @1798,368 flex=VERTICAL/gap8
+              [FRAME] "Margin" 359x15 @1798,368 flex=VERTICAL
+                [FRAME] "Container" 355x15 @1802,368 flex=VERTICAL
+                  [TEXT] "BUILDING VIEW" 355x15 @1802,368 fill=#544242 :: "BUILDING VIEW" 10px Inter/Regular #544242 
+              [FRAME] "Background+Border" 196x42 @1798,391 fill=#f5f3f5 r=8 flex=HORIZONTAL
+                [FRAME] "Button" 95x32 @1803,396 fill=#ffffff r=4 flex=VERTICAL
+                  [ROUNDED_RECTANGLE] "Button:shadow" 95x32 @1803,396 fill=#ffffff r=4
+                  [TEXT] "Front View" 63x16 @1819,404 fill=#4a0810 :: "Front View" 12px Inter/Regular #4a0810 CENTER
+                [FRAME] "Button" 91x32 @1898,396 r=4 flex=VERTICAL
+                  [TEXT] "Text" 59x16 @1914,404 fill=#544242 :: "Back View" 12px Inter/Regular #544242 CENTER
+            [FRAME] "Area Chips" 359x55 @1798,449 flex=VERTICAL/gap8
+              [FRAME] "Margin" 359x15 @1798,449 flex=VERTICAL
+                [FRAME] "Container" 355x15 @1802,449 flex=VERTICAL
+                  [TEXT] "SIZE RANGE" 355x15 @1802,449 fill=#544242 :: "SIZE RANGE" 10px Inter/Regular #544242 
+              [FRAME] "Container" 359x32 @1798,472 flex=HORIZONTAL/gap8
+                [FRAME] "Button" 94x32 @1798,472 fill=#ffffff r=12 flex=VERTICAL
+                  [TEXT] "Text" 68x17 @1811,479 fill=#544242 :: "Under 150m²" 11px Inter/Regular #544242 CENTER
+                [FRAME] "Button" 85x32 @1900,472 fill=#671f23 r=12 flex=VERTICAL
+                  [TEXT] "Text" 59x17 @1913,479 fill=#671f23 :: "150-250m²" 11px Inter/Regular #671f23 CENTER
+                [FRAME] "Button" 68x32 @1993,472 fill=#ffffff r=12 flex=VERTICAL
+                  [TEXT] "Text" 42x17 @2006,479 fill=#544242 :: "250m²+" 11px Inter/Regular #544242 CENTER
+      [FRAME] "Unit List" 393x1160 @1781,545 flex=VERTICAL/gap24
+        [FRAME] "Article - Available Unit" 393x368 @1781,553 fill=#ffffff r=4 flex=VERTICAL
+          [FRAME] "Container" 391x192 @1782,554 flex=VERTICAL
+            [FRAME] "AB6AXuDXcW8xPCrOMS56VWpCRrwYtbqS2nd4JPnSYLmXlQY2tqj0jTIM4YCCn-tZjiC0eqiBgYjjCGtoJWRfEbDmLkJk6nm0mpc0dfNODBYPuQnOzH93rW-4Py7clJklctDT78ilkwyttaupT3K5gJQh0fdsxeUU3Np_ezWSGpdNt69y0ccXXcjL7xamreAw2u_j8-gOB9SlHSaoIpo3NVoBNftQG4fanNU0RZZBF5up7SMV8TQ6hw70o7Ef-o2Jg0nIOO5eZOTIenjphhE" 391x192 @1782,554 fill=img:127dabc11f
+            [FRAME] "Container" 83x23 @1794,566 r=2 flex=HORIZONTAL/gap4
+              [ROUNDED_RECTANGLE] "Background" 6x6 @1802,574 fill=#ffffff r=12
+              [TEXT] "Text" 57x15 @1812,570 fill=#ffffff :: "AVAILABLE" 10px Inter/Regular #ffffff 
+          [FRAME] "Container" 391x174 @1782,746 flex=VERTICAL/gap12
+            [FRAME] "Container" 359x44 @1798,762 flex=HORIZONTAL/gap76
+              [FRAME] "Container" 158x44 @1798,762 flex=VERTICAL
+                [FRAME] "Heading 3" 158x28 @1798,762 flex=VERTICAL
+                  [TEXT] "Text" 113x28 @1798,762 fill=#4a0810 :: "Unit JWR-101" 18px Inter/Regular #4a0810 
+                [FRAME] "Container" 158x16 @1798,790 flex=VERTICAL
+                  [TEXT] "LUXURY 3-BEDROOM SUITE" 158x16 @1798,790 fill=#544242 :: "LUXURY 3-BEDROOM SUITE" 12px Inter/Regular #544242 
+              [FRAME] "Container" 125x44 @2032,762 flex=VERTICAL
+                [FRAME] "Container" 125x28 @2032,762 flex=VERTICAL
+                  [TEXT] "Text" 125x28 @2032,762 fill=#1b1b1d :: "SAR 1,200,000" 18px Inter/Regular #1b1b1d RIGHT
+                [FRAME] "Container" 125x16 @2032,790 flex=VERTICAL
+                  [TEXT] "Incl. VAT" 55x16 @2102,790 fill=#544242 :: "Incl. VAT" 12px Inter/Regular #544242 RIGHT
+            [FRAME] "Border" 359x34 @1798,818 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 74x16 @1798,827 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x11 @1798,829 flex=VERTICAL
+                  [VECTOR] "Icon" 15x11 @1798,829 fill=#c5a059
+                [FRAME] "Container" 55x16 @1817,827 flex=VERTICAL
+                  [TEXT] "Text" 55x16 @1817,827 fill=#1b1b1d :: "3 Rooms" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 60x16 @1888,827 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x15 @1888,827 flex=VERTICAL
+                  [VECTOR] "Icon" 15x15 @1888,827 fill=#c5a059
+                [FRAME] "Container" 41x16 @1907,827 flex=VERTICAL
+                  [TEXT] "Text" 41x16 @1907,827 fill=#1b1b1d :: "2 Bath" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 69x16 @1963,827 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @1963,828 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @1963,828 fill=#c5a059
+                [FRAME] "Container" 52x16 @1980,827 flex=VERTICAL
+                  [TEXT] "Text" 52x16 @1980,827 fill=#1b1b1d :: "185 sqm" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Button" 359x40 @1798,864 fill=#671f23 r=4 flex=VERTICAL
+              [TEXT] "VIEW DETAILS & RESERVE" 177x16 @1889,876 fill=#ffffff :: "VIEW DETAILS & RESERVE" 12px Inter/Regular #ffffff CENTER
+        [FRAME] "Article - Reserved Unit" 393x368 @1781,945 fill=#ffffff r=4 flex=VERTICAL
+          [FRAME] "Overlay" 391x192 @1782,946 fill=#ffffff flex=VERTICAL
+            [FRAME] "AB6AXuAtzq3sRoavp1ZK4A70kvtwuIrF2hAkU0XpJXG3YuwNDzKrYGNBJ_xieim_WP0dgTLo8LEg0GWIyd7oy9NXMNkk1lgLqpDBshHuXjaaGSVn_G6Wcd-ahn__yyv99O4ngKuGuU_Hm6FLqlWO0Tan7GLrMwMlm-lGbF4svACDvUCuJJwaN8MSM0vkD4akJN_y2VrdwpvxHfhz76HYBgLhc1vrnUMPocsHlFKcVHVpgHe6FqM4-hVEZi9oNu1WswBNCdaW3IpYV4IYex4" 391x192 @1782,946 fill=img:29d8146683
+            [FRAME] "Background" 81x23 @1794,958 fill=#544242 r=2 flex=HORIZONTAL/gap4
+              [ROUNDED_RECTANGLE] "Overlay" 6x6 @1802,966 fill=#ffffff r=12
+              [TEXT] "Text" 55x15 @1812,962 fill=#ffffff :: "RESERVED" 10px Inter/Regular #ffffff 
+          [FRAME] "Container" 391x174 @1782,1138 flex=VERTICAL/gap12
+            [FRAME] "Container" 359x44 @1798,1154 flex=HORIZONTAL/gap109
+              [FRAME] "Container" 138x44 @1798,1154 flex=VERTICAL
+                [FRAME] "Heading 3" 138x28 @1798,1154 flex=VERTICAL
+                  [TEXT] "Text" 117x28 @1798,1154 fill=#4a0810 :: "Unit JWR-102" 18px Inter/Regular #4a0810 
+                [FRAME] "Container" 138x16 @1798,1182 flex=VERTICAL
+                  [TEXT] "STANDARD 2-BEDROOM" 138x16 @1798,1182 fill=#544242 :: "STANDARD 2-BEDROOM" 12px Inter/Regular #544242 
+              [FRAME] "Container" 113x44 @2044,1154 flex=VERTICAL
+                [FRAME] "Container" 113x28 @2044,1154 flex=VERTICAL
+                  [TEXT] "Text" 113x28 @2044,1154 fill=#1b1b1d :: "SAR 980,000" 18px Inter/Regular #1b1b1d RIGHT
+                [FRAME] "Container" 113x16 @2044,1182 flex=VERTICAL
+                  [TEXT] "Incl. VAT" 55x16 @2102,1182 fill=#544242 :: "Incl. VAT" 12px Inter/Regular #544242 RIGHT
+            [FRAME] "Border" 359x34 @1798,1210 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 73x16 @1798,1219 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x11 @1798,1221 flex=VERTICAL
+                  [VECTOR] "Icon" 15x11 @1798,1221 fill=#877271
+                [FRAME] "Container" 54x16 @1817,1219 flex=VERTICAL
+                  [TEXT] "Text" 54x16 @1817,1219 fill=#1b1b1d :: "2 Rooms" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 60x16 @1887,1219 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x15 @1887,1219 flex=VERTICAL
+                  [VECTOR] "Icon" 15x15 @1887,1219 fill=#877271
+                [FRAME] "Container" 41x16 @1906,1219 flex=VERTICAL
+                  [TEXT] "Text" 41x16 @1906,1219 fill=#1b1b1d :: "2 Bath" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 69x16 @1963,1219 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @1963,1220 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @1963,1220 fill=#877271
+                [FRAME] "Container" 53x16 @1980,1219 flex=VERTICAL
+                  [TEXT] "Text" 53x16 @1980,1219 fill=#1b1b1d :: "142 sqm" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Button" 359x40 @1798,1256 fill=#544242 r=4 flex=VERTICAL
+              [TEXT] "RESERVED" 71x16 @1942,1268 fill=#544242 :: "RESERVED" 12px Inter/Regular #544242 CENTER
+        [FRAME] "Article - On Hold Unit" 393x368 @1781,1337 fill=#ffffff r=4 flex=VERTICAL
+          [FRAME] "Container" 391x192 @1782,1338 flex=VERTICAL
+            [FRAME] "AB6AXuDNxAgR2WGOjaa3NBLYmvD_MZOwq51AsFx98q4LFcvV_8oruh932LARAjjvxQy1pfhvAp-h7T5QyDquTzB3HWf6ZSd4zfCxkwUh-Zts-edwLaJc4OglZam9VxBLyHD5eR2xrAfAWZnexILSBunZWvy6rm8FypA6mFn17AUWiHo4O-nPbUSxvJtLRymDOy51MG2IHT96XkxXb4VtZJkbEqYdXw9SNhig7XsKx6OlQdOh0HFtT2vyEjO7VI1CgvPlPywAfxJzfsHA_rg" 391x192 @1782,1338 fill=img:d0ede1ec14
+            [FRAME] "Background" 56x23 @1794,1350 fill=#c5a059 r=2 flex=HORIZONTAL/gap4
+              [ROUNDED_RECTANGLE] "Background" 6x6 @1802,1358 fill=#ffffff r=12
+              [TEXT] "Text" 30x15 @1812,1354 fill=#ffffff :: "HOLD" 10px Inter/Regular #ffffff 
+          [FRAME] "Container" 391x174 @1782,1530 flex=VERTICAL/gap12
+            [FRAME] "Container" 359x44 @1798,1546 flex=HORIZONTAL/gap82
+              [FRAME] "Container" 149x44 @1798,1546 flex=VERTICAL
+                [FRAME] "Heading 3" 149x28 @1798,1546 flex=VERTICAL
+                  [TEXT] "Text" 117x28 @1798,1546 fill=#4a0810 :: "Unit JWR-105" 18px Inter/Regular #4a0810 
+                [FRAME] "Container" 149x16 @1798,1574 flex=VERTICAL
+                  [TEXT] "PENTHOUSE COLLECTION" 149x16 @1798,1574 fill=#544242 :: "PENTHOUSE COLLECTION" 12px Inter/Regular #544242 
+              [FRAME] "Container" 129x44 @2028,1546 flex=VERTICAL
+                [FRAME] "Container" 129x28 @2028,1546 flex=VERTICAL
+                  [TEXT] "Text" 129x28 @2028,1546 fill=#1b1b1d :: "SAR 2,450,000" 18px Inter/Regular #1b1b1d RIGHT
+                [FRAME] "Container" 129x16 @2028,1574 flex=VERTICAL
+                  [TEXT] "Text" 56x16 @2101,1574 fill=#544242 :: "Premium" 12px Inter/Regular #544242 RIGHT
+            [FRAME] "Border" 359x34 @1798,1602 flex=HORIZONTAL/gap16
+              [FRAME] "Container" 74x16 @1798,1611 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x11 @1798,1613 flex=VERTICAL
+                  [VECTOR] "Icon" 15x11 @1798,1613 fill=#c5a059
+                [FRAME] "Container" 55x16 @1817,1611 flex=VERTICAL
+                  [TEXT] "Text" 55x16 @1817,1611 fill=#1b1b1d :: "4 Rooms" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 60x16 @1888,1611 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 15x15 @1888,1611 flex=VERTICAL
+                  [VECTOR] "Icon" 15x15 @1888,1611 fill=#c5a059
+                [FRAME] "Container" 41x16 @1907,1611 flex=VERTICAL
+                  [TEXT] "Text" 41x16 @1907,1611 fill=#1b1b1d :: "4 Bath" 12px Inter/Regular #1b1b1d 
+              [FRAME] "Container" 72x16 @1964,1611 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 13x13 @1964,1612 flex=VERTICAL
+                  [VECTOR] "Icon" 13x13 @1964,1612 fill=#c5a059
+                [FRAME] "Container" 55x16 @1981,1611 flex=VERTICAL
+                  [TEXT] "Text" 55x16 @1981,1611 fill=#1b1b1d :: "320 sqm" 12px Inter/Regular #1b1b1d 
+            [FRAME] "Button" 359x40 @1798,1648 fill=#671f23 r=4 flex=VERTICAL
+              [TEXT] "INQUIRE FOR AVAILABILITY" 188x16 @1884,1660 fill=#ffffff :: "INQUIRE FOR AVAILABILITY" 12px Inter/Regular #ffffff CENTER
+    [FRAME] "Header - TopAppBar" 425x64 @1765,18 fill=#fbf8fb flex=HORIZONTAL/gap313
+      [FRAME] "Container" 136x40 @1781,29 flex=HORIZONTAL/gap16
+        [FRAME] "Button" 40x40 @1781,29 r=12 flex=HORIZONTAL
+          [FRAME] "Container" 16x16 @1793,41 flex=VERTICAL
+            [VECTOR] "Icon" 16x16 @1793,41 fill=#4a0810
+        [FRAME] "Container" 80x32 @1837,33 flex=VERTICAL
+          [FRAME] "Jiwar Aloula Logo" 80x32 @1837,33 fill=img:86442120d5

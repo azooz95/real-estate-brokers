@@ -1,0 +1,88 @@
+[FRAME] "All Projects Directory" 409x1296 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [ROUNDED_RECTANGLE] "Background Pattern" 409x1296 @1315,18 fill=grad:#671f23>#671f2300
+  [FRAME] "Main Content" 409x1235 @1315,18 flex=VERTICAL
+    [FRAME] "Hero Section Title" 377x160 @1331,98 flex=VERTICAL/gap8
+      [FRAME] "Heading 1" 377x32 @1331,122 flex=VERTICAL
+        [TEXT] "Our Projects" 377x32 @1331,122 fill=#4a0810 :: "Our Projects" 24px Inter/Regular #4a0810 
+      [FRAME] "Container" 320x72 @1331,162 flex=VERTICAL
+        [TEXT] "Text" 279x72 @1331,162 fill=#544242 :: "Discover our collection of premium
+residential communities designed for
+refined living." 16px Inter/Regular #544242 
+    [FRAME] "Search / Filter (Contextual)" 377x49 @1331,258 flex=HORIZONTAL/gap8
+      [FRAME] "Container" 325x49 @1331,258 flex=VERTICAL
+        [FRAME] "Input" 325x49 @1331,258 fill=#ffffff flex=HORIZONTAL
+          [FRAME] "Container" 269x19 @1371,272 flex=VERTICAL
+            [TEXT] "Search by name..." 269x19 @1371,272 fill=#6b7280 :: "Search by name..." 16px Inter/Regular #6b7280 
+        [FRAME] "Container" 18x24 @1343,271 flex=VERTICAL
+          [VECTOR] "Icon" 18x18 @1343,271 fill=#544242
+      [FRAME] "Button" 44x44 @1664,261 fill=#f0edef r=4 flex=VERTICAL
+        [FRAME] "Container" 18x18 @1677,274 flex=HORIZONTAL
+          [VECTOR] "Icon" 18x18 @1677,274 fill=#4a0810
+    [FRAME] "Projects Grid" 377x946 @1331,307 flex=GRID
+      [FRAME] "Article - Project Card 1" 177x449 @1331,331 fill=#ffffff r=8 flex=VERTICAL
+        [FRAME] "Container" 175x218 @1332,332 flex=VERTICAL
+          [FRAME] "Al-Yasmeen Towers" 175x218 @1332,332 fill=img:b96715f1d5
+          [FRAME] "Background" 76x20 @1344,341 fill=#4a0810 r=2 flex=VERTICAL
+            [TEXT] "Text" 60x15 @1352,344 fill=#ffffff :: "RESERVED" 10px Inter/Regular #ffffff 
+        [FRAME] "Container" 175x229 @1332,550 flex=VERTICAL
+          [FRAME] "Margin" 143x85 @1348,566
+            [FRAME] "Container" 143x74 @1348,565 flex=VERTICAL/gap4
+              [FRAME] "Heading 2" 143x46 @1348,565 flex=VERTICAL
+                [TEXT] "Al-Yasmeen Towers" 143x45 @1348,565 fill=#4a0810 :: "Al-Yasmeen
+Towers" 18px Inter/Regular #4a0810 
+              [FRAME] "Container" 143x24 @1348,615 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 9x12 @1348,621 flex=VERTICAL
+                  [VECTOR] "Icon" 9x12 @1348,621 fill=#bb9e80
+                [TEXT] "Text" 98x24 @1361,615 fill=#544242 :: "North Riyadh" 16px Inter/Regular #544242 
+          [FRAME] "Margin" 143x16 @1348,651
+          [FRAME] "Button:margin" 143x96 @1348,667 flex=VERTICAL
+            [FRAME] "Button" 143x72 @1348,691 fill=#4a0810 r=4 flex=VERTICAL
+              [TEXT] "Text" 83x48 @1378,703 fill=#ffffff :: "EXPLORE
+UNITS" 16px Inter/Regular #ffffff CENTER
+      [FRAME] "Article - Project Card 2" 177x449 @1532,331 fill=#ffffff r=8 flex=VERTICAL
+        [FRAME] "Container" 175x218 @1533,332 flex=VERTICAL
+          [FRAME] "Jiwar Residencies" 175x218 @1533,332 fill=img:3b684231a6
+          [FRAME] "Background" 80x20 @1545,341 fill=#004036 r=2 flex=VERTICAL
+            [TEXT] "Text" 64x15 @1553,344 fill=#b6eedf :: "AVAILABLE" 10px Inter/Regular #b6eedf 
+        [FRAME] "Container" 175x229 @1533,550 flex=VERTICAL
+          [FRAME] "Margin" 143x109 @1549,566
+            [FRAME] "Container" 143x98 @1549,565 flex=VERTICAL/gap4
+              [FRAME] "Heading 2" 143x46 @1549,565 flex=VERTICAL
+                [TEXT] "Jiwar Residencies" 143x45 @1549,565 fill=#4a0810 :: "Jiwar
+Residencies" 18px Inter/Regular #4a0810 
+              [FRAME] "Container" 143x48 @1549,615 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 9x12 @1549,633 flex=VERTICAL
+                  [VECTOR] "Icon" 9x12 @1549,633 fill=#bb9e80
+                [TEXT] "Text" 65x48 @1562,615 fill=#544242 :: "Heritage
+Corridor" 16px Inter/Regular #544242 
+          [FRAME] "Margin" 143x16 @1549,675
+          [FRAME] "Button" 143x72 @1549,691 fill=#4a0810 r=4 flex=VERTICAL
+            [TEXT] "Text" 83x48 @1578,703 fill=#ffffff :: "EXPLORE
+UNITS" 16px Inter/Regular #ffffff CENTER
+      [FRAME] "Article - Project Card 3" 177x449 @1331,804 fill=#ffffff r=8 flex=VERTICAL/gap0
+        [FRAME] "Container" 175x218 @1332,805 flex=VERTICAL
+          [FRAME] "Heritage Heights" 175x218 @1332,805 fill=img:c89aedd981
+          [FRAME] "Background" 80x20 @1344,814 fill=#004036 r=2 flex=VERTICAL
+            [TEXT] "Text" 64x15 @1352,817 fill=#b6eedf :: "AVAILABLE" 10px Inter/Regular #b6eedf 
+        [FRAME] "Container" 175x229 @1332,1023 flex=VERTICAL
+          [FRAME] "Margin" 143x109 @1348,1039
+            [FRAME] "Container" 143x98 @1348,1038 flex=VERTICAL/gap4
+              [FRAME] "Heading 2" 143x46 @1348,1038 flex=VERTICAL
+                [TEXT] "Heritage Heights" 143x45 @1348,1038 fill=#4a0810 :: "Heritage
+Heights" 18px Inter/Regular #4a0810 
+              [FRAME] "Container" 143x48 @1348,1088 flex=HORIZONTAL/gap4
+                [FRAME] "Container" 9x12 @1348,1106 flex=VERTICAL
+                  [VECTOR] "Icon" 9x12 @1348,1106 fill=#bb9e80
+                [TEXT] "Text" 80x48 @1361,1088 fill=#544242 :: "Diplomatic
+Quarter" 16px Inter/Regular #544242 
+          [FRAME] "Margin" 143x16 @1348,1148
+          [FRAME] "Button" 143x72 @1348,1164 fill=#4a0810 r=4 flex=VERTICAL
+            [TEXT] "Text" 83x48 @1378,1176 fill=#ffffff :: "EXPLORE
+UNITS" 16px Inter/Regular #ffffff CENTER
+  [FRAME] "Header - Top AppBar" 409x64 @1315,18 fill=#fbf8fb flex=HORIZONTAL/gap297
+    [FRAME] "Container" 136x40 @1331,30 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 40x40 @1331,30 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 16x16 @1343,42 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @1343,42 fill=#4a0810
+      [FRAME] "Container" 80x32 @1387,34 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 80x32 @1387,34 fill=img:86442120d5

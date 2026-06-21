@@ -1,0 +1,138 @@
+[FRAME] "Html → Body" 390x1854 @0,0 fill=#ffffff,#f2f1ed flex=VERTICAL
+  [FRAME] "image clip" 390x1854 @2231,18 flex=VERTICAL
+    [FRAME] "image" 60x60 @2231,18
+      [VECTOR] "Vector" 40x40 @2231,18 fill=#4a0810
+  [FRAME] "Main Content" 390x1854 @2231,18 flex=VERTICAL
+    [FRAME] "Article - Unit Details Content" 390x1294 @2231,479 flex=VERTICAL/gap24
+      [FRAME] "Header Info" 358x144 @2247,503 flex=HORIZONTAL/gap0
+        [FRAME] "Container" 234x144 @2247,503 flex=VERTICAL
+          [FRAME] "Background" 87x24 @2247,503 fill=#fbdab9 r=2 flex=HORIZONTAL
+            [TEXT] "Text" 71x16 @2255,507 fill=#765e44 :: "AVAILABLE" 12px Inter/Semi Bold #765e44 
+          [FRAME] "Heading 2" 234x72 @2247,527 flex=VERTICAL
+            [TEXT] "Text" 234x64 @2247,535 fill=#4a0810 :: "The Heritage Suite -
+Type A1" 24px Inter/Bold #4a0810 
+          [FRAME] "Container" 234x48 @2247,599 flex=HORIZONTAL/gap4
+            [FRAME] "Container" 9x12 @2247,617 flex=VERTICAL
+              [VECTOR] "Icon" 9x12 @2247,617 fill=#544242
+            [TEXT] "Text" 179x48 @2260,599 fill=#544242 :: "Al-Ula District, Heritage
+Sector" 16px Inter/Regular #544242 
+        [FRAME] "Container" 101x72 @2504,503 flex=VERTICAL
+          [FRAME] "Container" 101x16 @2504,503 flex=VERTICAL
+            [TEXT] "Text" 86x16 @2519,503 fill=#544242 :: "STARTING AT" 12px Inter/Semi Bold #544242 RIGHT
+          [FRAME] "Container" 101x56 @2504,519 flex=VERTICAL
+            [TEXT] "Text" 101x56 @2504,519 fill=#2e2e30 :: "SAR
+1,450,000" 20px Inter/Bold #2e2e30 RIGHT
+      [FRAME] "Section - Specification Matrix Grid" 358x106 @2247,671 flex=GRID
+        [FRAME] "Background+Border+Shadow" 117x96 @2247,671 fill=#ffffff r=8 flex=VERTICAL
+          [FRAME] "Margin" 20x22 @2295,688 flex=VERTICAL
+            [FRAME] "Container" 20x14 @2295,688 flex=VERTICAL
+              [VECTOR] "Icon" 20x14 @2295,688 fill=#4a0810
+          [FRAME] "Container" 10x24 @2300,710 flex=VERTICAL
+            [TEXT] "Text" 10x24 @2300,710 fill=#1b1b1d :: "3" 16px Inter/Bold #1b1b1d CENTER
+          [FRAME] "Container" 74x16 @2268,734 flex=VERTICAL
+            [TEXT] "Text" 74x16 @2268,734 fill=#544242 :: "BEDROOMS" 12px Inter/Semi Bold #544242 CENTER
+        [FRAME] "Background+Border+Shadow" 117x94 @2368,671 fill=#ffffff r=8 flex=VERTICAL
+          [FRAME] "Margin" 20x28 @2416,684 flex=VERTICAL
+            [FRAME] "Container" 20x20 @2416,684 flex=VERTICAL
+              [VECTOR] "Icon" 20x20 @2416,684 fill=#4a0810
+          [FRAME] "Container" 10x24 @2421,712 flex=VERTICAL
+            [TEXT] "Text" 10x24 @2421,712 fill=#1b1b1d :: "2" 16px Inter/Bold #1b1b1d CENTER
+          [FRAME] "Container" 83x16 @2384,736 flex=VERTICAL
+            [TEXT] "Text" 83x16 @2384,736 fill=#544242 :: "BATHROOMS" 12px Inter/Semi Bold #544242 CENTER
+        [FRAME] "Background+Border+Shadow" 117x94 @2488,671 fill=#ffffff r=8 flex=VERTICAL
+          [FRAME] "Margin" 20x20 @2537,688 flex=VERTICAL
+            [FRAME] "Container" 20x12 @2537,688 flex=VERTICAL
+              [VECTOR] "Icon" 20x12 @2537,688 fill=#4a0810
+          [FRAME] "Container" 28x24 @2533,708 flex=VERTICAL
+            [TEXT] "Text" 28x24 @2533,708 fill=#1b1b1d :: "145" 16px Inter/Bold #1b1b1d CENTER
+          [FRAME] "Container" 69x16 @2512,732 flex=VERTICAL
+            [TEXT] "Text" 69x16 @2512,732 fill=#544242 :: "SQM AREA" 12px Inter/Semi Bold #544242 CENTER
+      [FRAME] "Section - Description" 358x484 @2247,801 flex=VERTICAL/gap16
+        [FRAME] "Heading 3" 358x28 @2247,801 flex=VERTICAL
+          [TEXT] "Text" 204x28 @2267,801 fill=#4a0810 :: "Property Description" 20px Inter/Bold #4a0810 
+        [FRAME] "Overlay+Border" 358x440 @2247,845 fill=#ffffff r=8 flex=VERTICAL/gap16
+          [FRAME] "Container" 324x234 @2264,862 flex=VERTICAL
+            [TEXT] "Experience the pinnacle of Heritage Excellence. This Type A1 unit blends traditional architectural motifs with modern engineering. Featuring expansive glass walls that invite the golden Al-Ula light, the residence offers a unique connection to the historic landscape while providing ultimate privacy and climate control." 324x234 @2264,862 fill=#544242 :: "Experience the pinnacle of Heritage
+Excellence. This Type A1 unit blends
+traditional architectural motifs with
+modern engineering. Featuring expansive
+glass walls that invite the golden Al-Ula
+light, the residence offers a unique
+connection to the historic landscape while
+providing ultimate privacy and climate
+control." 16px Inter/Regular #544242 
+          [FRAME] "Container" 324x156 @2264,1112 flex=VERTICAL
+            [TEXT] "High-end finishes including locally sourced stone countertops, charcoal black architectural accents, and state-of-the-art smart home integration. Perfect for those seeking a prestigious residence in the heart of the kingdom's heritage corridor." 324x156 @2264,1112 fill=#544242 :: "High-end finishes including locally
+sourced stone countertops, charcoal black
+architectural accents, and state-of-the-art
+smart home integration. Perfect for those
+seeking a prestigious residence in the
+heart of the kingdom's heritage corridor." 16px Inter/Regular #544242 
+      [FRAME] "Section - Key Features - Bento Style" 358x180 @2247,1309 flex=VERTICAL/gap16
+        [FRAME] "Heading 3" 358x28 @2247,1309 flex=VERTICAL
+          [TEXT] "Text" 141x28 @2267,1309 fill=#4a0810 :: "Key Amenities" 20px Inter/Bold #4a0810 
+        [FRAME] "Container" 358x136 @2247,1353 flex=GRID
+          [FRAME] "Background" 171x56 @2247,1353 fill=#f5f3f5 r=8 flex=HORIZONTAL/gap12
+            [FRAME] "Container" 13x18 @2263,1372 flex=VERTICAL
+              [VECTOR] "Icon" 13x18 @2263,1372 fill=#725a40
+            [FRAME] "Container" 97x16 @2288,1373 flex=VERTICAL
+              [TEXT] "Text" 97x16 @2288,1373 fill=#58432a :: "Private Parking" 12px Inter/Semi Bold #58432a 
+          [FRAME] "Background" 171x56 @2434,1353 fill=#f5f3f5 r=8 flex=HORIZONTAL/gap12
+            [FRAME] "Container" 20x20 @2450,1371 flex=VERTICAL
+              [VECTOR] "Icon" 20x20 @2450,1371 fill=#725a40
+            [FRAME] "Container" 86x16 @2482,1373 flex=VERTICAL
+              [TEXT] "Text" 86x16 @2482,1373 fill=#58432a :: "Central HVAC" 12px Inter/Semi Bold #58432a 
+          [FRAME] "Background" 171x64 @2247,1425 fill=#f5f3f5 r=8 flex=HORIZONTAL/gap12
+            [FRAME] "Container" 18x20 @2263,1447 flex=VERTICAL
+              [VECTOR] "Icon" 18x20 @2263,1447 fill=#725a40
+            [FRAME] "Container" 103x32 @2293,1441 flex=VERTICAL
+              [TEXT] "Text" 55x32 @2293,1441 fill=#58432a :: "Heritage
+Terrace" 12px Inter/Semi Bold #58432a 
+          [FRAME] "Background" 171x64 @2434,1425 fill=#f5f3f5 r=8 flex=HORIZONTAL/gap12
+            [FRAME] "Container" 16x20 @2450,1447 flex=VERTICAL
+              [VECTOR] "Icon" 16x20 @2450,1447 fill=#725a40
+            [FRAME] "Container" 86x16 @2478,1449 flex=VERTICAL
+              [TEXT] "Text" 86x16 @2478,1449 fill=#58432a :: "24/7 Security" 12px Inter/Semi Bold #58432a 
+      [FRAME] "Section - Map Placeholder" 358x236 @2247,1513 flex=VERTICAL/gap16
+        [FRAME] "Heading 3" 358x28 @2247,1513 flex=VERTICAL
+          [TEXT] "Text" 132x28 @2267,1513 fill=#4a0810 :: "Location Map" 20px Inter/Bold #4a0810 
+        [FRAME] "Background+Border" 358x192 @2247,1557 fill=#ffffff r=16 flex=VERTICAL
+          [FRAME] "AB6AXuClW0QKKizGAJkYaqBTh0M74I2pjfhjshAS14t1ORo2qhGzVgD4w3NvtBetbeUIDz4klkyJZnhiFFnbj89ootGsEtYB1cTDyqSfCDKQ8CzVZoY3QPO4WQsS_S_OIufuf28nTPW_5AqrOtWJTKKW0rOv8PP-F15ZeaHrhvr06PSCu35XyMCMClOcdekU2YS3ZhEtEk7gZa2pjUkB1ovOPgvjzALEsqYNP8K-NFsNx01v_zyZj_JBF1lb9lY7tk729VWoYOmA56l60xE" 354x188 @2249,1559 fill=img:de7d19813f
+          [FRAME] "Container" 354x188 @2249,1559 flex=HORIZONTAL
+            [FRAME] "Background" 32x36 @2410,1635 fill=#4a0810 r=12 flex=VERTICAL
+              [ROUNDED_RECTANGLE] "Overlay+Shadow" 32x36 @2410,1635 fill=#ffffff r=12
+              [VECTOR] "Icon" 16x20 @2418,1643 fill=#ffffff
+    [FRAME] "Section - Image Carousel" 390x397 @2231,82 fill=#dcd9dc flex=VERTICAL
+      [FRAME] "Container" 390x397 @2231,82
+        [FRAME] "Container" 390x397 @2231,82 flex=VERTICAL
+          [FRAME] "AB6AXuD40JpZm6Q_QCxwhLEbxqlBB_OpUzQpZvJxp9LsXCcYbcLKRwHSHVRhyecOdJijFpmXU1mWGLzlUzzS83bpk-ogyhB22UCvEyE7vrPvgb7UF88IxNy0XZPsazsj6Bbpnp6dAUu2DeBHo9KtZJ1NiFNkFXmN5-vPjNs7_pLOzPNc_3Jg8AiftcPCM9dAgLQPFsGLB1f4JSHFxQBsBoMjqed-EIV9dGiK8IAGOLkkXhapDhkG8jQ0Og2GcuCu_VqtGNt7aFMJdCUiw4Q" 390x397 @2231,82 fill=img:6d0086420f
+          [FRAME] "Overlay+OverlayBlur" 125x24 @2247,439 fill=#4a0810 r=12 flex=VERTICAL
+            [TEXT] "Text" 101x16 @2259,443 fill=#ffffff :: "EXTERIOR VIEW" 12px Inter/Semi Bold #ffffff 
+        [FRAME] "Container" 390x397 @2621,82 flex=VERTICAL
+          [FRAME] "AB6AXuBQLHBnU6Vn9YFnlBhPomlpvRO8LxCwAK8pzNixyLsJTRhWYZmPx2AYdatCtzVSFY8sw-D7v11AqQsk2jw3qOcsfe7kzAQiAzyJyStMomO5RrfOPgM2_O8EPdTvA7s93-BEIEEcGMRM1MWcHRqvW7JlO7C8wpvxzVXz1q1vRZF253FlXPU23WkiFKuLDQqxFTVijhzlBVRjUJtMqiA2HV6V4OHhWRjeUjyFTogu1K9hexnWVlRSZMjQc1k4kIrKzJz-x8ONcIFt8s0" 390x397 @2621,82 fill=img:1f0150b936
+          [FRAME] "Overlay+OverlayBlur" 105x24 @2637,439 fill=#4a0810 r=12 flex=VERTICAL
+            [TEXT] "Text" 81x16 @2649,443 fill=#ffffff :: "FLOOR PLAN" 12px Inter/Semi Bold #ffffff 
+        [FRAME] "Container" 390x397 @3011,82 flex=VERTICAL
+          [FRAME] "AB6AXuBRbixCM4IyAaisBmbue_p5_1pWGfMaalIOHuRwEzX5AQ4fRsuFzsVmBYH2zV7WI15BjhEZhiR39-nuMa4ai0GCWwYW70e2g5NkgcjX4IcH46zhFHmJRXxmSYgTZKwOp6qLaQdX_lVbo08Jq3_L8k-uHv2DUAr2R_rwhU1vrpEv1hy8OSjMWOGamDIf9ZYVqtkhIfnXr-jNf6RW-AgzdmuBGmHtW2qxjVdMEQkTNaidDeslOjTV0xk1NWwXV0MwIPDCm9VBX9FT7GA" 390x397 @3011,82 fill=img:3b5bf27540
+          [FRAME] "Overlay+OverlayBlur" 140x24 @3027,439 fill=#4a0810 r=12 flex=VERTICAL
+            [TEXT] "Text" 116x16 @3039,443 fill=#ffffff :: "INTERIOR RENDER" 12px Inter/Semi Bold #ffffff 
+      [FRAME] "Indicator Dots" 40x8 @2565,455 flex=HORIZONTAL/gap8
+        [ROUNDED_RECTANGLE] "Background" 8x8 @2565,455 fill=#ffffff r=12
+        [ROUNDED_RECTANGLE] "Background" 8x8 @2581,455 fill=#ffffff r=12
+        [ROUNDED_RECTANGLE] "Background" 8x8 @2597,455 fill=#ffffff r=12
+  [FRAME] "Header - TopAppBar" 390x64 @2231,18 fill=#fbf8fb flex=HORIZONTAL/gap40
+    [FRAME] "Container" 40x40 @2565,30 flex=HORIZONTAL/gap8
+      [FRAME] "Button" 40x40 @2565,30 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 18x20 @2576,40 flex=VERTICAL
+          [VECTOR] "Icon" 18x20 @2576,40 fill=#544242
+    [FRAME] "Container" 136x40 @2247,30 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 40x40 @2247,30 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 16x16 @2259,42 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @2259,42 fill=#4a0810
+      [FRAME] "Container" 80x32 @2303,34 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 80x32 @2303,34 fill=img:86442120d5
+  [FRAME] "Sticky Bottom Footer" 390x89 @2231,1783 fill=#fbf8fb flex=VERTICAL
+    [FRAME] "Container" 358x56 @2247,1800 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 358x56 @2247,1800 fill=#671f23 r=8 flex=HORIZONTAL
+        [ROUNDED_RECTANGLE] "Button:shadow" 358x56 @2247,1800 fill=#ffffff r=8
+        [TEXT] "Text" 218x24 @2317,1816 fill=#f2f1ed :: "RESERVE THIS UNIT NOW" 16px Inter/Bold #f2f1ed CENTER

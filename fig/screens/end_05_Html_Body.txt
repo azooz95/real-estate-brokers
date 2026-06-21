@@ -1,0 +1,80 @@
+[FRAME] "Html → Body" 390x1104 @0,0 fill=#ffffff,#fbf8fb flex=VERTICAL
+  [FRAME] "image clip" 390x979 @2662,0 flex=VERTICAL
+    [FRAME] "image" 60x60 @2662,0
+      [VECTOR] "Vector" 60x60 @2662,0 fill=#671f23
+  [FRAME] "Main" 390x829 @2662,0 flex=VERTICAL/gap24
+    [FRAME] "Section - Unit Summary Banner" 358x131 @2678,80 fill=#ffffff r=8 flex=VERTICAL/gap8
+      [FRAME] "Container" 324x56 @2695,97 flex=HORIZONTAL/gap132
+        [FRAME] "Container" 137x52 @2695,97 flex=VERTICAL
+          [FRAME] "Heading 2" 137x28 @2695,97 flex=VERTICAL
+            [TEXT] "Text" 137x28 @2695,97 fill=#671f23 :: "Heritage Suite" 20px Inter/Semi Bold #671f23 
+          [FRAME] "Container" 137x24 @2695,125 flex=VERTICAL
+            [TEXT] "Text" 114x24 @2695,125 fill=#544242 :: "Unit: JWR-402" 16px Inter/Regular #544242 
+        [FRAME] "Background" 55x56 @2964,97 fill=#eae7ea r=4 flex=VERTICAL
+          [FRAME] "Container" 39x24 @2972,101 flex=VERTICAL
+            [TEXT] "Text" 39x24 @2972,101 fill=#544242 :: "Floor" 16px Inter/Regular #544242 
+          [FRAME] "Container" 39x24 @2972,125 flex=VERTICAL
+            [TEXT] "Text" 21x24 @2981,125 fill=#1b1b1d :: "04" 16px Inter/Semi Bold #1b1b1d CENTER
+      [FRAME] "HorizontalBorder" 324x33 @2695,161 flex=HORIZONTAL/gap69
+        [FRAME] "Container" 152x24 @2695,170 flex=VERTICAL
+          [TEXT] "Text" 152x24 @2695,170 fill=#544242 :: "Reservation Deposit" 16px Inter/Regular #544242 
+        [FRAME] "Container" 104x24 @2915,170 flex=VERTICAL
+          [TEXT] "Text" 104x24 @2915,170 fill=#671f23 :: "SAR 5,000.00" 16px Inter/Regular #671f23 
+    [FRAME] "Countdown Banner" 358x82 @2678,235 fill=#bb9e80 r=8 flex=HORIZONTAL/gap12
+      [FRAME] "Container" 18x21 @2695,266 flex=VERTICAL
+        [VECTOR] "Icon" 18x21 @2695,266 fill=#bb9e80
+      [FRAME] "Container" 288x48 @2725,252 flex=VERTICAL
+        [TEXT] "Text" 257x48 @2725,252 fill=#58432a :: "Holding this unit for you for 09:59
+minutes" 16px Inter/Regular #58432a 
+    [FRAME] "Section - Personal Details Form" 358x232 @2678,341 flex=VERTICAL/gap16
+      [FRAME] "Heading 3" 358x28 @2678,341 flex=VERTICAL
+        [TEXT] "Personal Information" 358x28 @2678,341 fill=#1b1b1d :: "Personal Information" 20px Inter/Semi Bold #1b1b1d 
+      [FRAME] "Form" 358x188 @2678,385 flex=VERTICAL/gap16
+        [FRAME] "Container" 358x86 @2678,385 flex=VERTICAL/gap4
+          [FRAME] "Label" 358x24 @2678,385 flex=VERTICAL
+            [TEXT] "Full Name" 350x24 @2682,385 fill=#544242 :: "Full Name" 16px Inter/Regular #544242 
+          [FRAME] "Input" 358x58 @2678,413 fill=#ffffff flex=HORIZONTAL
+            [FRAME] "Container" 324x19 @2695,432 flex=VERTICAL
+              [TEXT] "Enter your full name" 324x19 @2695,432 fill=#6b7280 :: "Enter your full name" 16px Inter/Regular #6b7280 
+        [FRAME] "Container" 358x86 @2678,487 flex=VERTICAL/gap4
+          [FRAME] "Label" 358x24 @2678,487 flex=VERTICAL
+            [TEXT] "Phone Number" 350x24 @2682,487 fill=#544242 :: "Phone Number" 16px Inter/Regular #544242 
+          [FRAME] "Container" 358x58 @2678,515 flex=HORIZONTAL
+            [FRAME] "Background+HorizontalBorder" 72x58 @2678,515 fill=#f5f3f5 flex=HORIZONTAL
+              [TEXT] "Text" 40x24 @2694,531 fill=#544242 :: "+966" 16px Inter/Regular #544242 
+            [FRAME] "Input" 286x58 @2750,515 fill=#ffffff flex=VERTICAL
+              [FRAME] "Container" 252x19 @2767,534 flex=VERTICAL
+                [TEXT] "5X XXX XXXX" 252x19 @2767,534 fill=#6b7280 :: "5X XXX XXXX" 16px Inter/Regular #6b7280 
+    [FRAME] "Section - Payment Methods" 358x232 @2678,597 flex=VERTICAL/gap16
+      [FRAME] "Heading 3" 358x28 @2678,597 flex=VERTICAL
+        [TEXT] "Select Payment Method" 358x28 @2678,597 fill=#1b1b1d :: "Select Payment Method" 20px Inter/Semi Bold #1b1b1d 
+      [FRAME] "Container" 358x188 @2678,641 flex=GRID
+        [FRAME] "Button - Mada" 175x90 @2678,641 fill=#ffffff r=8 flex=VERTICAL/gap8
+          [FRAME] "Mada Logo" 24x24 @2753,658 fill=img:953c23eb00
+          [TEXT] "Text" 51x24 @2740,690 fill=#544242 :: "MADA" 16px Inter/Regular #544242 CENTER
+        [FRAME] "Button - STC Pay" 175x90 @2861,641 fill=#ffffff r=8 flex=VERTICAL/gap8
+          [FRAME] "STC Pay Logo" 24x24 @2936,658 fill=img:9d789de405
+          [TEXT] "Text" 72x24 @2913,690 fill=#544242 :: "STC PAY" 16px Inter/Regular #544242 CENTER
+        [FRAME] "Button - Apple Pay" 175x90 @2678,739 fill=#ffffff r=8 flex=VERTICAL/gap8
+          [FRAME] "Apple Pay Logo" 24x24 @2753,756 fill=img:810ee4e987
+          [TEXT] "Text" 92x24 @2720,788 fill=#544242 :: "APPLE PAY" 16px Inter/Regular #544242 CENTER
+        [FRAME] "Button - Credit Card" 175x82 @2861,739 fill=#ffffff r=8 flex=VERTICAL/gap8
+          [FRAME] "Container" 20x16 @2939,756 flex=HORIZONTAL
+            [FRAME] "Container" 20x16 @2939,756 flex=VERTICAL
+              [VECTOR] "Icon" 20x16 @2939,756 fill=#544242
+          [TEXT] "Text" 115x24 @2891,780 fill=#544242 :: "CREDIT CARD" 16px Inter/Regular #544242 CENTER
+  [FRAME] "Top Navigation Header" 390x64 @2662,0 fill=#fbf8fb flex=HORIZONTAL/gap124
+    [FRAME] "Container" 136x40 @2678,12 flex=HORIZONTAL/gap16
+      [FRAME] "Button" 40x40 @2678,12 r=12 flex=HORIZONTAL
+        [FRAME] "Container" 16x16 @2690,24 flex=VERTICAL
+          [VECTOR] "Icon" 16x16 @2690,24 fill=#4a0810
+      [FRAME] "Container" 80x32 @2734,16 flex=VERTICAL
+        [FRAME] "Jiwar Aloula Logo" 80x32 @2734,16 fill=img:86442120d5
+  [FRAME] "CTA Section" 390x121 @2662,848 fill=#fbf8fb flex=VERTICAL/gap8
+    [FRAME] "Button" 358x56 @2678,865 fill=#671f23 r=12 flex=HORIZONTAL
+      [ROUNDED_RECTANGLE] "Button:shadow" 358x56 @2678,865 fill=#ffffff r=12
+      [TEXT] "Text" 211x24 @2752,881 fill=#ffffff :: "Proceed to Secure Payment" 16px Inter/Regular #ffffff CENTER
+    [FRAME] "Container" 358x24 @2678,929 flex=HORIZONTAL/gap4
+      [FRAME] "Container" 9x12 @2701,935 flex=VERTICAL
+        [VECTOR] "Icon" 9x12 @2701,935 fill=#544242
+      [TEXT] "Text" 299x24 @2714,929 fill=#544242 :: "Secure 256-bit SSL encrypted payment" 16px Inter/Regular #544242 CENTER
