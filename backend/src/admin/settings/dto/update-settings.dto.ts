@@ -1,5 +1,11 @@
 import { Type } from 'class-transformer';
-import { IsBoolean, IsInt, IsString, Min, ValidateNested } from 'class-validator';
+import {
+  IsBoolean,
+  IsInt,
+  IsString,
+  Min,
+  ValidateNested,
+} from 'class-validator';
 
 class IntegrationsDto {
   @IsBoolean()

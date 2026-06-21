@@ -31,23 +31,50 @@ export class InventoryService {
   async getAdminDetail(code: string) {
     const unit = await this.prisma.unit.findUnique({
       where: { code },
-      include: { project: true, reservations: { orderBy: { createdAt: 'desc' }, take: 1 } },
+      include: {
+        project: true,
+        reservations: { orderBy: { createdAt: 'desc' }, take: 1 },
+      },
     });
     if (!unit) throw new NotFoundException('Unit not found');
 
     const reservation = unit.reservations[0] ?? null;
     const holder = reservation
-      ? { name: reservation.clientName, phone: reservation.clientPhone, since: `${unit.status === 'hold' ? 'Held' : 'Reserved'} ${timeAgo(reservation.createdAt)}` }
+      ? {
+          name: reservation.clientName,
+          phone: reservation.clientPhone,
+          since: `${unit.status === 'hold' ? 'Held' : 'Reserved'} ${timeAgo(reservation.createdAt)}`,
+        }
       : unit.status === 'hold'
-        ? { name: 'On administrative hold', phone: 'Internal — no client yet', since: unit.statusChangedAt ? `Held ${timeAgo(unit.statusChangedAt)}` : 'Held' }
+        ? {
+            name: 'On administrative hold',
+            phone: 'Internal — no client yet',
+            since: unit.statusChangedAt
+              ? `Held ${timeAgo(unit.statusChangedAt)}`
+              : 'Held',
+          }
         : null;
 
-    const timeline = [{ icon: '📤', title: 'Unit Published', meta: `Synced • ${unit.createdAt.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}` }];
+    const timeline = [
+      {
+        icon: '📤',
+        title: 'Unit Published',
+        meta: `Synced • ${unit.createdAt.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}`,
+      },
+    ];
     if (reservation) {
-      timeline.unshift({ icon: '💳', title: 'Deposit Received', meta: `Verified • ${timeAgo(reservation.createdAt)}` });
+      timeline.unshift({
+        icon: '💳',
+        title: 'Deposit Received',
+        meta: `Verified • ${timeAgo(reservation.createdAt)}`,
+      });
     }
     if (unit.statusChangedAt) {
-      timeline.unshift({ icon: '🛡', title: `Status changed to ${unit.status}`, meta: `${unit.statusReason ?? 'Admin override'} • ${timeAgo(unit.statusChangedAt)}` });
+      timeline.unshift({
+        icon: '🛡',
+        title: `Status changed to ${unit.status}`,
+        meta: `${unit.statusReason ?? 'Admin override'} • ${timeAgo(unit.statusChangedAt)}`,
+      });
     }
 
     return {
@@ -73,7 +100,11 @@ export class InventoryService {
 
     const updated = await this.prisma.unit.update({
       where: { code },
-      data: { status: dto.status, statusReason: dto.reason, statusChangedAt: new Date() },
+      data: {
+        status: dto.status,
+        statusReason: dto.reason,
+        statusChangedAt: new Date(),
+      },
     });
 
     return { code: updated.code, status: updated.status };

@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import type { Request } from 'express';
 
 function cookieExtractor(req: Request): string | null {
-  return req?.cookies?.access_token ?? null;
+  return (req?.cookies?.access_token as string | undefined) ?? null;
 }
 
 @Injectable()
@@ -18,7 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     } satisfies StrategyOptionsWithoutRequest);
   }
 
-  async validate(payload: { sub: string; email: string; role: string }) {
+  validate(payload: { sub: string; email: string; role: string }) {
     return { id: payload.sub, email: payload.email, role: payload.role };
   }
 }

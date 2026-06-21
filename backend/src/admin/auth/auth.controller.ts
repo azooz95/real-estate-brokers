@@ -1,4 +1,14 @@
-import { Body, Controller, Get, HttpCode, Post, Put, Req, Res, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  Post,
+  Put,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import type { Request, Response } from 'express';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
@@ -10,7 +20,11 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private auth: AuthService, private config: ConfigService, private jwt: JwtService) {}
+  constructor(
+    private auth: AuthService,
+    private config: ConfigService,
+    private jwt: JwtService,
+  ) {}
 
   private setAuthCookie(res: Response, token: string) {
     res.cookie('access_token', token, {
@@ -22,7 +36,10 @@ export class AuthController {
   }
 
   @Post('login')
-  async login(@Body() dto: LoginDto, @Res({ passthrough: true }) res: Response) {
+  async login(
+    @Body() dto: LoginDto,
+    @Res({ passthrough: true }) res: Response,
+  ) {
     const { token, user } = await this.auth.login(dto);
     this.setAuthCookie(res, token);
     return { token, user };
@@ -56,7 +73,11 @@ export class AuthController {
     const user = await this.auth.updateAccount(req.user.id, dto);
     // Re-issue the cookie so the session reflects the new email immediately,
     // without forcing the admin to log out and back in.
-    const token = await this.jwt.signAsync({ sub: user.id, email: user.email, role: user.role });
+    const token = await this.jwt.signAsync({
+      sub: user.id,
+      email: user.email,
+      role: user.role,
+    });
     this.setAuthCookie(res, token);
     return { user };
   }

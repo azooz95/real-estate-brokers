@@ -1,4 +1,8 @@
-import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import puppeteer from 'puppeteer-core';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
@@ -10,16 +14,23 @@ export class ReservationsService {
   constructor(private prisma: PrismaService) {}
 
   async create(dto: CreateReservationDto) {
-    const unit = await this.prisma.unit.findUnique({ where: { id: dto.unitId } });
+    const unit = await this.prisma.unit.findUnique({
+      where: { id: dto.unitId },
+    });
     if (!unit) throw new NotFoundException('Unit not found');
-    if (unit.status === 'reserved') throw new ConflictException('Unit is already reserved');
+    if (unit.status === 'reserved')
+      throw new ConflictException('Unit is already reserved');
 
     // A suspended broker's tracking link no longer attributes — same as no ref.
     const broker = dto.brokerRef
-      ? await this.prisma.broker.findFirst({ where: { id: dto.brokerRef, status: 'active' } })
+      ? await this.prisma.broker.findFirst({
+          where: { id: dto.brokerRef, status: 'active' },
+        })
       : null;
 
-    const settings = await this.prisma.settings.findUnique({ where: { id: 1 } });
+    const settings = await this.prisma.settings.findUnique({
+      where: { id: 1 },
+    });
     const deposit = unit.deposit ?? settings?.reservationDeposit ?? 5000;
     const id = await this.generateId();
 
@@ -36,7 +47,10 @@ export class ReservationsService {
           status: 'confirmed',
         },
       });
-      await tx.unit.update({ where: { id: unit.id }, data: { status: 'reserved' } });
+      await tx.unit.update({
+        where: { id: unit.id },
+        data: { status: 'reserved' },
+      });
       return created;
     });
 
@@ -109,12 +123,23 @@ export class ReservationsService {
     return reservation;
   }
 
-  private buildReceiptHtml(reservation: Awaited<ReturnType<ReservationsService['loadReceiptData']>>) {
-    const sar = (n: number) => new Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(n);
+  private buildReceiptHtml(
+    reservation: Awaited<ReturnType<ReservationsService['loadReceiptData']>>,
+  ) {
+    const sar = (n: number) =>
+      new Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(n);
     const initials = reservation.broker
-      ? reservation.broker.name.split(' ').map((w) => w[0]).slice(0, 2).join('')
+      ? reservation.broker.name
+          .split(' ')
+          .map((w) => w[0])
+          .slice(0, 2)
+          .join('')
       : '—';
-    const date = reservation.createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
+    const date = reservation.createdAt.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit',
+    });
 
     return `<!doctype html>
 <html><head><meta charset="utf-8"><title>Receipt ${reservation.id}</title>

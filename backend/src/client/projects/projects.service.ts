@@ -16,7 +16,10 @@ export class ProjectsService {
       name: p.name,
       location: p.location,
       image: p.image,
-      status: p.units.length > 0 && p.units.every((u) => u.status !== 'available') ? 'reserved' : 'available',
+      status:
+        p.units.length > 0 && p.units.every((u) => u.status !== 'available')
+          ? 'reserved'
+          : 'available',
     }));
   }
 

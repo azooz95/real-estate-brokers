@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Header, Param, Post, Res, StreamableFile } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Header,
+  Param,
+  Post,
+  Res,
+  StreamableFile,
+} from '@nestjs/common';
 import type { Response } from 'express';
 import { ReservationsService } from './reservations.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
@@ -24,7 +33,10 @@ export class ReservationsController {
   }
 
   @Get(':id/receipt/pdf')
-  async getReceiptPdf(@Param('id') id: string, @Res({ passthrough: true }) res: Response) {
+  async getReceiptPdf(
+    @Param('id') id: string,
+    @Res({ passthrough: true }) res: Response,
+  ) {
     const pdf = await this.reservations.getReceiptPdf(id);
     res.set({
       'Content-Type': 'application/pdf',

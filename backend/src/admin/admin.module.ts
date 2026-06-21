@@ -20,6 +20,12 @@ import { SettingsService } from './settings/settings.service';
     TransactionsController,
     SettingsController,
   ],
-  providers: [BrokersService, InventoryService, DashboardService, TransactionsService, SettingsService],
+  providers: [
+    BrokersService,
+    InventoryService,
+    DashboardService,
+    TransactionsService,
+    SettingsService,
+  ],
 })
 export class AdminModule {}

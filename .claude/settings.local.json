@@ -21,7 +21,11 @@
       "Bash(curl -s -b /tmp/cookies.txt -X PUT http://localhost:8000/api/settings -H \"Content-Type: application/json\" -d '{\"reservationDeposit\":5000,\"vatRate\":15,\"holdWindowMinutes\":10,\"currency\":\"SAR\",\"integrations\":{\"paymentGateway\":true,\"smsAlerts\":true,\"bilingualReceipts\":false}}')",
       "Bash(cp /tmp/test-smtp.js ./test-smtp.cjs)",
       "Bash(node test-smtp.cjs)",
-      "Bash(rm test-smtp.cjs)"
+      "Bash(rm test-smtp.cjs)",
+      "Bash(npm run *)",
+      "Bash(docker build *)",
+      "Bash(npm ls *)",
+      "Bash(docker run *)"
     ]
   }
 }

@@ -12,7 +12,9 @@ export class UnitsService {
     });
     if (!unit) throw new NotFoundException('Unit not found');
 
-    const settings = await this.prisma.settings.findUnique({ where: { id: 1 } });
+    const settings = await this.prisma.settings.findUnique({
+      where: { id: 1 },
+    });
 
     return {
       id: unit.id,

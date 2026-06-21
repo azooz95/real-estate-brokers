@@ -7,7 +7,13 @@ import { ClientModule } from './client/client.module';
 import { AdminModule } from './admin/admin.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), PrismaModule, MailModule, ClientModule, AdminModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    PrismaModule,
+    MailModule,
+    ClientModule,
+    AdminModule,
+  ],
   controllers: [AppController],
 })
 export class AppModule {}

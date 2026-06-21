@@ -9,7 +9,9 @@ export class MailService {
   private readonly from: string;
 
   constructor(private config: ConfigService) {
-    this.from = this.config.get<string>('MAIL_FROM') ?? 'Jiwar Aloula <no-reply@jiwar1st.com>';
+    this.from =
+      this.config.get<string>('MAIL_FROM') ??
+      'Jiwar Aloula <no-reply@jiwar1st.com>';
     this.transporter = createTransport({
       host: this.config.get<string>('SMTP_HOST'),
       port: Number(this.config.get<string>('SMTP_PORT') ?? 465),
@@ -22,7 +24,9 @@ export class MailService {
   }
 
   async sendNewPasswordEmail(to: string, name: string, newPassword: string) {
-    const adminBaseUrl = this.config.get<string>('ADMIN_BASE_URL') ?? 'http://localhost:5173/admin.html';
+    const adminBaseUrl =
+      this.config.get<string>('ADMIN_BASE_URL') ??
+      'http://localhost:5173/admin.html';
     await this.transporter.sendMail({
       from: this.from,
       to,

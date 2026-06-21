@@ -7,7 +7,9 @@ export class SettingsService {
   constructor(private prisma: PrismaService) {}
 
   async get() {
-    const s = await this.prisma.settings.findUniqueOrThrow({ where: { id: 1 } });
+    const s = await this.prisma.settings.findUniqueOrThrow({
+      where: { id: 1 },
+    });
     return this.toDto(s);
   }
 

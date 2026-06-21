@@ -6,16 +6,25 @@ import { UpdateBrokerDto } from './dto/update-broker.dto';
 
 @Injectable()
 export class BrokersService {
-  constructor(private prisma: PrismaService, private config: ConfigService) {}
+  constructor(
+    private prisma: PrismaService,
+    private config: ConfigService,
+  ) {}
 
   private trackingUrl(brokerId: string) {
-    const base = this.config.get<string>('CLIENT_BASE_URL') ?? 'http://localhost:5173';
+    const base =
+      this.config.get<string>('CLIENT_BASE_URL') ?? 'http://localhost:5173';
     return `${base}/?ref=${brokerId}`;
   }
 
   async list() {
     const brokers = await this.prisma.broker.findMany({
-      include: { reservations: { where: { status: 'confirmed' }, include: { unit: true } } },
+      include: {
+        reservations: {
+          where: { status: 'confirmed' },
+          include: { unit: true },
+        },
+      },
       orderBy: { createdAt: 'asc' },
     });
 
@@ -69,7 +78,12 @@ export class BrokersService {
       },
     });
 
-    return { id: updated.id, name: updated.name, mobile: updated.mobile, status: updated.status };
+    return {
+      id: updated.id,
+      name: updated.name,
+      mobile: updated.mobile,
+      status: updated.status,
+    };
   }
 
   // Reservations already attributed to this broker are kept (audit ledger

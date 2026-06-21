@@ -9,7 +9,17 @@ import { BrokerLookupController } from './brokers/broker-lookup.controller';
 import { BrokerLookupService } from './brokers/broker-lookup.service';
 
 @Module({
-  controllers: [ProjectsController, UnitsController, ReservationsController, BrokerLookupController],
-  providers: [ProjectsService, UnitsService, ReservationsService, BrokerLookupService],
+  controllers: [
+    ProjectsController,
+    UnitsController,
+    ReservationsController,
+    BrokerLookupController,
+  ],
+  providers: [
+    ProjectsService,
+    UnitsService,
+    ReservationsService,
+    BrokerLookupService,
+  ],
 })
 export class ClientModule {}

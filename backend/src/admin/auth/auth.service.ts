@@ -1,4 +1,9 @@
-import { BadRequestException, ConflictException, Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  ConflictException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from '../../prisma/prisma.service';
@@ -9,16 +14,26 @@ import { UpdateAccountDto } from './dto/update-account.dto';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService, private jwt: JwtService, private mail: MailService) {}
+  constructor(
+    private prisma: PrismaService,
+    private jwt: JwtService,
+    private mail: MailService,
+  ) {}
 
   async login(dto: LoginDto) {
-    const user = await this.prisma.adminUser.findUnique({ where: { email: dto.email } });
+    const user = await this.prisma.adminUser.findUnique({
+      where: { email: dto.email },
+    });
     if (!user) throw new UnauthorizedException('Invalid email or password');
 
     const valid = await bcrypt.compare(dto.password, user.password);
     if (!valid) throw new UnauthorizedException('Invalid email or password');
 
-    const token = await this.jwt.signAsync({ sub: user.id, email: user.email, role: user.role });
+    const token = await this.jwt.signAsync({
+      sub: user.id,
+      email: user.email,
+      role: user.role,
+    });
     return { token, user: { name: user.name, role: user.role } };
   }
 
@@ -38,7 +53,9 @@ export class AuthService {
   }
 
   async getMe(userId: string) {
-    const user = await this.prisma.adminUser.findUniqueOrThrow({ where: { id: userId } });
+    const user = await this.prisma.adminUser.findUniqueOrThrow({
+      where: { id: userId },
+    });
     return { id: user.id, name: user.name, email: user.email, role: user.role };
   }
 
@@ -47,15 +64,22 @@ export class AuthService {
   // real owner out by silently swapping the login email.
   async updateAccount(userId: string, dto: UpdateAccountDto) {
     if (!dto.newEmail && !dto.newPassword) {
-      throw new BadRequestException('Provide a new email or a new password to update');
+      throw new BadRequestException(
+        'Provide a new email or a new password to update',
+      );
     }
 
-    const user = await this.prisma.adminUser.findUniqueOrThrow({ where: { id: userId } });
+    const user = await this.prisma.adminUser.findUniqueOrThrow({
+      where: { id: userId },
+    });
     const valid = await bcrypt.compare(dto.currentPassword, user.password);
-    if (!valid) throw new UnauthorizedException('Current password is incorrect');
+    if (!valid)
+      throw new UnauthorizedException('Current password is incorrect');
 
     if (dto.newEmail && dto.newEmail !== user.email) {
-      const existing = await this.prisma.adminUser.findUnique({ where: { email: dto.newEmail } });
+      const existing = await this.prisma.adminUser.findUnique({
+        where: { email: dto.newEmail },
+      });
       if (existing) throw new ConflictException('That email is already in use');
     }
 
@@ -63,10 +87,17 @@ export class AuthService {
       where: { id: userId },
       data: {
         email: dto.newEmail ?? user.email,
-        password: dto.newPassword ? await bcrypt.hash(dto.newPassword, 10) : user.password,
+        password: dto.newPassword
+          ? await bcrypt.hash(dto.newPassword, 10)
+          : user.password,
       },
     });
 
-    return { id: updated.id, name: updated.name, email: updated.email, role: updated.role };
+    return {
+      id: updated.id,
+      name: updated.name,
+      email: updated.email,
+      role: updated.role,
+    };
   }
 }
