@@ -5,8 +5,10 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 COPY prisma ./prisma
 
+# npm install, not npm ci: this lockfile's optional @napi-rs/wasm-runtime peer deps
+# resolve non-deterministically, which makes npm ci's strict sync check flaky here.
 FROM base AS deps
-RUN npm ci
+RUN npm install --no-audit --no-fund
 
 FROM deps AS builder
 COPY . .
@@ -18,7 +20,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends chromium \
   && rm -rf /var/lib/apt/lists/*
 ENV CHROME_PATH=/usr/bin/chromium
-RUN npm ci --omit=dev
+RUN npm install --no-audit --no-fund --omit=dev
 COPY --from=builder /app/dist ./dist
 EXPOSE 8000
 CMD ["sh", "-c", "npx prisma migrate deploy && node dist/main"]

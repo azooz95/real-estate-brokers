@@ -25,7 +25,15 @@
       "Bash(npm run *)",
       "Bash(docker build *)",
       "Bash(npm ls *)",
-      "Bash(docker run *)"
+      "Bash(docker run *)",
+      "Bash(npm audit *)",
+      "Bash(npm view *)",
+      "Bash(docker image *)",
+      "Bash(rm -rf node_modules)",
+      "Bash(npm ci *)",
+      "Bash(git ls-remote *)",
+      "Bash(git check-ignore *)",
+      "Bash(git add *)"
     ]
   }
 }

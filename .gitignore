@@ -3,7 +3,9 @@ dist/
 build/
 .env
 .env.*
+!.env.example
 *.log
+*.swp
 .DS_Store
 uploads/
 graphify-out/
