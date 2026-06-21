@@ -3,11 +3,34 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import puppeteer from 'puppeteer-core';
 import { PrismaService } from '../../prisma/prisma.service';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 
 const CHROME_PATH = process.env.CHROME_PATH ?? '/usr/bin/google-chrome';
+
+// puppeteer-core and @sparticuz/chromium are ESM-only — dynamic import()
+// keeps them out of this file's module graph, since a static import would
+// crash the whole (CommonJS) Nest app at load time, not just this route.
+//
+// On Vercel there's no system Chrome install — @sparticuz/chromium ships a
+// binary built for the serverless runtime instead. Locally/Docker keep using
+// a real installed browser via CHROME_PATH.
+async function launchBrowser() {
+  const { default: puppeteer } = await import('puppeteer-core');
+  if (process.env.VERCEL) {
+    const { default: chromium } = await import('@sparticuz/chromium');
+    return puppeteer.launch({
+      executablePath: await chromium.executablePath(),
+      args: chromium.args,
+      headless: true,
+    });
+  }
+  return puppeteer.launch({
+    executablePath: CHROME_PATH,
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+}
 
 @Injectable()
 export class ReservationsService {
@@ -95,11 +118,7 @@ export class ReservationsService {
   // shape of the on-screen receipt (ReceiptPanel.jsx / Success.jsx).
   async getReceiptPdf(id: string): Promise<Buffer> {
     const html = await this.getReceiptHtml(id);
-    const browser = await puppeteer.launch({
-      executablePath: CHROME_PATH,
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
+    const browser = await launchBrowser();
     try {
       const page = await browser.newPage();
       await page.setContent(html, { waitUntil: 'load' });
