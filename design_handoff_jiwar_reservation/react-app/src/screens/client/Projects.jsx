@@ -19,13 +19,10 @@ export default function Projects() {
         <div style={{ fontSize: 16, color: color.inkSoft, marginTop: 8, lineHeight: 1.5 }}>{t('projects_sub')}</div>
 
         {/* Search row */}
-        <div style={{ display: 'flex', gap: 8, marginTop: 20 }}>
-          <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, background: '#fff',
-            border: `1px solid ${color.line}`, borderRadius: 8, padding: 14 }}>
-            <span style={{ color: color.inkSoft }}>🔍</span>
-            <span style={{ color: color.placeholder, fontSize: 16 }}>{t('search_name')}</span>
-          </div>
-          <div style={{ width: 44, height: 49, display: 'grid', placeItems: 'center', background: '#f0edef', borderRadius: 4, color: color.primary }}>⚙</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 20, background: '#fff',
+          border: `1px solid ${color.line}`, borderRadius: 8, padding: 14 }}>
+          <span style={{ color: color.inkSoft }}>🔍</span>
+          <span style={{ color: color.placeholder, fontSize: 16 }}>{t('search_name')}</span>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginTop: 24 }}>

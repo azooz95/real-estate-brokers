@@ -56,7 +56,7 @@ export default function Success() {
               </div>
             </div>
           </div>
-          <div onClick={() => r?.receiptUrl && window.open(r.receiptUrl, '_blank')} style={{ background: '#f5f3f5', textAlign: 'center', padding: 16, borderTop: '1px dashed #d7c9c9', cursor: r ? 'pointer' : 'default' }}>
+          <div onClick={() => r?.receiptUrl && window.open(r.receiptUrl, '_blank')} className={r ? 'tap-target' : ''} style={{ background: '#f5f3f5', textAlign: 'center', padding: 16, borderTop: '1px dashed #d7c9c9', cursor: r ? 'pointer' : 'default' }}>
             <span style={{ color: color.primary, fontSize: 14, fontWeight: 600, letterSpacing: '.04em' }}>⬇ {t('download_receipt')}</span>
           </div>
         </div>

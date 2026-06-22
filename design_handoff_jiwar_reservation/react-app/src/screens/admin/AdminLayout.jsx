@@ -19,7 +19,7 @@ export default function AdminLayout() {
         <div style={{ padding: '0 8px 24px' }}><img src="/assets/img/logo-white.png" alt="Jiwar Aloula" style={{ height: 32 }} /></div>
         <nav style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {NAV.map((n) => (
-            <NavLink key={n.to} to={n.to} style={({ isActive }) => ({
+            <NavLink key={n.to} to={n.to} className="tap-target" style={({ isActive }) => ({
               display: 'flex', alignItems: 'center', gap: 16, padding: '11px 16px', borderRadius: 4, fontSize: 14,
               background: isActive ? color.primaryHover : 'transparent',
               color: isActive ? color.accentRose : color.sidebarItem,

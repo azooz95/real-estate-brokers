@@ -69,7 +69,7 @@ export default function Home() {
         </div>
         <div style={{ display: 'flex', gap: 16, marginTop: 16, overflowX: 'auto', paddingBottom: 4 }}>
           {projects.map((p) => (
-            <div key={p.id} style={{ flex: '0 0 auto', width: 160, cursor: 'pointer' }} onClick={() => nav(`/projects/${p.id}/units`)}>
+            <div key={p.id} className="tap-target" style={{ flex: '0 0 auto', width: 160 }} onClick={() => nav(`/projects/${p.id}/units`)}>
               <div style={{ position: 'relative', height: 96, borderRadius: 8, overflow: 'hidden' }}>
                 <img src={p.image} alt={p.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0))' }} />
@@ -115,7 +115,7 @@ export default function Home() {
       </div>
 
       <button onClick={() => nav('/projects')} aria-label="search"
-        style={{ position: 'sticky', bottom: 20, insetInlineStart: 'calc(100% - 72px)', width: 56, height: 56, border: 'none',
+        style={{ position: 'fixed', bottom: 20, insetInlineEnd: 16, width: 56, height: 56, border: 'none', zIndex: 10,
           borderRadius: 16, background: color.gold, color: '#fff', fontSize: 20, boxShadow: '0 12px 24px -6px rgba(114,90,64,.6)', cursor: 'pointer' }}>🔍</button>
     </PhoneFrame>
   );

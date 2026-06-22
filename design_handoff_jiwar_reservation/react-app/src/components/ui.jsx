@@ -61,11 +61,9 @@ export function PhoneHeader({ onBack, right }) {
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64,
       padding: '0 16px', background: color.bgWarm, position: 'sticky', top: 0, zIndex: 5 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-        {onBack ? (
+        {onBack && (
           <button onClick={onBack} style={{ width: 40, height: 40, border: 'none', background: 'transparent',
             color: color.primary, fontSize: 18, cursor: 'pointer' }}>‹</button>
-        ) : (
-          <div style={{ width: 40, height: 40, display: 'grid', placeItems: 'center', color: color.primary, fontSize: 20 }}>☰</div>
         )}
         <img src="/assets/img/86442120d5.png" alt="Jiwar Aloula" style={{ height: 30 }} />
       </div>
