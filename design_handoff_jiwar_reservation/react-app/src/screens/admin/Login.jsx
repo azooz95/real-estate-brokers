@@ -3,15 +3,34 @@ import { useNavigate } from 'react-router-dom';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
+import { useToast } from '../../components/Toast.jsx';
 
 export default function Login() {
   const { t } = useI18n();
+  const toast = useToast();
   const nav = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
+  const [showPassword, setShowPassword] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
+  const [error, setError] = useState(null);
 
   async function signIn() {
-    await api.login(form);          // sets session cookie / token on backend
-    nav('/dashboard');
+    if (!form.email.trim() || !form.password) {
+      setError('Enter your email and password.');
+      return;
+    }
+    setSigningIn(true);
+    setError(null);
+    try {
+      await api.login(form);          // sets session cookie / token on backend
+      nav('/dashboard');
+    } catch (e) {
+      const message = e.message?.includes('401') ? 'Incorrect email or password.' : 'Could not sign in. Please try again.';
+      setError(message);
+      toast.error(message);
+    } finally {
+      setSigningIn(false);
+    }
   }
 
   return (
@@ -37,16 +56,23 @@ export default function Login() {
           <div style={{ fontSize: 15, color: color.inkSoft, marginTop: 8, lineHeight: 1.5 }}>{t('login_sub')}</div>
 
           <Label>{t('username_email')}</Label>
-          <InputRow icon="✉">
-            <input value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
+          <InputRow icon="✉" error={!!error}>
+            <input value={form.email} onChange={(e) => { setForm({ ...form, email: e.target.value }); setError(null); }}
               placeholder="admin@jiwaraloula.com" style={bare} />
           </InputRow>
 
           <Label>{t('password')}</Label>
-          <InputRow icon="🔒" trailing="👁">
-            <input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })}
+          <InputRow icon="🔒" error={!!error} trailing={showPassword ? '🙈' : '👁'} onTrailingClick={() => setShowPassword((v) => !v)} trailingLabel={showPassword ? 'Hide password' : 'Show password'}>
+            <input type={showPassword ? 'text' : 'password'} value={form.password}
+              onChange={(e) => { setForm({ ...form, password: e.target.value }); setError(null); }}
+              onKeyDown={(e) => e.key === 'Enter' && signIn()}
               placeholder="••••••••••" style={bare} />
           </InputRow>
+          {error && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 10, color: color.primaryHover, fontSize: 13, fontWeight: 600 }}>
+              <span>⚠</span>{error}
+            </div>
+          )}
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 18 }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 8, color: color.inkSoft, fontSize: 14 }}>
@@ -56,8 +82,10 @@ export default function Login() {
             <button onClick={() => nav('/forgot')} style={{ background: 'none', border: 'none', color: color.gold, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>{t('forgot_password')}</button>
           </div>
 
-          <button onClick={signIn} style={{ marginTop: 28, background: color.primaryHover, color: '#fff', border: 'none',
-            borderRadius: 8, padding: 15, fontSize: 16, fontWeight: 600, cursor: 'pointer', boxShadow: shadow.lift }}>{t('sign_in')}</button>
+          <button onClick={signIn} disabled={signingIn} style={{ marginTop: 28, background: color.primaryHover, color: '#fff', border: 'none',
+            borderRadius: 8, padding: 15, fontSize: 16, fontWeight: 600, cursor: signingIn ? 'default' : 'pointer', boxShadow: shadow.lift, opacity: signingIn ? 0.7 : 1 }}>
+            {signingIn ? 'Signing in…' : t('sign_in')}
+          </button>
           <div style={{ textAlign: 'center', marginTop: 28, color: color.placeholder, fontSize: 12 }}>{t('login_footer')}</div>
         </div>
       </div>
@@ -69,13 +97,18 @@ const bare = { flex: 1, border: 'none', outline: 'none', background: 'transparen
 function Label({ children }) {
   return <div style={{ fontSize: 13, fontWeight: 600, color: color.inkSoft, letterSpacing: '.03em', marginTop: 20 }}>{children}</div>;
 }
-function InputRow({ icon, trailing, children }) {
+function InputRow({ icon, trailing, trailingLabel, onTrailingClick, error, children }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: color.surfaceAlt, border: `1px solid ${color.line}`,
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: color.surfaceAlt, border: `1px solid ${error ? color.primaryHover : color.line}`,
       borderRadius: 8, padding: '14px 16px', marginTop: 6 }}>
       <span style={{ color: color.inkMuted }}>{icon}</span>
       {children}
-      {trailing && <span style={{ color: color.inkMuted }}>{trailing}</span>}
+      {trailing && (onTrailingClick ? (
+        <button type="button" onClick={onTrailingClick} aria-label={trailingLabel} title={trailingLabel}
+          style={{ border: 'none', background: 'transparent', padding: 0, color: color.inkMuted, fontSize: 15, cursor: 'pointer', display: 'flex' }}>{trailing}</button>
+      ) : (
+        <span style={{ color: color.inkMuted }}>{trailing}</span>
+      ))}
     </div>
   );
 }

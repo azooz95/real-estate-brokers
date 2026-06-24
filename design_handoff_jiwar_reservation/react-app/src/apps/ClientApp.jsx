@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { ToastProvider } from '../components/Toast.jsx';
 import Home from '../screens/client/Home.jsx';
 import Projects from '../screens/client/Projects.jsx';
 import UnitList from '../screens/client/UnitList.jsx';
@@ -16,14 +17,16 @@ export default function ClientApp() {
   useEffect(() => { captureTrackingRef(); }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/projects/:projectId/units" element={<UnitList />} />
-      <Route path="/units/:unitId" element={<UnitDetail />} />
-      <Route path="/units/:unitId/reserve" element={<Reserve />} />
-      <Route path="/reservation/:id/success" element={<Success />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <ToastProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:projectId/units" element={<UnitList />} />
+        <Route path="/units/:unitId" element={<UnitDetail />} />
+        <Route path="/units/:unitId/reserve" element={<Reserve />} />
+        <Route path="/reservation/:id/success" element={<Success />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </ToastProvider>
   );
 }

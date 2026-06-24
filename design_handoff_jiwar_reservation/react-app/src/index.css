@@ -27,6 +27,8 @@ button:disabled { cursor: default; }
 button:not(:disabled), .tap-target { cursor: pointer; }
 
 @keyframes pop { 0% { transform: scale(.7); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes toastPop { from { transform: translateY(10px) scale(.96); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+.toast-pop { animation: toastPop .22s ease; }
 @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
 html[dir='rtl'] [style*="slideIn"] { animation-name: slideInRtl !important; }
 @keyframes slideInRtl { from { transform: translateX(-100%); } to { transform: translateX(0); } }

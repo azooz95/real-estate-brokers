@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
+import { useToast } from '../../components/Toast.jsx';
 import ReceiptPanel from './ReceiptPanel.jsx';
 
 const fmt = (n) => new Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(n);
@@ -34,6 +35,7 @@ function exportExcel(rows) {
 
 export default function Transactions() {
   const { t } = useI18n();
+  const toast = useToast();
   const [rows, setRows] = useState([]);
   const [openRef, setOpenRef] = useState(null);   // transaction shown in the receipt panel
   useEffect(() => { api.listTransactions().then(setRows); }, []);
@@ -62,8 +64,8 @@ export default function Transactions() {
           <div style={{ fontSize: 14, color: color.inkMuted, marginTop: 4, maxWidth: 520, lineHeight: 1.5 }}>{t('tx_sub')}</div>
         </div>
         <div style={{ display: 'flex', gap: 10 }}>
-          <button onClick={() => exportCsv(rows)} style={{ background: '#fff', color: color.primary, border: '1px solid #e3dde1', borderRadius: 8, padding: '10px 16px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>⬇ {t('export_csv')}</button>
-          <button onClick={() => exportExcel(rows)} style={{ background: color.emerald, color: '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>⬇ {t('export_excel')}</button>
+          <button onClick={() => { exportCsv(rows); toast.success('Transactions CSV downloaded.'); }} style={{ background: '#fff', color: color.primary, border: '1px solid #e3dde1', borderRadius: 8, padding: '10px 16px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>⬇ {t('export_csv')}</button>
+          <button onClick={() => { exportExcel(rows); toast.success('Transactions Excel file downloaded.'); }} style={{ background: color.emerald, color: '#fff', border: 'none', borderRadius: 8, padding: '10px 16px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>⬇ {t('export_excel')}</button>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { color } from '../../theme/tokens.js';
+import { api } from '../../api/client.js';
 
 const NAV = [
   { to: 'dashboard',    key: 'nav_dashboard',    icon: '▦' },
@@ -12,6 +13,19 @@ const NAV = [
 
 export default function AdminLayout() {
   const { t } = useI18n();
+  const nav = useNavigate();
+
+  async function signOut() {
+    try {
+      await api.logout();
+    } catch {
+      // Even if the request fails, drop the client back to login —
+      // staying signed in on a console with no working logout is worse.
+    } finally {
+      nav('/login', { replace: true });
+    }
+  }
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: color.bgAdmin }}>
       {/* Sidebar */}
@@ -30,10 +44,13 @@ export default function AdminLayout() {
         </nav>
         <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: 12, padding: '12px 8px' }}>
           <div style={{ width: 38, height: 38, borderRadius: 10, background: color.primaryHover, color: '#fff', display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 700 }}>AM</div>
-          <div>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ color: '#fff', fontSize: 13, fontWeight: 600 }}>Admin Manager</div>
             <div style={{ color: color.emeraldSoft, fontSize: 11 }}>● {t('status_active')}</div>
           </div>
+          <button onClick={signOut} title={t('sign_out')} aria-label={t('sign_out')} className="tap-target"
+            style={{ width: 34, height: 34, flex: '0 0 34px', display: 'grid', placeItems: 'center', border: '1px solid rgba(255,255,255,.12)',
+              background: 'rgba(255,255,255,.06)', borderRadius: 8, color: color.accentRose, fontSize: 15 }}>⏻</button>
         </div>
       </aside>
 

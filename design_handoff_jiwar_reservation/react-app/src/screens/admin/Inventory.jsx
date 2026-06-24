@@ -4,6 +4,7 @@ import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
 import { StatusBadge } from '../../components/ui.jsx';
+import { useToast } from '../../components/Toast.jsx';
 import UnitModal from './UnitModal.jsx';
 
 const fmt = (n) => new Intl.NumberFormat('en-US').format(n);
@@ -11,16 +12,25 @@ const sarShort = (n) => n >= 1_000_000 ? `SAR ${(n / 1_000_000).toFixed(1)}M` : 
 
 export default function Inventory() {
   const { t } = useI18n();
+  const toast = useToast();
   const nav = useNavigate();
   const [rows, setRows] = useState([]);
   const [openCode, setOpenCode] = useState(null);   // unit shown in the modal
   useEffect(() => { api.listInventory().then(setRows); }, []);
 
   // Admin action: change a unit's status (hold / release / confirm). Optimistic
-  // update; persists via api.setUnitStatus (PATCH /api/units/:code/status).
+  // update; persists via api.setUnitStatus (PATCH /api/units/:code/status),
+  // rolled back with an error toast if the request fails.
   async function setUnitStatus(code, status, reason) {
+    const previous = rows.find((r) => r.code === code)?.status;
     setRows((prev) => prev.map((r) => (r.code === code ? { ...r, status } : r)));
-    await api.setUnitStatus(code, status, reason);
+    try {
+      await api.setUnitStatus(code, status, reason);
+      toast.success(`Unit ${code} status updated to ${status}.`);
+    } catch {
+      setRows((prev) => prev.map((r) => (r.code === code ? { ...r, status: previous } : r)));
+      toast.error(`Could not update unit ${code}. Please try again.`);
+    }
   }
   const openUnit = rows.find((r) => r.code === openCode) || null;
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
+import { useToast } from '../../components/Toast.jsx';
 
 const TONE = {
   gold: ['#fbe3c9', '#281804'], rose: ['#f3d9d9', '#3f0209'], mint: ['#cfeee6', '#00201a'],
@@ -9,7 +10,7 @@ const TONE = {
 };
 const BAR = { Available: color.emerald, Reserved: color.inkMuted, Hold: color.goldSoft };
 
-function downloadInventoryCsv() {
+function downloadInventoryCsv(toast) {
   api.listInventory().then((rows) => {
     const cols = ['code', 'project', 'floor', 'beds', 'baths', 'area', 'price', 'status'];
     const escape = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
@@ -21,11 +22,13 @@ function downloadInventoryCsv() {
     a.download = `inventory-${Date.now()}.csv`;
     a.click();
     URL.revokeObjectURL(url);
-  });
+    toast.success('Inventory CSV downloaded.');
+  }).catch(() => toast.error('Could not export the inventory. Please try again.'));
 }
 
 export default function Dashboard() {
   const { t } = useI18n();
+  const toast = useToast();
   const [d, setD] = useState(null);
   useEffect(() => { api.getDashboard().then(setD); }, []);
   if (!d) return null;
@@ -89,7 +92,7 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
-          <button onClick={downloadInventoryCsv} style={{ width: '100%', marginTop: 22, background: color.primary, color: '#fff', border: 'none', borderRadius: 8, padding: 12, fontSize: 12, fontWeight: 600, letterSpacing: '.04em', cursor: 'pointer' }}>⬇ {t('download_inventory')}</button>
+          <button onClick={() => downloadInventoryCsv(toast)} style={{ width: '100%', marginTop: 22, background: color.primary, color: '#fff', border: 'none', borderRadius: 8, padding: 12, fontSize: 12, fontWeight: 600, letterSpacing: '.04em', cursor: 'pointer' }}>⬇ {t('download_inventory')}</button>
         </div>
       </div>
 

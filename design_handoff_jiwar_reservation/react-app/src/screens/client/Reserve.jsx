@@ -6,14 +6,17 @@ import * as mock from '../../data/fixtures.js';
 import { color, radius, shadow } from '../../theme/tokens.js';
 import { PhoneFrame, PhoneHeader } from '../../components/ui.jsx';
 import { getTrackingRef } from '../../lib/trackingRef.js';
+import { useToast } from '../../components/Toast.jsx';
 
 export default function Reserve() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const toast = useToast();
   const nav = useNavigate();
   const { unitId } = useParams();
   const [unit, setUnit] = useState(null);
   const [form, setForm] = useState({ name: '', phone: '', paymentMethod: 'mada' });
   const [submitting, setSubmitting] = useState(false);
+  const [phoneTouched, setPhoneTouched] = useState(false);
 
   useEffect(() => { api.getUnit(unitId).then(setUnit); }, [unitId]);
 
@@ -22,10 +25,27 @@ export default function Reserve() {
   // page's own URL by the time the client reaches Reserve.
   const brokerRef = getTrackingRef();
 
+  const phoneValid = /^5\d{8}$/.test(form.phone);
+
   async function submit() {
+    if (!form.name.trim()) {
+      toast.error(lang === 'ar' ? 'يرجى إدخال الاسم الكامل' : 'Please enter your full name.');
+      return;
+    }
+    if (!phoneValid) {
+      setPhoneTouched(true);
+      toast.error(lang === 'ar' ? 'يرجى إدخال رقم هاتف سعودي صحيح (9 أرقام، يبدأ بـ 5)' : 'Please enter a valid Saudi mobile number (9 digits, starting with 5).');
+      return;
+    }
     setSubmitting(true);
-    const res = await api.createReservation({ unitId, brokerRef, client: form, paymentMethod: form.paymentMethod });
-    nav(`/reservation/${res.id}/success`);
+    try {
+      const res = await api.createReservation({ unitId, brokerRef, client: form, paymentMethod: form.paymentMethod });
+      nav(`/reservation/${res.id}/success`);
+    } catch {
+      toast.error(lang === 'ar' ? 'تعذر إتمام الحجز. حاول مرة أخرى.' : 'Could not complete the reservation. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -66,11 +86,19 @@ export default function Reserve() {
           </Field>
           <Field label={t('phone_number')}>
             <div style={{ display: 'flex' }}>
-              <div style={{ display: 'grid', placeItems: 'center', background: '#f5f3f5', border: `1px solid ${color.line}`,
+              <div style={{ display: 'grid', placeItems: 'center', background: '#f5f3f5', border: `1px solid ${phoneTouched && !phoneValid ? color.primaryHover : color.line}`,
                 borderInlineEnd: 'none', borderRadius: '8px 0 0 8px', padding: '0 16px', color: color.inkSoft, fontSize: 16 }}>+966</div>
-              <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                placeholder="5X XXX XXXX" style={{ ...inputStyle, borderRadius: '0 8px 8px 0', flex: 1 }} />
+              <input value={form.phone} type="tel" inputMode="numeric" maxLength={9}
+                onChange={(e) => { setForm({ ...form, phone: e.target.value.replace(/\D/g, '').slice(0, 9) }); setPhoneTouched(true); }}
+                onBlur={() => setPhoneTouched(true)}
+                placeholder="5X XXX XXXX"
+                style={{ ...inputStyle, borderRadius: '0 8px 8px 0', flex: 1, borderColor: phoneTouched && !phoneValid ? color.primaryHover : color.line }} />
             </div>
+            {phoneTouched && !phoneValid && (
+              <div style={{ fontSize: 13, color: color.primaryHover, marginTop: 6 }}>
+                {lang === 'ar' ? 'أدخل رقم هاتف سعودي صحيح مكوّن من 9 أرقام ويبدأ بـ 5' : 'Enter a valid 9-digit Saudi mobile number starting with 5.'}
+              </div>
+            )}
           </Field>
         </div>
 

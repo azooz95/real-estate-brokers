@@ -32,7 +32,7 @@ export const STR = {
     nav_dashboard: 'Dashboard', nav_inventory: 'Inventory', nav_brokers: 'Brokers',
     nav_transactions: 'Transactions', nav_settings: 'Settings',
     admin_portal: 'Admin Portal', status_active: 'Status: Active', admin_console: 'Admin Console',
-    search_inventory: 'Search Inventory...',
+    search_inventory: 'Search Inventory...', sign_out: 'Sign out',
     // login
     login_title: 'Administrative Terminal Login',
     login_sub: 'Enter your credentials to access the central command dashboard.',
@@ -105,7 +105,7 @@ export const STR = {
     unit_code: 'رمز الوحدة', deposit_amount: 'مبلغ العربون', attributed_marketer: 'المسوّق المنسوب',
     nav_dashboard: 'لوحة التحكم', nav_inventory: 'المخزون', nav_brokers: 'الوسطاء',
     nav_transactions: 'المعاملات', nav_settings: 'الإعدادات',
-    admin_portal: 'بوابة الإدارة', status_active: 'الحالة: نشط', admin_console: 'وحدة التحكم',
+    admin_portal: 'بوابة الإدارة', status_active: 'الحالة: نشط', admin_console: 'وحدة التحكم', sign_out: 'تسجيل الخروج',
     search_inventory: 'ابحث في المخزون...',
     login_title: 'تسجيل دخول الإدارة', login_sub: 'أدخل بياناتك للوصول إلى لوحة القيادة المركزية.',
     username_email: 'اسم المستخدم أو البريد', password: 'كلمة المرور', remember_me: 'تذكرني',

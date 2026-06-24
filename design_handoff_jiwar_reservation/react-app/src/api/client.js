@@ -36,6 +36,8 @@ export const api = {
   // ---- Auth (admin / marketer) ----
   // POST /api/auth/login  { email, password } -> { token, user }
   login: (body) => USE_MOCK ? delay(mock.session) : http('/auth/login', { method: 'POST', body }),
+  // POST /api/auth/logout -> 204 (clears the session cookie)
+  logout: () => USE_MOCK ? delay(null) : http('/auth/logout', { method: 'POST' }),
   // POST /api/auth/forgot { email } -> 204
   forgotPassword: (body) => USE_MOCK ? delay(null) : http('/auth/forgot', { method: 'POST', body }),
   // GET /api/auth/me -> { id, name, email, role }

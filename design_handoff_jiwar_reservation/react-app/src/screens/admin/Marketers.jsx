@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
+import { useToast } from '../../components/Toast.jsx';
 
 const SAR = (n) => 'SAR ' + new Intl.NumberFormat('en-US').format(n);
 const sarShort = (n) => n >= 1_000_000 ? `SAR ${(n / 1_000_000).toFixed(1)}M` : SAR(Math.round(n));
@@ -9,6 +10,7 @@ const initials = (name) => name.split(' ').map((w) => w[0]).slice(0, 2).join('')
 
 export default function Marketers() {
   const { t, lang } = useI18n();
+  const toast = useToast();
   const [brokers, setBrokers] = useState([]);
   const [form, setForm] = useState({ fullName: '', mobile: '' });
   const [creating, setCreating] = useState(false);
@@ -17,16 +19,29 @@ export default function Marketers() {
   useEffect(() => { api.listBrokers().then(setBrokers); }, []);
 
   async function generateLink() {
-    if (!form.fullName.trim() || !form.mobile.trim()) return;
+    if (!form.fullName.trim() || !form.mobile.trim()) {
+      toast.error('Enter the broker\'s full name and mobile number first.');
+      return;
+    }
     setCreating(true);
     try {
       const broker = await api.createBroker(form);
       setBrokers((prev) => [broker, ...prev]);
       setJustCreated(broker);
       setForm({ fullName: '', mobile: '' });
+      toast.success(`Tracking link generated for ${broker.name}.`);
+    } catch {
+      toast.error('Could not generate the link. Please try again.');
     } finally {
       setCreating(false);
     }
+  }
+
+  function copyLink(url) {
+    navigator.clipboard?.writeText(url).then(
+      () => toast.success('Tracking link copied.'),
+      () => toast.error('Could not copy the link.'),
+    );
   }
 
   const activeCount = brokers.filter((b) => b.status !== 'suspended').length;
@@ -105,7 +120,7 @@ export default function Marketers() {
                 <div style={{ fontSize: 11, fontWeight: 700, color: color.emeraldText, letterSpacing: '.05em' }}>✓ LINK GENERATED for {justCreated.name}</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 8 }}>
                   <span style={{ flex: 1, fontSize: 12, color: color.gold, background: '#f5f2f4', padding: '6px 8px', borderRadius: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{justCreated.trackingUrl}</span>
-                  <button onClick={() => navigator.clipboard?.writeText(justCreated.trackingUrl)} style={{ border: 'none', background: color.primary, color: '#fff', borderRadius: 4, padding: '6px 10px', fontSize: 11, fontWeight: 600, cursor: 'pointer' }}>Copy</button>
+                  <button onClick={() => copyLink(justCreated.trackingUrl)} style={{ border: 'none', background: color.primary, color: '#fff', borderRadius: 4, padding: '6px 10px', fontSize: 11, fontWeight: 600, cursor: 'pointer' }}>Copy</button>
                 </div>
               </div>
             )}
@@ -137,6 +152,7 @@ export default function Marketers() {
 }
 
 function BrokerEditModal({ broker, onClose, onChange, onDeleted }) {
+  const toast = useToast();
   const [mobile, setMobile] = useState(broker.mobile);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -151,6 +167,8 @@ function BrokerEditModal({ broker, onClose, onChange, onDeleted }) {
       onChange({ ...broker, ...updated });
       setSaved(true);
       setTimeout(() => setSaved(false), 1800);
+    } catch {
+      toast.error('Could not save the phone number. Please try again.');
     } finally {
       setSaving(false);
     }
@@ -161,6 +179,9 @@ function BrokerEditModal({ broker, onClose, onChange, onDeleted }) {
     try {
       const updated = await api.updateBroker(broker.id, { status: suspended ? 'active' : 'suspended' });
       onChange({ ...broker, ...updated });
+      toast.success(suspended ? `${broker.name} reactivated.` : `${broker.name} suspended.`);
+    } catch {
+      toast.error('Could not update broker status. Please try again.');
     } finally {
       setSaving(false);
     }
@@ -175,6 +196,9 @@ function BrokerEditModal({ broker, onClose, onChange, onDeleted }) {
     try {
       await api.deleteBroker(broker.id);
       onDeleted(broker.id);
+      toast.success(`${broker.name} deleted.`);
+    } catch {
+      toast.error('Could not delete this broker. Please try again.');
     } finally {
       setDeleting(false);
     }

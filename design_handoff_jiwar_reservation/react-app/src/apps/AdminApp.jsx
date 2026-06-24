@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import LangToggle from '../components/LangToggle.jsx';
+import { ToastProvider } from '../components/Toast.jsx';
 import Login from '../screens/admin/Login.jsx';
 import ForgotPassword from '../screens/admin/ForgotPassword.jsx';
 import AdminLayout from '../screens/admin/AdminLayout.jsx';
@@ -35,7 +36,7 @@ function RequireAuth() {
 // the domain root (no /admin prefix — the prefix WAS the domain).
 export default function AdminApp() {
   return (
-    <>
+    <ToastProvider>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/forgot" element={<ForgotPassword />} />
@@ -52,6 +53,6 @@ export default function AdminApp() {
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
       <LangToggle />
-    </>
+    </ToastProvider>
   );
 }

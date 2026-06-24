@@ -2,17 +2,41 @@ import { useEffect, useState } from 'react';
 import { useI18n } from '../../i18n/I18nContext.jsx';
 import { api } from '../../api/client.js';
 import { color, shadow } from '../../theme/tokens.js';
+import { useToast } from '../../components/Toast.jsx';
 
 export default function Settings() {
   const { t } = useI18n();
+  const toast = useToast();
   const [s, setS] = useState(null);
   const [me, setMe] = useState(null);
+  const [saving, setSaving] = useState(false);
   useEffect(() => { api.getSettings().then(setS); }, []);
   useEffect(() => { api.getMe().then(setMe); }, []);
   if (!s) return null;
 
   const set = (patch) => setS({ ...s, ...patch });
   const setIntegration = (key, v) => setS({ ...s, integrations: { ...s.integrations, [key]: v } });
+
+  async function saveSettings() {
+    setSaving(true);
+    try {
+      const updated = await api.saveSettings(s);
+      setS(updated);
+      toast.success('Settings saved.');
+    } catch {
+      toast.error('Could not save settings. Please try again.');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function cancelSettings() {
+    try {
+      setS(await api.getSettings());
+    } catch {
+      toast.error('Could not reload settings.');
+    }
+  }
 
   return (
     <div style={{ maxWidth: 760 }}>
@@ -43,8 +67,11 @@ export default function Settings() {
         <AccountPanel me={me} onUpdated={setMe} />
 
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12 }}>
-          <button onClick={() => api.getSettings().then(setS)} style={{ background: '#fff', color: color.inkSoft, border: '1px solid #e3dde1', borderRadius: 8, padding: '12px 22px', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Cancel</button>
-          <button onClick={() => api.saveSettings(s).then(setS)} style={{ background: color.primaryHover, color: '#fff', border: 'none', borderRadius: 8, padding: '12px 24px', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>{t('save_changes')}</button>
+          <button onClick={cancelSettings} disabled={saving} style={{ background: '#fff', color: color.inkSoft, border: '1px solid #e3dde1', borderRadius: 8, padding: '12px 22px', fontSize: 14, fontWeight: 600, cursor: saving ? 'default' : 'pointer' }}>Cancel</button>
+          <button onClick={saveSettings} disabled={saving}
+            style={{ background: color.primaryHover, color: '#fff', border: 'none', borderRadius: 8, padding: '12px 24px', fontSize: 14, fontWeight: 600, cursor: saving ? 'default' : 'pointer', opacity: saving ? 0.7 : 1 }}>
+            {saving ? 'Saving…' : t('save_changes')}
+          </button>
         </div>
       </div>
     </div>
