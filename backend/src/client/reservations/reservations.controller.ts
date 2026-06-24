@@ -30,6 +30,7 @@ export class ReservationsController {
   @Header('Content-Type', 'text/html')
   getReceipt(@Param('id') id: string) {
     return this.reservations.getReceiptHtml(id);
+    
   }
 
   @Get(':id/receipt/pdf')
